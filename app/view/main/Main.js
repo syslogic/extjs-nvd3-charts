@@ -26,7 +26,7 @@ Ext.define('NVD3Charts.view.main.Main', {
             width: '100%',
             items: [
                 {xtype:  'label', html: '<a class="btc" href="https://github.com/syslogic/extjs-nvd3-charts" target="_blank"><img src="resources/images/octocat.png"></a>', padding: 8, width: 24},
-                {xtype:  'label', html: '<a class="btc" href="bitcoin:1LXzkLeSBGPRQZQGLNzL7LPQR8nyJDQzW7?amount=0.1&label=Martin%20Zeitler&message=a%20donation%20for%20extjs-nvd3" target="_blank"><img src="resources/images/bitcoin.png"></a>', padding: 8, width: 24},
+                {xtype:  'label', html: '<a class="btc" href="bitcoin:1LXzkLeSBGPRQZQGLNzL7LPQR8nyJDQzW7?amount=0.01&label=Martin%20Zeitler&message=a%20donation%20for%20extjs-nvd3" target="_blank"><img src="resources/images/bitcoin.png"></a>', padding: 8, width: 24},
                 {xtype:  'label', html: '<a class="gplus" href="https://plus.google.com/+MartinZeitler?rel=author" target="_blank"><img src="resources/images/gplus.png"></a>', padding: 8, width: 24}
             ]
         },
