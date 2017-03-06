@@ -26,11 +26,11 @@ b) clone this repository with:
 
     git clone git@github.com:syslogic/extjs-nvd3-charts.git
 
-c) copy the ExtJS 5.1.x Framework to directory:
+c) place the ExtJS 5.1.x Framework at the following location:
 
     /ext
 
-d) copy the the ExtJS Crisp Theme to directory:
+d) place the the ExtJS Crisp Theme at the following location:
 
     /resources/themes/ext-theme-crisp
 
