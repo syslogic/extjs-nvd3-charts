@@ -1,4 +1,4 @@
-# NVD3 as Sencha ExtJS Package
+# NVD3.js Bindings as Sencha ExtJS Package
 
 This project is similar to the ExtJS 4 & Touch bindings, as well as the AngularJS directives.
 
