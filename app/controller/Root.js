@@ -19,8 +19,8 @@ Ext.define('NVD3Charts.controller.Root', {
         'StackedBarChart': 'onHashtag',
         'HorizontalStackedBarChart': 'onHashtag',
         'LinePlusBarChart': 'onHashtag',
-	'CumulativeLineChart': 'onHashtag',
-	'LineWithFocusChart': 'onHashtag',
+	    'CumulativeLineChart': 'onHashtag',
+	    'LineWithFocusChart': 'onHashtag',
         'PieChart': 'onHashtag',
         'BulletChart': 'onHashtag'
     },
@@ -33,23 +33,27 @@ Ext.define('NVD3Charts.controller.Root', {
             var cards = ct.items.items;
             Ext.each(cards, function(panel, i) {
                 if(panel.name === 'Panel' + hash) {
-                    console.info('viewIndex ' + i + ' -> #' + hash);
+                    //<debug>
+                    	Ext.log({msg: 'viewIndex ' + i + ' -> #' + hash, level: 'info'});
+                    //</debug>
                     panel.items.items[0].renderChartData(panel.store.proxy.reader.rawData);
                     ct.setActiveItem(i);
                     return true;
                 }
             });
         }
-    },    
-    
+    },
+
     listen: {
         controller: {
             '*': {unmatchedroute : 'onUnmatchedRoute'}
         }
     },
-    
+
     /** unmatched route */
     onUnmatchedRoute: function(hash) {
-        console.warn(hash);
-    }    
+        //<debug>
+            Ext.log({msg: 'onUnmatchedRoute: ' + hash.replace('#', ''), level: 'warn'});
+        //</debug>
+    }
 });

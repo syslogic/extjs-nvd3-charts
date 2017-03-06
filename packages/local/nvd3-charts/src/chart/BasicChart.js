@@ -9,16 +9,20 @@
 
 Ext.define('NVD3.chart.BasicChart', {
     extend: 'Ext.Component',
+    requires: [],
     alias: ['widget.BasicChart'],
+    
     config: {
         chart: null,
         height: '100%',
         width: '100%',
+        chartFn: function(chart){},
         chartAnimDuration: 600,
         chartType: null,
-        chartData: [],
         chartOptions: [],
-        chartFn: function(chart){}
+        chartData: [],
+        html: '<svg class="nvd3-svg"/>',
+        plain: true
     },
     
     /** apply properties */
@@ -157,7 +161,11 @@ Ext.define('NVD3.chart.BasicChart', {
         // initially append the SVG to the inner element of the container
         if (this.innerElement) {dom = this.innerElement.dom;}
         else {dom = this.el.dom;}
-        d3.select(dom).append('svg')
+        
+        var svg = dom.firstChild, chart = this.getChart();
+        if(svg === null) {d3.select(dom).append('svg'); svg = dom.firstChild;}
+        
+        d3.select('svg')
             .datum(this.getChartData())
             .transition().duration(this.chartAnimDuration)
             .call(chart);
@@ -174,7 +182,10 @@ Ext.define('NVD3.chart.BasicChart', {
     
     /** initComponent() */
     initComponent: function() {
-        if(typeof(nv) !== 'undefined') {nv.addGraph(Ext.bind(this.addChart, this));}
-        else {Ext.Logger.error('NVD3 is not loaded.');}
+        if(typeof(nv) !== 'undefined') {
+            nv.addGraph(Ext.bind(this.addChart, this));
+        } else {
+            Ext.Logger.error('NVD3 is not loaded.');
+        }
     }
 });

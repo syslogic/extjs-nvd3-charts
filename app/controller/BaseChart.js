@@ -9,37 +9,50 @@ Ext.define('NVD3Charts.controller.BaseChart', {
     extend: 'Ext.app.Controller',
     requires: [],
     stores: [],
-    
-    onElementMouseover: function(e) {
-        console.log('onElementMouseover');
-        console.log(e);
+
+    onElementMouseover: function(event) {
+        //<debug>
+            Ext.log({msg: 'onElementMouseover', level: 'debug'});
+        	console.log(event);
+        //</debug>
     },
-    onElementMouseout: function(e) {
-        console.log('onElementMouseout');
-        console.log(e);
+    onElementMouseout: function(event) {
+        //<debug>
+            Ext.log({msg: 'onElementMouseout', level: 'debug'});
+        	console.log(event);
+        //</debug>
     },
-    onElementClick: function(e) {
-        console.log('onElementClick');
-        console.log(e);
+    onElementClick: function(event) {
+        //<debug>
+            Ext.log({msg: 'onElementClick', level: 'debug'});
+        	console.log(event);
+        //</debug>
     },
-    
-    onTooltipShow: function(e) {
-        console.log('onTooltipShow');
-        console.log(e);
+
+    onTooltipShow: function(event) {
+        //<debug>
+            Ext.log({msg: 'onTooltipShow', level: 'debug'});
+        	console.log(event);
+        //</debug>
     },
-    onTooltipHide: function(e) {
-        console.log('onTooltipHide');
-        console.log(e);
+    onTooltipHide: function(event) {
+        //<debug>
+            Ext.log({msg: 'onTooltipHide', level: 'debug'});
+        	console.log(event);
+        //</debug>
     },
 
     onLegendMouseover: function(e) {
-        console.log('onLegendMouseover');
-        console.log(e);
+        //<debug>
+            Ext.log({msg: 'onLegendMouseover', level: 'debug'});
+        	console.log(event);
+        //</debug>
     },
-    
+
     onStateChange: function(e) {
-        console.log('onStateChange');
-        console.log(e);
+        //<debug>
+            Ext.log({msg: 'onStateChange', level: 'debug'});
+        	console.log(event);
+        //</debug>
     }
-    
 });

@@ -9,7 +9,7 @@
 Ext.define('NVD3Charts.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
-    requires: [],
+    requires: ['Ext.tip.ToolTip'],
     views: [
         'main.Main',
         'menu.Charts',
@@ -26,11 +26,11 @@ Ext.define('NVD3Charts.view.main.MainController', {
         'panel.BulletChart'
     ],
 
-    /* custom event listeners */
+    /* Event Listeners */
     listeners: {
-	chartLoaded: 'chartLoaded'
+		chartLoaded: 'chartLoaded'
     },
-    
+
     initComponent: function() {
         this.callParent(arguments);
     }

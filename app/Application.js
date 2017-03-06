@@ -12,5 +12,10 @@ Ext.define("NVD3Charts.Application", { /* Ext.application({ */
     autoCreateViewport: 'NVD3Charts.view.main.Main',
     name: 'NVD3Charts',
     defaultToken: '#',
-    launch: function() {this.viewport = this.getMainView();}
+    launch: function() {
+        //<debug>
+            Ext.log({msg: NVD3Charts.getApplication().getName() + ' was launched.', level: 'info'});
+		//</debug>
+    	this.viewport = this.getMainView();
+    }
 });
