@@ -8,13 +8,7 @@ as well as the available AngularJS directives.
 * [Sencha ExtJS 5.1.1.451](https://docs.sencha.com/extjs/5.1.1/index.html) (JavaScript Framework)
 * [Sencha Cmd 6.2.1.29](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
 
-## Getting Started
-
-You'd have to clone the repository -
-
-and then add the ExtJS framework and the crisp theme.
-
-## Directory Structure
+## Basic Directory Structure
 
 The relevant locations within the structure are:
 
@@ -22,17 +16,17 @@ The relevant locations within the structure are:
 
     The Package: / packages / local / nvd3-charts
 
-## Including the Package in your Application
+## Getting Started
 
-This adds the package dependency (and goes to /app.json):
+a) change the local path to the desired location.
 
-    requires: ['nvd3-charts'],
+b) then clone this repository to ./
 
-This adds the name-space NVD3 (and goes to /app/Application.js):
+c) add the ExtJS Framework to ./ext
 
-    requires: ['NVD3.Charts'],
+d) add the ExtJS Crisp Theme to ./resources/themes/ext-theme-crisp
 
-## Useful CLI Commands
+## Common CLI Commands
 
 To refresh the application bootstrap:
 
@@ -43,6 +37,16 @@ To build the PKG archive:
 
     cd /packages/local/nvd3-charts
     sencha package build
+
+## Including the Package in your Application
+
+This adds the package dependency (and goes to /app.json):
+
+    requires: ['nvd3-charts'],
+
+This adds the name-space NVD3 (and goes to /app/Application.js):
+
+    requires: ['NVD3.Charts'],
 
 ## MIT License
 
