@@ -5,9 +5,12 @@ This project is similar to the ExtJS 4 & Touch bindings, as well as the AngularJ
 
 ### Prerequisites
 
+Development: Oracle NetBeans IDE 8.2
+
 Framework: Sencha ExtJS 5.1.1.451
+
 Compiler: Sencha Cmd 6.2.1.29
-Development: Netbeans IDE 8.2
+
 
 ### Getting Started
 
@@ -31,7 +34,7 @@ Martin Zeitler
 
 ## MIT License
 
-Copyright (c) 2017 Martin Zeitler
+Copyright (c) 2017 Martin Zeitler, IT Solution Development, Bavaria.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -26,5 +26,9 @@
                 <file localPath="lib/nvd3/nv.d3.min.js" path="nv.d3.min.js"/>
             </library>
         </libraries>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>ExtJS</word>
+            <word>Zeitler</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>
