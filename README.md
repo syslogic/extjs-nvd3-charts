@@ -1,19 +1,20 @@
 # NVD3.js Bindings as Sencha ExtJS Package
 
-This project is similar to the ExtJS 4 & Touch bindings, as well as the AngularJS directives.
+This project is similar to the ExtJS 4 & Touch bindings,
+as well as the available AngularJS directives.
 
 ## Built With
 * [Oracle NetBeans IDE 8.2](http://www.oracle.com/technetwork/developer-tools/netbeans/index.html) (Development Environment)
 * [Sencha ExtJS 5.1.1.451](https://docs.sencha.com/extjs/5.1.1/index.html) (JavaScript Framework)
 * [Sencha Cmd 6.2.1.29](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
 
-### Getting Started
+## Getting Started
 
 You'd have to clone the repository -
 
 and then add the ExtJS framework and the crisp theme.
 
-### Directory Structure
+## Directory Structure
 
 The relevant locations within the structure are:
 
@@ -21,9 +22,23 @@ The relevant locations within the structure are:
 
     Package: / packages / local / nvd3-charts
 
-## Contributors
+## Including the Package in your Application
 
-Martin Zeitler, IT Solution Development, Bavaria.
+This adds the package dependency (and goes to /app.json):
+
+    requires: ['nvd3-charts'],
+
+This adds the name-space NVD3 (and goes to /app/Application.js):
+
+    requires: ['NVD3.Charts'],
+
+## Useful CLI Commands
+
+    cd /
+    sencha app refresh
+
+    cd /packages/local/nvd3-charts
+    sencha package build
 
 ## MIT License
 
@@ -46,3 +61,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+### Contributors
+
+Martin Zeitler, IT Solution Development, Bavaria.
