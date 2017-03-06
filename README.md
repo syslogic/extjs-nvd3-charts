@@ -18,7 +18,7 @@ The relevant locations within the structure are:
 
 ## Getting Started
 
-a) change the local path to the desired location:
+a) change the local path to the desired location, for example:
     
     cd /home/github
 
