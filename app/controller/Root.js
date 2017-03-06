@@ -35,10 +35,10 @@ Ext.define('NVD3Charts.controller.Root', {
             Ext.each(cards, function(panel, i) {
                 if(panel.name === 'Panel' + hash) {
                     //<debug>
-                    	Ext.log({msg: 'viewIndex ' + i + ' -> #' + hash, level: 'info'});
+                    	Ext.log({msg: 'viewIndex ' + i + ' -> ' + hash, level: 'info'});
                     //</debug>
-                    panel.items.items[0].renderChartData(panel.store.proxy.reader.rawData);
                     ct.setActiveItem(i);
+                    panel.items.items[0].renderChartData(panel.store.proxy.reader.rawData);
                     return true;
                 }
             });
