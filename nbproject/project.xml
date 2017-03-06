@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.web.clientproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/php-project/1">
+            <name>extjs-nvd3-charts</name>
+        </data>
+        <libraries xmlns="http://www.netbeans.org/ns/cdnjs-libraries/1">
+            <library name="d3" version="3.5.3">
+                <file localPath="lib/d3/d3.js" path="d3.js"/>
+                <file localPath="lib/d3/d3.min.js" path="d3.min.js"/>
+            </library>
+            <library name="jasmine" version="2.5.2">
+                <file localPath="lib/jasmine/boot.js" path="boot.js"/>
+                <file localPath="lib/jasmine/boot.min.js" path="boot.min.js"/>
+                <file localPath="lib/jasmine/jasmine-html.js" path="jasmine-html.js"/>
+                <file localPath="lib/jasmine/jasmine-html.min.js" path="jasmine-html.min.js"/>
+                <file localPath="lib/jasmine/jasmine.css" path="jasmine.css"/>
+                <file localPath="lib/jasmine/jasmine.js" path="jasmine.js"/>
+                <file localPath="lib/jasmine/jasmine.min.js" path="jasmine.min.js"/>
+            </library>
+            <library name="nvd3" version="1.8.5">
+                <file localPath="lib/nvd3/nv.d3.css" path="nv.d3.css"/>
+                <file localPath="lib/nvd3/nv.d3.js" path="nv.d3.js"/>
+                <file localPath="lib/nvd3/nv.d3.min.css" path="nv.d3.min.css"/>
+                <file localPath="lib/nvd3/nv.d3.min.js" path="nv.d3.min.js"/>
+            </library>
+        </libraries>
+    </configuration>
+</project>
