@@ -8,6 +8,7 @@
 Ext.define('NVD3Charts.controller.Main', {
     extend: 'Ext.app.Controller',
     views: ['main.Main'],
+    
     refs: [
         {ref: 'cardContainer',             selector: 'panel[name=MainContainer]'},
         {ref: 'barChart',                  selector: 'PanelBarChart'},
@@ -23,6 +24,7 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'bulletChart',               selector: 'PanelBulletChart'},
         {ref: 'sunburstChart',             selector: 'PanelSunburstChart'}
     ],
+    
     updateActiveItem: function(viewIndex) {
         var cardContainer = this.getCardContainer();
         cardContainer.layout.setActiveItem(viewIndex);
@@ -41,12 +43,13 @@ Ext.define('NVD3Charts.controller.Main', {
             case 10: chartPanel = this.getBulletChart(); break;
             case 11: chartPanel = this.getSunburstChart(); break;
         }
+        
         if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) !== 'undefined') {
             document.location.hash = chartPanel.name.replace("Panel", "#");
         } else if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) === 'undefined') {
             Ext.log({msg: 'Panel '+ chartPanel.name.replace("Panel", "#") + '  has no store.', level: 'warn'});
         } else {
-            Ext.log({msg: 'neither chartPanel nor store for viewIndex: '+viewIndex+'.', level: 'error'});
+            Ext.log({msg: 'viewIndex ' + viewIndex + ' -> neither chartPanel nor store available.', level: 'warn'});
         }
     }
 });
