@@ -20,13 +20,15 @@ and then add the ExtJS framework and the crisp theme.
 
 ### Directory Structure
 
-The relevant locations within the directory structure are:
+The relevant locations within the structure are:
 
--> app, an example ExtJS  application.
+-> *app*, an example ExtJS  application.
 
 -> packages
+
    -> local
-      -> nvd3-charts, the ExtJS package.
+
+      -> *nvd3-charts*, the ExtJS package.
 
 ## Contributors
 
