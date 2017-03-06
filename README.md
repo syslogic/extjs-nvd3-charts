@@ -18,13 +18,17 @@ The relevant locations within the structure are:
 
 ## Getting Started
 
-a) change the local path to the desired location.
+a) change the local path to the desired location, eg.
+    
+    cd /home/github
 
-b) then clone this repository to ./
+b) clone this repository with:
 
-c) add the ExtJS Framework to ./ext
+    git clone git@github.com:syslogic/extjs-nvd3-charts.git
 
-d) add the ExtJS Crisp Theme to ./resources/themes/ext-theme-crisp
+c) copy the ExtJS 5.1.x Framework to /ext
+
+d) copy the the ExtJS Crisp Theme to /resources/themes/ext-theme-crisp
 
 ## Common CLI Commands
 
