@@ -34,8 +34,12 @@ This adds the name-space NVD3 (and goes to /app/Application.js):
 
 ## Useful CLI Commands
 
+To refresh the application bootstrap:
+
     cd /
     sencha app refresh
+
+To build the PKG archive:
 
     cd /packages/local/nvd3-charts
     sencha package build
