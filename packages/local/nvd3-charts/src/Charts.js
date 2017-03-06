@@ -13,7 +13,7 @@ Ext.define('NVD3.Charts', {
         'NVD3.chart.BulletChart',
         'NVD3.chart.CumulativeLineChart',
         'NVD3.chart.MultiBarHorizontalChart',
-        'NVD3.chart.IndentedTree',
+        'NVD3.chart.SunburstChart',
         'NVD3.chart.LineChart',
         'NVD3.chart.LinePlusBarChart',
         'NVD3.chart.LineWithFocusChart',

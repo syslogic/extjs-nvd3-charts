@@ -8,7 +8,6 @@
 Ext.define('NVD3Charts.controller.Main', {
     extend: 'Ext.app.Controller',
     views: ['main.Main'],
-    
     refs: [
         {ref: 'cardContainer',             selector: 'panel[name=MainContainer]'},
         {ref: 'barChart',                  selector: 'PanelBarChart'},
@@ -21,16 +20,14 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'cumulativeLineChart',       selector: 'PanelCumulativeLineChart'},
         {ref: 'lineWithFocusChart',        selector: 'PanelLineWithFocusChart'},
         {ref: 'pieChart',                  selector: 'PanelPieChart'},
-        {ref: 'bulletChart',               selector: 'PanelBulletChart'
-    }],
-
-    updateActiveItem: function(index) {
-        
+        {ref: 'bulletChart',               selector: 'PanelBulletChart'},
+        {ref: 'sunburstChart',             selector: 'PanelSunburstChart'}
+    ],
+    updateActiveItem: function(viewIndex) {
         var cardContainer = this.getCardContainer();
-        cardContainer.layout.setActiveItem(index);
+        cardContainer.layout.setActiveItem(viewIndex);
         var chartPanel = null;
-        
-        switch(index) {
+        switch(viewIndex) {
              case 0: chartPanel = this.getBarChart(); break;
              case 1: chartPanel = this.getLineChart(); break;
              case 2: chartPanel = this.getScatterChart(); break;
@@ -41,12 +38,15 @@ Ext.define('NVD3Charts.controller.Main', {
              case 7: chartPanel = this.getCumulativeLineChart(); break;
              case 8: chartPanel = this.getLineWithFocusChart(); break;
              case 9: chartPanel = this.getPieChart(); break;
-            case 10: chartPanel = this.getBulletChart();break;
+            case 10: chartPanel = this.getBulletChart(); break;
+            case 11: chartPanel = this.getSunburstChart(); break;
         }
-
         if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) !== 'undefined') {
             document.location.hash = chartPanel.name.replace("Panel", "#");
-            // chartPanel.items.items[0].renderChartData(chartPanel.store.proxy.reader.rawData);
+        } else if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) === 'undefined') {
+            Ext.log({msg: 'Panel '+ chartPanel.name.replace("Panel", "#") + '  has no store.', level: 'warn'});
+        } else {
+            Ext.log({msg: 'neither chartPanel nor store for viewIndex: '+viewIndex+'.', level: 'error'});
         }
     }
 });

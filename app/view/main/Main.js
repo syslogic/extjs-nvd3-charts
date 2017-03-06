@@ -8,14 +8,10 @@
 
 Ext.define('NVD3Charts.view.main.Main', {
     extend: 'Ext.container.Container',
-    requires: [
-	'NVD3Charts.view.main.MainController',
-	'NVD3Charts.view.menu.Charts',
-        'Ext.form.Label'
-    ],
-    layout: 'border',
-    xtype: 'app-main',
+    requires: ['NVD3Charts.view.main.MainController', 'NVD3Charts.view.menu.ChartTypes'],
     controller: 'main',
+    xtype: 'app-main',
+    layout: 'border',
     items:[{
         xtype: 'panel',
 	region: 'center',
@@ -45,7 +41,8 @@ Ext.define('NVD3Charts.view.main.Main', {
             {xtype: 'PanelCumulativeLineChart'},
             {xtype: 'PanelLineWithFocusChart'},
             {xtype: 'PanelPieChart'},
-            {xtype: 'PanelBulletChart'}
+            {xtype: 'PanelBulletChart'},
+            {xtype: 'SunburstChart'}
         ]
     }, {
         xtype: 'toolbar',
@@ -56,7 +53,7 @@ Ext.define('NVD3Charts.view.main.Main', {
         split: true,
         height: 46,
         border: 0,
-        items: ['->', {xtype: 'button', name: 'select_chart_type', text: 'Select Chart Type', menu: Ext.create('NVD3Charts.view.menu.Charts')}]
+        items: ['->', {xtype: 'button', name: 'ButtonChartType', text: 'Chart Type', menu: Ext.create('NVD3Charts.view.menu.ChartTypes')}]
     }],
     initComponent: function() {
         this.callParent(arguments);

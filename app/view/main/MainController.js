@@ -9,7 +9,7 @@
 Ext.define('NVD3Charts.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
-    requires: ['Ext.tip.ToolTip'],
+    requires: ['Ext.tip.ToolTip', 'Ext.form.Label'],
     views: [
         'main.Main',
         'menu.Charts',
@@ -23,12 +23,13 @@ Ext.define('NVD3Charts.view.main.MainController', {
         'panel.CumulativeLineChart',
         'panel.LineWithFocusChart',
         'panel.PieChart',
-        'panel.BulletChart'
+        'panel.BulletChart',
+        'panel.SunburstChart'
     ],
 
     /* Event Listeners */
     listeners: {
-		chartLoaded: 'chartLoaded'
+        chartLoaded: 'chartLoaded'
     },
 
     initComponent: function() {

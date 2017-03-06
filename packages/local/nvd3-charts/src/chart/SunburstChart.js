@@ -7,8 +7,8 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.IndentedTree',{
+Ext.define('NVD3.chart.SunburstChart',{
     extend: 'NVD3.chart.BasicChart',
-    xtype: ['IndentedTree'],
-    config: {chartType: 'indentedTree'}
+    xtype: ['SunburstChart'],
+    config: {chartType: 'sunburstChart'}
 });

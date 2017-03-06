@@ -19,10 +19,11 @@ Ext.define('NVD3Charts.controller.Root', {
         'StackedBarChart': 'onHashtag',
         'HorizontalStackedBarChart': 'onHashtag',
         'LinePlusBarChart': 'onHashtag',
-	    'CumulativeLineChart': 'onHashtag',
-	    'LineWithFocusChart': 'onHashtag',
+        'CumulativeLineChart': 'onHashtag',
+        'LineWithFocusChart': 'onHashtag',
         'PieChart': 'onHashtag',
-        'BulletChart': 'onHashtag'
+        'BulletChart': 'onHashtag',
+        'SunburstChart': 'onHashtag'
     },
 
     /** switching the card öayout */
