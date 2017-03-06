@@ -1,0 +1,18 @@
+{
+    "name": "NVD3Charts",
+    "id": "9760645c-5482-48d0-bddd-414657ace490",
+    "version": "1.0.0.0",
+    "framework":"ext",
+    "locale": "en",
+    "indexHtmlPath": "index.html",
+    "requires": ["nvd3-charts"],
+    "loader": {"cacheParam": "_dc", "cache": true},
+    "builds": {"classic": {"theme": "ext-theme-crisp"}},
+    "js": [
+        {"path": "bootstrap.js"},
+        {"path": "app.js", "bundle": true}
+    ],
+    "css": [
+        {"path": "bootstrap.css", "bootstrap": true}
+    ]
+}
