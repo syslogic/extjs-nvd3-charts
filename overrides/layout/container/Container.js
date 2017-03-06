@@ -6,6 +6,7 @@
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
 **/
+
 Ext.define('NVD3Charts.overrides.layout.container.Container', {
   override: 'Ext.layout.container.Container',
   notifyOwner: function() {
