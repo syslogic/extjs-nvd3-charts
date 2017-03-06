@@ -80,4 +80,4 @@ SOFTWARE.
 
 ### Contributors
 
-Martin Zeitler, IT Solution Development, Bavaria.
+Martin Zeitler.
