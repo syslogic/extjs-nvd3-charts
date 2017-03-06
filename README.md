@@ -18,9 +18,9 @@ and then add the ExtJS framework and the crisp theme.
 
 The relevant locations within the structure are:
 
-    Application: / app
+    Example Application: / app
 
-    Package: / packages / local / nvd3-charts
+    The Package: / packages / local / nvd3-charts
 
 ## Including the Package in your Application
 
