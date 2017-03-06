@@ -1,0 +1,141 @@
+{
+    "indexHtmlPath": "index.html",
+    "js": [
+        {
+            "path": "${framework.dir}/build/ext-all-rtl-debug.js"
+        },
+        {
+            "path": "app.js",
+            "bundle": true
+        }
+    ],
+    "css": [
+        {
+            "path": "bootstrap.css",
+            "bootstrap": true
+        }
+    ],
+
+    "compressor": null,
+
+    "production": {
+        "compressor": {
+            "type": "yui"
+        }
+    },
+
+    "testing": {
+        "output": {
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
+    },
+
+    "development": {
+        "output": {
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
+    },
+
+
+    "bootstrap":{
+        "base": "${app.dir}"
+    },
+
+    "output": {
+        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+        "deltas": {
+            "enable": false
+        },
+        "cache": {
+            "enable": false
+        },
+        "microloader": {
+            "enable": true
+        }
+    },
+
+    "cache": {
+        "deltas": "deltas"
+    },
+
+    "cordova": {
+        "config": {
+            "name": "${app.name}",
+            "id": "com.domain.${app.name}",
+            "verbose": false,
+            "target": "",
+            "path": "${app.dir}/cordova"
+        },
+        "js": [
+            {
+                "path": "cordova.js",
+                "remote": true,
+                "priority": 1000
+            }
+        ],
+        "microloader": "${app.config.dir}/Microloader.js",
+        "output": {
+            "base": "${app.cordova.config.path}/www",
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
+    },
+
+    "phonegap": {
+        "config": {
+            "name": "${app.name}",
+            "id": "com.domain.${app.name}",
+            "remote": false,
+            "verbose": false,
+            "path": "${app.dir}/phonegap"
+        },
+        "js": [
+            {
+                "path": "phonegap.js",
+                "remote": true,
+                "priority": 1000
+            }
+        ],
+        "microloader": "${app.config.dir}/Microloader.js",
+        "output": {
+            "base": "${app.phonegap.config.path}/www",
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
+    },
+
+    "slicer": {
+        "js": [
+            {
+                "path": "${app.dir}/sass/example/custom.js",
+                "isWidgetManifest": true
+            }
+        ],
+        "output": {
+            "deltas": {
+                "enable": false
+            },
+            "cache": {
+                "enable": false
+            }
+        }
+    }
+}
