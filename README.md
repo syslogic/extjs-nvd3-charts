@@ -2,9 +2,8 @@
 
 This project is similar to the ExtJS 4 & Touch bindings, as well as the AngularJS directives.
 
-
 ## Built With
-* [Oracle NetBeans IDE 8.2](http://www.oracle.com/technetwork/developer-tools/netbeans/index.html) (Development)
+* [Oracle NetBeans IDE 8.2](http://www.oracle.com/technetwork/developer-tools/netbeans/index.html) (Development Environment)
 * [Sencha ExtJS 5.1.1.451](https://docs.sencha.com/extjs/5.1.1/index.html) (JavaScript Framework)
 * [Sencha Cmd 6.2.1.29](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
 
@@ -24,7 +23,7 @@ The relevant locations within the structure are:
 
 ## Contributors
 
-Martin Zeitler
+Martin Zeitler, IT Solution Development, Bavaria.
 
 ## MIT License
 
