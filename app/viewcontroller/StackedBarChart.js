@@ -9,6 +9,7 @@ Ext.define('NVD3Charts.viewcontroller.StackedBarChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.stackedbarchart'],
     stores: ['StackedBarChart'],
+    views: ['panel.StackedBarChart'],
     init: function() {
         this.control({
             "PanelStackedBarChart": {

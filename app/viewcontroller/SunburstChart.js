@@ -8,7 +8,7 @@
 Ext.define('NVD3Charts.viewcontroller.SunburstChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.sunburstchart'],
-    stores: ['SunburstChart'],
+    views: ['panel.SunburstChart'],
     init: function() {
         this.control({
             "PanelSunburstChart": {

@@ -11,7 +11,7 @@ Ext.define('NVD3Charts.view.menu.ChartTypes', {
     alias: ['widget.MenuChartTypes'],
     defaults: {xtype: 'menuitem'},
     items: [
-        {viewIndex:  0, text: 'Bar'},
+        {viewIndex:  0, text: 'Discrete Bar'},
         {viewIndex:  1, text: 'Line'},
         {viewIndex:  2, text: 'Scatter'},
         {viewIndex:  3, text: 'Stacked Area'},

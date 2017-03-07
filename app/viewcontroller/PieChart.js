@@ -9,6 +9,7 @@ Ext.define('NVD3Charts.viewcontroller.PieChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.piechart'],
     stores: ['PieChart'],
+    views: ['panel.PieChart'],
     init: function() {
         this.control({
             "PanelPieChart": {

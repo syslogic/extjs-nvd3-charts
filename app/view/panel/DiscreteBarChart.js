@@ -5,16 +5,16 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.view.panel.BarChart', {
+Ext.define('NVD3Charts.view.panel.DiscreteBarChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.BarChart'],
-    name: 'PanelBarChart',
-    alias: ['widget.PanelBarChart'],
-    store: Ext.create('NVD3Charts.store.BarChart'),
-    controller: 'barchart',
+    requires: ['NVD3Charts.viewcontroller.DiscreteBarChart'],
+    name: 'PanelDiscreteBarChart',
+    alias: ['widget.PanelDiscreteBarChart'],
+    store: Ext.create('NVD3Charts.store.DiscreteBarChart'),
+    controller: 'discretebarchart',
     layout: 'fit',
     items: [{
-        xtype: 'BarChart',
+        xtype: 'DiscreteBarChart',
         chartOptions: {
             x: function(d) { return d.label; },
             y: function(d) { return d.value; },

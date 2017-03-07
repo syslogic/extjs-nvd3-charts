@@ -9,6 +9,7 @@ Ext.define('NVD3Charts.viewcontroller.LineWithFocusChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.linewithfocuschart'],
     stores: ['LineWithFocusChart'],
+    views: ['panel.LineWithFocusChart'],
     init: function() {
         this.control({
             "PanelLineWithFocusChart": {

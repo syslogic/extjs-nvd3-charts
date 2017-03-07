@@ -9,6 +9,7 @@ Ext.define('NVD3Charts.viewcontroller.ScatterChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.scatterchart'],
     stores: ['ScatterChart'],
+    views: ['panel.ScatterChart'],
     init: function() {
         this.control({
             "PanelScatterChart": {

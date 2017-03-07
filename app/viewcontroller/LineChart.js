@@ -9,6 +9,7 @@ Ext.define('NVD3Charts.viewcontroller.LineChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.linechart'],
     stores: ['LineChart'],
+    views: ['panel.LineChart'],
     init: function() {
         this.control({
             "PanelLineChart": {

@@ -9,6 +9,7 @@ Ext.define('NVD3Charts.viewcontroller.CumulativeLineChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.cummulativelinechart'],
     stores: ['CumulativeLineChart'],
+    views: ['panel.CumulativeLineChart'],
     init: function() {
         this.control({
             "PanelCumulativeLineChart": {

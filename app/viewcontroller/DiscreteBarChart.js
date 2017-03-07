@@ -5,13 +5,14 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.viewcontroller.BarChart', {
+Ext.define('NVD3Charts.viewcontroller.DiscreteBarChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
-    alias: ['controller.barchart'],
-    stores: ['BarChart'],
+    alias: ['controller.discretebarchart'],
+    stores: ['DiscreteBarChart'],
+    views: ['panel.DiscreteBarChart'],
     init: function() {
         this.control({
-            "PanelBarChart": {
+            "PanelDiscreteBarChart": {
                 elementMouseover: 'onElementMouseover',
                 elementMouseout: 'onElementMouseout',
                 tooltipShow: 'onTooltipShow',

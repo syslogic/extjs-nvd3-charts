@@ -10,7 +10,7 @@ Ext.define('NVD3Charts.controller.Main', {
     views: ['main.Main'],
     
     requires: [
-        'NVD3Charts.store.BarChart',
+        'NVD3Charts.store.DiscreteBarChart',
         'NVD3Charts.store.BulletChart',
         'NVD3Charts.store.CandlestickBarChart',
         'NVD3Charts.store.CumulativeLineChart',
@@ -27,7 +27,7 @@ Ext.define('NVD3Charts.controller.Main', {
 
     refs: [
         {ref: 'cardContainer',             selector: 'panel[name=MainContainer]'},
-        {ref: 'barChart',                  selector: 'PanelBarChart'},
+        {ref: 'discreteBarChart',          selector: 'PanelDiscreteBarChart'},
         {ref: 'lineChart',                 selector: 'PanelLineChart'},
         {ref: 'scatterChart',              selector: 'PanelScatterChart'},
         {ref: 'stackedAreaChart',          selector: 'PanelStackedAreaChart'},
@@ -39,7 +39,7 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'pieChart',                  selector: 'PanelPieChart'},
         {ref: 'bulletChart',               selector: 'PanelBulletChart'},
         {ref: 'sunburstChart',             selector: 'PanelSunburstChart'},
-        {ref: 'candlestickBarChart',       selector: 'PanelCandleStickBarChart'}
+        {ref: 'candlestickBarChart',       selector: 'PanelCandlestickBarChart'}
     ],
 
     updateActiveItem: function(viewIndex) {
@@ -47,7 +47,7 @@ Ext.define('NVD3Charts.controller.Main', {
         ct.layout.setActiveItem(viewIndex);
         var chartPanel = null;
         switch(viewIndex) {
-             case 0: chartPanel = this.getBarChart(); break;
+             case 0: chartPanel = this.getDiscreteBarChart(); break;
              case 1: chartPanel = this.getLineChart(); break;
              case 2: chartPanel = this.getScatterChart(); break;
              case 3: chartPanel = this.getStackedAreaChart(); break;

@@ -31,8 +31,8 @@ Ext.define('NVD3Charts.view.main.Main', {
             ]
         },
         items: [
-            {xtype: 'PanelBarChart'},
-            {xtype: 'PanelBulletChart'},
+            {xtype: 'PanelDiscreteBarChart'},
+            {xtype: 'PanelLineChart'},
             {xtype: 'PanelScatterChart'},
             {xtype: 'PanelStackedAreaChart'},
             {xtype: 'PanelStackedBarChart'},
@@ -54,7 +54,9 @@ Ext.define('NVD3Charts.view.main.Main', {
         split: true,
         height: 46,
         border: 0,
-        items: ['->', {xtype: 'button', name: 'ButtonChartType', text: 'Chart Type', menu: Ext.create('NVD3Charts.view.menu.ChartTypes')}]
+        items: ['->', {
+            xtype: 'button', name: 'ButtonChartType', text: 'Chart Type', menu: Ext.create('NVD3Charts.view.menu.ChartTypes')
+        }]
     }],
     initComponent: function() {
         this.callParent(arguments);

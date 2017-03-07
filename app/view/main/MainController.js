@@ -13,14 +13,15 @@ Ext.define('NVD3Charts.view.main.MainController', {
     views: [
         'main.Main',
         'menu.Charts',
-        'panel.BarChart',
+        
+        'panel.DiscreteBarChart',
         'panel.LineChart',
         'panel.ScatterChart',
         'panel.StackedAreaChart',
         'panel.StackedBarChart',
         'panel.HorizontalStackedBarChart',
         'panel.CandlestickBarChart',
-        'panel.LinePlusBarChartl',
+        'panel.LinePlusBarChart',
         'panel.CumulativeLineChart',
         'panel.LineWithFocusChart',
         'panel.PieChart',

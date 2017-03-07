@@ -9,6 +9,7 @@ Ext.define('NVD3Charts.viewcontroller.CandlestickBarChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
     alias: ['controller.candlestickbarchart'],
     stores: ['CandlestickBarChart'],
+    views: ['panel.CandlestickBarChart'],
     init: function() {
         this.control({
             "PanelCandlestickBarChart": {

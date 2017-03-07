@@ -5,10 +5,10 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.store.BarChart', {
+Ext.define('NVD3Charts.store.DiscreteBarChart', {
     extend: 'Ext.data.Store',
-    storeId: 'BarChart',
-    alias: ['store.BarChart'],
+    storeId: 'DiscreteBarChart',
+    alias: ['store.DiscreteBarChart'],
     model: 'NVD3Charts.model.None',
     data:[{
         key: "Cumulative Return",
