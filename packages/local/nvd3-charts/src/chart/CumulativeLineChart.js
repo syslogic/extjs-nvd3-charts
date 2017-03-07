@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.CumulativeLineChart',{
+Ext.define('NVD3.chart.CumulativeLineChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['CumulativeLineChart'],
     config: {chartType: 'cumulativeLineChart'}

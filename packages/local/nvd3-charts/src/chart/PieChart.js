@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.PieChart',{
+Ext.define('NVD3.chart.PieChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['PieChart'],
     config: {chartType: 'pieChart'}

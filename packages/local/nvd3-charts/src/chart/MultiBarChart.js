@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.MultiBarChart',{
+Ext.define('NVD3.chart.MultiBarChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['MultiBarChart', 'StackedBarChart'],
     config: {chartType: 'multiBarChart'}

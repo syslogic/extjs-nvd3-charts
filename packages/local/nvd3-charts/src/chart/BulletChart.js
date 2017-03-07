@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.BulletChart',{
+Ext.define('NVD3.chart.BulletChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['BulletChart'],
     config: {chartType: 'bulletChart'}

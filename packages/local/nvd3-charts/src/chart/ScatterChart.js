@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.ScatterChart',{
+Ext.define('NVD3.chart.ScatterChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['ScatterChart'],
     config: {chartType: 'scatterChart'}

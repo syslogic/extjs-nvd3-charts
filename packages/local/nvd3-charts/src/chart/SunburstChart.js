@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.SunburstChart',{
+Ext.define('NVD3.chart.SunburstChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['SunburstChart'],
     config: {chartType: 'sunburstChart'}

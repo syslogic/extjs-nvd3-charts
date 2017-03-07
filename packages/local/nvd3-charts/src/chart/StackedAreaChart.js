@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.StackedAreaChart',{
+Ext.define('NVD3.chart.StackedAreaChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['StackedAreaChart'],
     config: {chartType: 'stackedAreaChart'}

@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.LineChart',{
+Ext.define('NVD3.chart.LineChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['LineChart'],
     config: {chartType: 'lineChart'}

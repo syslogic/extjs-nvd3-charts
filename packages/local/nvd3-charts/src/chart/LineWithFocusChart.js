@@ -7,7 +7,7 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.LineWithFocusChart',{
+Ext.define('NVD3.chart.LineWithFocusChart', {
     extend: 'NVD3.chart.BasicChart',
     xtype: ['LineWithFocusChart'],
     config: {chartType: 'lineWithFocusChart'}

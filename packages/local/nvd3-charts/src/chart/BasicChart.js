@@ -14,24 +14,83 @@ Ext.define('NVD3.chart.BasicChart', {
     
     config: {
         chart: null,
+        plain: true,
+        html: '<svg class="nvd3-svg"/>',
         height: '100%',
         width: '100%',
         chartFn: function(chart){},
         chartAnimDuration: 600,
         chartType: null,
         chartOptions: [],
-        chartData: [],
-        html: '<svg class="nvd3-svg"/>',
-        plain: true
+        chartData: []
     },
     
-    /** apply properties */
-    applyChartProperties: function(chart, options, chartFn) {
-        chart.options(options);
+    addChart: function() {
+        
+        var me = this;
+        
+        // check, if a chartType was supplied
+        if (! me.getChartType()) {
+            Ext.log({msg: 'no chartType was supplied.', level: 'warn'});
+            return false;
+        }
+
+        // check, if the chartType is of type function
+        var chartType = me.getChartType();
+        if(typeof(nv.models[chartType]) !== 'function') {
+            Ext.log({msg: 'an invalid chartType was supplied: ' + chartType, level: 'warn'});
+            return false;
+        }
+        
+        // create a basic chart
+        var chart = nv.models[chartType](), options = me.getChartOptions(), dom;
+        
+        // apply the properties
+        if (! options) {
+            Ext.log({msg: 'the chartOptions were not defined for chartType '+ chartType +'.', level: 'warn'});
+            return false;
+        } else {
+            chart.options(options);
+        }
+        
+        // call the chartFn()
+        var chartFn = me.getChartFn();
         if (Ext.isFunction(chartFn)) {chartFn(chart);}
+    
+        // bind the directives
+        this.bindEvents(chart);
+        
+        // keep a reference
+        this.setChart(chart);
+
+        // append the SVG to the inner element of the container, if none is there.
+        if (this.innerElement) {dom = this.innerElement.dom;}
+        else {dom = this.el.dom;}
+        
+        var svg = dom.firstChild, chart = this.getChart();
+        if(svg === null) {d3.select(dom).append('svg'); svg = dom.firstChild;}
+        
+        // set the data
+        d3.select('svg')
+            .datum(this.getChartData())
+            .transition().duration(this.chartAnimDuration)
+            .call(chart);
+
+        // update the chart size when the window is resized
+        nv.utils.windowResize(function() {
+            chart.update();
+        });
+
+        // fire the chartLoaded event.
+        me.fireEvent('chartLoaded', chart);
+        //<debug>
+            Ext.log({msg: chartType + 'loaded, id #' + dom.id + '.', level: 'info'});
+        //</debug>
+        
+        return chart;
     },
     
-    /** render the data */
+    /** render data */
     renderChartData: function(data) {
         
         var dom;
@@ -40,22 +99,24 @@ Ext.define('NVD3.chart.BasicChart', {
 
         // update the chartData
         if (! data || data.length === 0) {
-            Ext.Logger.warn('AbstractChart.renderChartData() called without data.');
+            Ext.log({msg: 'method renderChartData() was called without data.', level: 'warn'});
             return false;
         } else {
+            
+            // apply the data
             this.setChartData(data);
-        }
 
-        // redraw the chart
-        var svg = dom.firstChild, chart = this.getChart();
-        if(svg === null) {d3.select(dom).append('svg'); svg = dom.firstChild;}
-        if(chart !== null) {
-            d3.select(svg).datum(data).transition().duration(this.chartAnimDuration).call(chart);
-            this.setChart(chart);
+            // redraw the chart
+            var svg = dom.firstChild, chart = this.getChart();
+            if(svg === null) {d3.select(dom).append('svg'); svg = dom.firstChild;}
+            if(chart !== null) {
+                d3.select(svg).datum(data).transition().duration(this.chartAnimDuration).call(chart);
+                this.setChart(chart);
+        }
         }
     },
     
-    /** bind NVD3 events */
+    /** bind events */
     bindEvents: function(chart) {
         
         var me = this;
@@ -131,53 +192,14 @@ Ext.define('NVD3.chart.BasicChart', {
 	}
         
         /** TODO */
-        if (chart.indentedTree) {
+        if (chart.sunburst) {
             
         }
-    },
-    
-    addChart: function() {
         
-        var me = this;
-        
-        // no chartType was defined, cannot do anything without that
-        if (! me.getChartType()) {
-            Ext.Logger.error('A chartType must be defined.');
-            return false;
+        /** TODO */
+        if (chart.candlestickbar) {
+            
         }
-
-        // create a basic chart
-        var chart = nv.models[me.getChartType()](), options = me.getChartOptions(), dom;
-        if (! options) {
-            Ext.Logger.error('chartOptions is not defined for the '+ me.getChartType() +' chartType.');
-            return false;
-        }
-        this.applyChartProperties(chart, options, me.getChartFn());
-
-        // bind the chart events and keep a reference
-        this.bindEvents(chart);
-        this.setChart(chart);
-
-        // initially append the SVG to the inner element of the container
-        if (this.innerElement) {dom = this.innerElement.dom;}
-        else {dom = this.el.dom;}
-        
-        var svg = dom.firstChild, chart = this.getChart();
-        if(svg === null) {d3.select(dom).append('svg'); svg = dom.firstChild;}
-        
-        d3.select('svg')
-            .datum(this.getChartData())
-            .transition().duration(this.chartAnimDuration)
-            .call(chart);
-
-        // update the chart size when the window is resized
-        nv.utils.windowResize(function() {
-            chart.update();
-        });
-
-        // fire a chartLoaded event for controllers to use.
-        me.fireEvent('chartLoaded', chart);
-        return chart;
     },
     
     /** initComponent() */
@@ -185,7 +207,7 @@ Ext.define('NVD3.chart.BasicChart', {
         if(typeof(nv) !== 'undefined') {
             nv.addGraph(Ext.bind(this.addChart, this));
         } else {
-            Ext.Logger.error('NVD3 is not loaded.');
+            Ext.log({msg: 'NVD3 is not loaded.', level: 'warn'});
         }
     }
 });
