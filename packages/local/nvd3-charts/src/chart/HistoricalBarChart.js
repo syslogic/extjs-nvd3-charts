@@ -7,8 +7,8 @@
 
 /* global Ext, d3 */
 
-Ext.define('NVD3.chart.CandleStickBarChart', {
+Ext.define('NVD3.chart.HistoricalBarChart', {
     extend: 'NVD3.chart.BasicChart',
-    xtype: ['CandleStickBarChart'],
-    config: {chartType: 'candlestickBarChart'}
+    xtype: ['HistoricalBarChart'],
+    config: {chartType: 'historicalBarChart'}
 });

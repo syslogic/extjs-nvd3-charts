@@ -84,7 +84,8 @@ Ext.define('NVD3.chart.BasicChart', {
         d3.select('svg').datum(this.getChartData()).transition().duration(this.chartAnimDuration).call(chart);
 
         // update the chart size when the window is resized
-        nv.utils.windowResize(function() {chart.update();});
+        // nv.utils.windowResize(function() {chart.update();});
+        nv.utils.windowResize(chart.update);
 
         // fire the chartLoaded event.
         me.fireEvent('chartLoaded', chart);
@@ -116,9 +117,10 @@ Ext.define('NVD3.chart.BasicChart', {
             var svg = dom.firstChild, chart = this.getChart();
             if(svg === null) {d3.select(dom).append('svg'); svg = dom.firstChild;}
             if(chart !== null) {
-                d3.select(svg).datum(data).transition().duration(this.chartAnimDuration).call(chart);
+                var domNode = d3.select(svg).datum(data).transition().duration(this.chartAnimDuration);
+                domNode.call(chart);
                 this.setChart(chart);
-        }
+            }
         }
     },
 

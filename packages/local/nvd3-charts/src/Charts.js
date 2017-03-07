@@ -9,11 +9,13 @@
 
 Ext.define('NVD3.Charts', {
     requires: [
-        'NVD3.chart.DiscreteBarChart',
+        'NVD3.chart.BoxPlotChart',
         'NVD3.chart.BulletChart',
+        'NVD3.chart.DiscreteBarChart',
         'NVD3.chart.CandleStickBarChart',
         'NVD3.chart.CumulativeLineChart',
         'NVD3.chart.MultiBarHorizontalChart',
+        'NVD3.chart.HistoricalBarChart',
         'NVD3.chart.SunburstChart',
         'NVD3.chart.LineChart',
         'NVD3.chart.LinePlusBarChart',
