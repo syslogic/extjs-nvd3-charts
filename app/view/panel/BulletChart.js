@@ -7,9 +7,11 @@
 
 Ext.define('NVD3Charts.view.panel.BulletChart', {
     extend: 'Ext.container.Container',
+    requires: ['NVD3Charts.viewcontroller.BulletChart'],
     name: 'PanelBulletChart',
     alias: ['widget.PanelBulletChart'],
     store: Ext.create('NVD3Charts.store.BulletChart'),
+    controller: 'bulletchart',
     layout: 'fit',
     items: [{xtype: 'BulletChart'}]
 });

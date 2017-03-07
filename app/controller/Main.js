@@ -9,6 +9,22 @@ Ext.define('NVD3Charts.controller.Main', {
     extend: 'Ext.app.Controller',
     views: ['main.Main'],
     
+    requires: [
+        'NVD3Charts.store.BarChart',
+        'NVD3Charts.store.BulletChart',
+        'NVD3Charts.store.CandlestickBarChart',
+        'NVD3Charts.store.CumulativeLineChart',
+        'NVD3Charts.store.HorizontalStackedBarChart',
+        'NVD3Charts.store.LineChart',
+        'NVD3Charts.store.LinePlusBarChart',
+        'NVD3Charts.store.LineWithFocusChart',
+        'NVD3Charts.store.PieChart',
+        'NVD3Charts.store.ScatterChart',
+        'NVD3Charts.store.StackedAreaChart',
+        'NVD3Charts.store.StackedBarChart',
+        'NVD3Charts.store.SunburstChart'
+    ],
+
     refs: [
         {ref: 'cardContainer',             selector: 'panel[name=MainContainer]'},
         {ref: 'barChart',                  selector: 'PanelBarChart'},
@@ -22,12 +38,13 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'lineWithFocusChart',        selector: 'PanelLineWithFocusChart'},
         {ref: 'pieChart',                  selector: 'PanelPieChart'},
         {ref: 'bulletChart',               selector: 'PanelBulletChart'},
-        {ref: 'sunburstChart',             selector: 'PanelSunburstChart'}
+        {ref: 'sunburstChart',             selector: 'PanelSunburstChart'},
+        {ref: 'candlestickBarChart',       selector: 'PanelCandleStickBarChart'}
     ],
-    
+
     updateActiveItem: function(viewIndex) {
-        var cardContainer = this.getCardContainer();
-        cardContainer.layout.setActiveItem(viewIndex);
+        var ct = this.getCardContainer();
+        ct.layout.setActiveItem(viewIndex);
         var chartPanel = null;
         switch(viewIndex) {
              case 0: chartPanel = this.getBarChart(); break;
@@ -42,8 +59,9 @@ Ext.define('NVD3Charts.controller.Main', {
              case 9: chartPanel = this.getPieChart(); break;
             case 10: chartPanel = this.getBulletChart(); break;
             case 11: chartPanel = this.getSunburstChart(); break;
+            case 12: chartPanel = this.getCandlestickBarChart(); break;
         }
-        
+
         if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) !== 'undefined') {
             document.location.hash = chartPanel.name.replace("Panel", "#");
         } else if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) === 'undefined') {

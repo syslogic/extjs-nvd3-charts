@@ -42,11 +42,12 @@ Ext.define('NVD3Charts.view.main.Main', {
             {xtype: 'PanelLineWithFocusChart'},
             {xtype: 'PanelPieChart'},
             {xtype: 'PanelBulletChart'},
-            {xtype: 'SunburstChart'}
+            {xtype: 'PanelSunburstChart'},
+            {xtype: 'PanelCandlestickBarChart'}
         ]
     }, {
         xtype: 'toolbar',
-		region: 'south',
+        region: 'south',
         name: 'ToolbarSouthern',
         style: {background: '#F5F5F5', border: '1px solid #CECECE', color: '#157FCC'},
         collapsible: false,

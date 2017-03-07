@@ -8,7 +8,7 @@
 
 Ext.define('NVD3Charts.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.main',
+    alias: ['controller.main'],
     requires: ['Ext.tip.ToolTip', 'Ext.form.Label'],
     views: [
         'main.Main',
@@ -19,6 +19,7 @@ Ext.define('NVD3Charts.view.main.MainController', {
         'panel.StackedAreaChart',
         'panel.StackedBarChart',
         'panel.HorizontalStackedBarChart',
+        'panel.CandlestickBarChart',
         'panel.LinePlusBarChartl',
         'panel.CumulativeLineChart',
         'panel.LineWithFocusChart',
@@ -28,10 +29,20 @@ Ext.define('NVD3Charts.view.main.MainController', {
     ],
 
     /* Event Listeners */
-    listeners: {
-        chartLoaded: 'chartLoaded'
-    },
+    listeners: {chartLoaded: 'chartLoaded'},
 
+    chartLoaded: function(){
+        //<debug>
+            Ext.log({msg: 'chartLoaded.', level: 'info'});
+        //</debug>
+    },
+    listen: {
+        controller: {
+            '*': {
+                chartLoaded: 'chartLoaded'
+            }
+        }
+    },
     initComponent: function() {
         this.callParent(arguments);
     }

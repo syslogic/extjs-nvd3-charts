@@ -5,9 +5,9 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.controller.BarChart', {
-    extend: 'NVD3Charts.controller.BaseChart',
-    requires: ['NVD3Charts.store.BarChart'],
+Ext.define('NVD3Charts.viewcontroller.BarChart', {
+    extend: 'NVD3Charts.viewcontroller.BaseChart',
+    alias: ['controller.barchart'],
     stores: ['BarChart'],
     init: function() {
         this.control({

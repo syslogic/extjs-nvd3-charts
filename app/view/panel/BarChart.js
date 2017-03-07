@@ -7,9 +7,11 @@
 
 Ext.define('NVD3Charts.view.panel.BarChart', {
     extend: 'Ext.container.Container',
+    requires: ['NVD3Charts.viewcontroller.BarChart'],
     name: 'PanelBarChart',
     alias: ['widget.PanelBarChart'],
     store: Ext.create('NVD3Charts.store.BarChart'),
+    controller: 'barchart',
     layout: 'fit',
     items: [{
         xtype: 'BarChart',

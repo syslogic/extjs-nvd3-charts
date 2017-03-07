@@ -9,26 +9,24 @@
 Ext.define('NVD3Charts.view.menu.ChartTypes', {
     extend: 'Ext.menu.Menu',
     alias: ['widget.MenuChartTypes'],
-    defaults: {
-        // icon: 'resources/images/chart.png',
-	xtype: 'menuitem'
-    },
+    defaults: {xtype: 'menuitem'},
     items: [
-        {viewIndex:  0, text: 'Bar Chart'},
-        {viewIndex:  1, text: 'Line Chart'},
-        {viewIndex:  2, text: 'Scatter Chart'},
-        {viewIndex:  3, text: 'Stacked Area Chart'},
-        {viewIndex:  4, text: 'Stacked Bar Chart'},
-        {viewIndex:  5, text: 'Horizontal Stacked Bar Chart'},
-        {viewIndex:  6, text: 'Line Plus Bar Chart'},
-        {viewIndex:  7, text: 'Cumulative Line Chart'},
-        {viewIndex:  8, text: 'Line With Focus Chart'},
-        {viewIndex:  9, text: 'Pie Chart'},
-        {viewIndex: 10, text: 'Bullet Chart'},
-        {viewIndex: 11, text: 'Sunburst Chart'}
+        {viewIndex:  0, text: 'Bar'},
+        {viewIndex:  1, text: 'Line'},
+        {viewIndex:  2, text: 'Scatter'},
+        {viewIndex:  3, text: 'Stacked Area'},
+        {viewIndex:  4, text: 'Stacked Bar'},
+        {viewIndex:  5, text: 'Horizontal Stacked Bar'},
+        {viewIndex:  6, text: 'Line Plus Bar'},
+        {viewIndex:  7, text: 'Cumulative Line'},
+        {viewIndex:  8, text: 'Line With Focus'},
+        {viewIndex:  9, text: 'Pie'},
+        {viewIndex: 10, text: 'Bullet'},
+        {viewIndex: 11, text: 'Sunburst'},
+        {viewIndex: 12, text: 'Candlestick'}
     ],
     listeners: {
-        click: function( menu, item, e, eOpts ) {
+        click: function(menu, item, e, eOpts) {
             NVD3Charts.app.getMainController().updateActiveItem(item.viewIndex);
         }
     }

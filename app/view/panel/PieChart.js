@@ -7,6 +7,7 @@
 
 Ext.define('NVD3Charts.view.panel.PieChart', {
     extend: 'Ext.container.Container',
+    requires: ['NVD3Charts.viewcontroller.PieChart'],
     name: 'PanelPieChart',
     alias: ['widget.PanelPieChart'],
     store: Ext.create('NVD3Charts.store.PieChart'),

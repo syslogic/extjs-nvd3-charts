@@ -5,9 +5,10 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.controller.BulletChart', {
-    extend: 'NVD3Charts.controller.BaseChart',
-    requires: ['NVD3Charts.store.BulletChart'],
+Ext.define('NVD3Charts.viewcontroller.BulletChart', {
+    extend: 'NVD3Charts.viewcontroller.BaseChart',
+    requires: [],
+    alias: ['controller.bulletchart'],
     stores: ['BulletChart'],
     init: function() {
         this.control({

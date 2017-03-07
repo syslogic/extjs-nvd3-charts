@@ -7,6 +7,7 @@
 
 Ext.define('NVD3Charts.view.panel.SunburstChart', {
     extend: 'Ext.container.Container',
+    requires: ['NVD3Charts.viewcontroller.SunburstChart'],
     name: 'PanelSunburstChart',
     alias: ['widget.PanelSunburstChart'],
     store: Ext.create('NVD3Charts.store.SunburstChart'),

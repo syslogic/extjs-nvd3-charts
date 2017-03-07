@@ -10,7 +10,20 @@ Ext.define('NVD3Charts.store.LineChart', {
     storeId: 'LineChart',
     alias: ['store.LineChart'],
     model: 'NVD3Charts.model.None',
-    data: [{
+    data: [],
+    initComponent: function(){
+        var sin = [],cos = [];
+        for (var i = 0; i < 500; i++) {
+          sin.push({x: i, y: Math.sin(i / 10)});
+          cos.push({x: i, y: .5 * Math.cos(i / 10)});
+        }
+        this.data = [
+            {values: sin, key:   'Sine Wave', color: '#FF7F0E'},
+            {values: cos, key: 'Cosine Wave', color: '#2CA02C'}
+        ];
+    },
+            
+    data2: [{
         "key":"Sine Wave",
         "color":"#ff7f0e",
         "values": [

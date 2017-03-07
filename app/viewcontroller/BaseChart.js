@@ -5,54 +5,54 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.controller.BaseChart', {
-    extend: 'Ext.app.Controller',
+Ext.define('NVD3Charts.viewcontroller.BaseChart', {
+    extend: 'Ext.app.ViewController',
     requires: [],
     stores: [],
 
     onElementMouseover: function(event) {
         //<debug>
             Ext.log({msg: 'onElementMouseover', level: 'debug'});
-        	console.log(event);
+            console.log(event);
         //</debug>
     },
     onElementMouseout: function(event) {
         //<debug>
             Ext.log({msg: 'onElementMouseout', level: 'debug'});
-        	console.log(event);
+            console.log(event);
         //</debug>
     },
     onElementClick: function(event) {
         //<debug>
             Ext.log({msg: 'onElementClick', level: 'debug'});
-        	console.log(event);
+            console.log(event);
         //</debug>
     },
 
     onTooltipShow: function(event) {
         //<debug>
             Ext.log({msg: 'onTooltipShow', level: 'debug'});
-        	console.log(event);
+            console.log(event);
         //</debug>
     },
     onTooltipHide: function(event) {
         //<debug>
             Ext.log({msg: 'onTooltipHide', level: 'debug'});
-        	console.log(event);
+            console.log(event);
         //</debug>
     },
 
     onLegendMouseover: function(e) {
         //<debug>
             Ext.log({msg: 'onLegendMouseover', level: 'debug'});
-        	console.log(event);
+            console.log(event);
         //</debug>
     },
 
     onStateChange: function(e) {
         //<debug>
             Ext.log({msg: 'onStateChange', level: 'debug'});
-        	console.log(event);
+            console.log(event);
         //</debug>
     }
 });

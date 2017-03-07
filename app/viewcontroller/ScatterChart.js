@@ -5,9 +5,9 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.controller.ScatterChart', {
-    extend: 'NVD3Charts.controller.BaseChart',
-    requires: ['NVD3Charts.store.ScatterChart'],
+Ext.define('NVD3Charts.viewcontroller.ScatterChart', {
+    extend: 'NVD3Charts.viewcontroller.BaseChart',
+    alias: ['controller.scatterchart'],
     stores: ['ScatterChart'],
     init: function() {
         this.control({

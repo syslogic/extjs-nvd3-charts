@@ -20,6 +20,7 @@ Ext.define('NVD3Charts.controller.Root', {
         'HorizontalStackedBarChart': 'onHashtag',
         'LinePlusBarChart': 'onHashtag',
         'CumulativeLineChart': 'onHashtag',
+        'CandleStickChart': 'onHashtag',
         'LineWithFocusChart': 'onHashtag',
         'PieChart': 'onHashtag',
         'BulletChart': 'onHashtag',
@@ -35,10 +36,12 @@ Ext.define('NVD3Charts.controller.Root', {
             Ext.each(cards, function(panel, i) {
                 if(panel.name === 'Panel' + hash) {
                     //<debug>
-                    	Ext.log({msg: 'viewIndex ' + i + ' -> ' + hash, level: 'info'});
+                    	Ext.log({msg: 'viewIndex is ' + i + ' -> ' + hash, level: 'info'});
                     //</debug>
                     ct.setActiveItem(i);
-                    panel.items.items[0].renderChartData(panel.store.proxy.reader.rawData);
+                    var chartPanel = panel.items.items[0];
+                    var data = panel.store.proxy.reader.rawData;
+                    chartPanel.renderChartData(data);
                     return true;
                 }
             });

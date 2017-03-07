@@ -5,13 +5,13 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.controller.PieChart', {
-    extend: 'NVD3Charts.controller.BaseChart',
-    requires: ['NVD3Charts.store.PieChart'],
-    stores: ['PieChart'],
+Ext.define('NVD3Charts.viewcontroller.SunburstChart', {
+    extend: 'NVD3Charts.viewcontroller.BaseChart',
+    alias: ['controller.sunburstchart'],
+    stores: ['SunburstChart'],
     init: function() {
         this.control({
-            "PanelPieChart": {
+            "PanelSunburstChart": {
                 elementMouseover: 'onElementMouseover',
                 elementMouseout: 'onElementMouseout',
                 tooltipShow: 'onTooltipShow',

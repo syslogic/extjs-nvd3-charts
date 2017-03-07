@@ -9,6 +9,7 @@
 
 Ext.define('NVD3Charts.view.panel.StackedAreaChart', {
     extend: 'Ext.container.Container',
+    requires: ['NVD3Charts.viewcontroller.StackedAreaChart'],
     name: 'PanelStackedAreaChart',
     alias: ['widget.PanelStackedAreaChart'],
     store: Ext.create('NVD3Charts.store.StackedAreaChart'),

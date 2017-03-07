@@ -5,9 +5,9 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.controller.HorizontalStackedBarChart', {
-    extend: 'NVD3Charts.controller.BaseChart',
-    requires: ['NVD3Charts.store.HorizontalStackedBarChart'],
+Ext.define('NVD3Charts.viewcontroller.HorizontalStackedBarChart', {
+    extend: 'NVD3Charts.viewcontroller.BaseChart',
+    alias: ['controller.horizontalstackedbarchart'],
     stores: ['HorizontalStackedBarChart'],
     init: function() {
         this.control({

@@ -5,9 +5,9 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.controller.CumulativeLineChart', {
-    extend: 'NVD3Charts.controller.BaseChart',
-    requires: ['NVD3Charts.store.CumulativeLineChart'],
+Ext.define('NVD3Charts.viewcontroller.CumulativeLineChart', {
+    extend: 'NVD3Charts.viewcontroller.BaseChart',
+    alias: ['controller.cummulativelinechart'],
     stores: ['CumulativeLineChart'],
     init: function() {
         this.control({
