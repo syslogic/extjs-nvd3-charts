@@ -23,8 +23,8 @@ Ext.define('NVD3Charts.view.panel.LineChart', {
             transitionDuration: 250
         },
         chartFn: function(chart) {
-            // chart.xAxis.axisLabel('Time (ms)').tickFormat(d3.format(',r'));
-            // chart.yAxis.axisLabel('Voltage (v)').tickFormat(d3.format('.02f'));
+            chart.xAxis.axisLabel('Time (ms)').tickFormat(d3.format(',r'));
+            chart.yAxis.axisLabel('Voltage (v)').tickFormat(d3.format('.02f'));
         }
     }]
 });

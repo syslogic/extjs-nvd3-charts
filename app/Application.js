@@ -11,11 +11,10 @@ Ext.define("NVD3Charts.Application", { /* Ext.application({ */
     defaultToken: '#',
     requires: ['NVD3Charts.overrides.layout.container.Container', 'NVD3.Charts'],
     controllers: ['Root', 'Main'],
-    // 'BaseChart', 'BarChart', 'BulletChart', 'CandleStickChart', 'CumulativeLineChart', 'HorizontalStackedBarChart', 'LineChart', 'LinePlusBarChart', 'LineWithFocusChart', 'PieChart', 'ScatterChart', 'StackedAreaChart', 'StackedBarChart', 'SunburstChart'
     autoCreateViewport: 'NVD3Charts.view.main.Main',
     launch: function() {
         //<debug>
-            Ext.log({msg: 'Application was launched.', level: 'info'});
+            Ext.log({msg: 'the Application was launched.', level: 'info'});
         //</debug>
     	this.viewport = this.getMainView();
     }

@@ -9,6 +9,6 @@
 
 Ext.define('NVD3.chart.DiscreteBarChart', {
     extend: 'NVD3.chart.BasicChart',
-    xtype: ['DiscreteBarChart', 'BarChart'],
+    xtype: ['DiscreteBarChart'],
     config: {chartType: 'discreteBarChart'}
 });
