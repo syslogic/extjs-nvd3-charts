@@ -16,7 +16,7 @@ Ext.define('NVD3Charts.view.main.Main', {
         xtype: 'panel',
 	region: 'center',
         name: 'MainContainer',
-        title: 'NVD3 for Sencha ExtJS',
+        title: 'NVD3 Bindings for Sencha ExtJS',
         titleAlign: 'left',
         layout: 'card',
         width: '100%',
