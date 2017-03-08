@@ -1,6 +1,6 @@
 {
     "type": "code",
-    "name": "nvd3-charts",
+    "name": "nvd3-chart",
     "version": "1.0.0",
     "framework": "ext",
     "namespace": "NVD3",
