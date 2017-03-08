@@ -9,6 +9,10 @@ as well as the available AngularJS directives.
 * [Sencha Cmd 6.2.1.29](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
 * [NVD3 1.8.5](https://github.com/novus/nvd3) (reusable D3 charting library)
 
+
+* [NVD3.js Bindings as Sencha ExtJS, Live Example](http://nvd3.randomized.eu)
+
+
 ## Basic Directory Structure
 
 The relevant locations within the structure are:
