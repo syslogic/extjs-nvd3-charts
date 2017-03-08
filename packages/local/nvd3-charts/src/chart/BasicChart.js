@@ -1,5 +1,5 @@
 /**
- * NVD3 for Sencha ExtJS
+ * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
  * @see https://d3js.org & https://nvd3.org
@@ -130,7 +130,10 @@ Ext.define('NVD3.chart.BasicChart', {
         var me = this;
 
         if (chart.dispatch) {
-            if (chart.dispatch.tooltipShow) {chart.dispatch.on('tooltipShow.directive', function (e) {me.fireEvent('tooltipShow', e);});}
+            if (chart.dispatch.tooltipShow) {
+                chart.dispatch.on('tooltipShow.directive', function (e) {me.fireEvent('tooltipShow', e);});
+                chart.dispatch.on('tooltipShow.directive', Ext.Function.bind(me.fireEvent('tooltipShow', this)));
+            }
             if (chart.dispatch.tooltipHide) {chart.dispatch.on('tooltipHide.directive', function (e) {me.fireEvent('tooltipHide', e);});}
             if (chart.dispatch.beforeUpdate) {chart.dispatch.on('beforeUpdate.directive', function (e) {me.fireEvent('beforeUpdate', e);});}
             if (chart.dispatch.renderEnd) {chart.dispatch.on('renderEnd.directive', function (e) {me.fireEvent('renderEnd', e);});}
