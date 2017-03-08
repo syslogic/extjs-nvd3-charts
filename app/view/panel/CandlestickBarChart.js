@@ -18,14 +18,19 @@ Ext.define('NVD3Charts.view.panel.CandlestickBarChart', {
         xtype: 'CandleStickBarChart',
         store: Ext.create('NVD3Charts.store.CandlestickBarChart'),
         chartOptions: {
-            x: function(d) {return d[0];},
-            y: function(d) {return d[1];}
+            x: function(d) {return d['date']},
+            y: function(d) {return d['close']},
+            margin: {left: 75, bottom: 50}
         },
         chartFn: function(chart) {
-            chart.xAxis.axisLabel("Dates").tickFormat(function(d) {
-                return d3.time.format('%x')(new Date(new Date() - (20000 * 86400000) + (d * 86400000)));
-            });
-            chart.yAxis.axisLabel('Stock Price').tickFormat(function(d,i){ return '$' + d3.format(',.1f')(d); });
+            chart.xAxis
+                .axisLabel("Dates")
+                .tickFormat(function(d) {
+                    return d3.time.format('%x')(new Date(new Date() - (20000 * 86400000) + (d * 86400000)));
+                });
+            chart.yAxis
+                .axisLabel('Stock Price')
+                .tickFormat(function(d,i){ return '$' + d3.format(',.1f')(d); });
         }
     }]
 });
