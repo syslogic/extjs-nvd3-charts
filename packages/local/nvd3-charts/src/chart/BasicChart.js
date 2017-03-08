@@ -9,7 +9,6 @@
 
 Ext.define('NVD3.chart.BasicChart', {
     extend: 'Ext.Component',
-    requires: [],
     alias: ['widget.BasicChart'],
     html: '<svg class="nvd3-svg"/>',
     height: '100%',
@@ -88,18 +87,16 @@ Ext.define('NVD3.chart.BasicChart', {
             // call the D3 library
             d3.select(this.svg).datum(this.getChartData()).transition().duration(this.chartAnimDuration).call(this.chart);
 
-            // update the chart size when the window is resized;
-            // improvement: this could happen a tad delayed.
-            nv.utils.windowResize(this.chart.update);
+            // bind the window resize event
+            nv.utils.windowResize(me.chart.update);
 
-            // fire the chartLoaded event.
-            me.fireEvent('chartLoaded', this.chart);
+            // fire the chartLoaded event
+            me.fireEvent('chartLoaded', me.chart);
 
             //<debug>
                 Ext.log({msg: 'the ' + chartType + ' has been attached as #' + dom.id + '.', level: 'verbose'});
             //</debug>
             return this.chart;
-
         }
     },
 
@@ -250,6 +247,11 @@ Ext.define('NVD3.chart.BasicChart', {
         
         /** TODO */
         if (me.chart.sparkline) {
+
+        }
+        
+        /** TODO */
+        if (me.chart.sparklineplus) {
 
         }
     }    
