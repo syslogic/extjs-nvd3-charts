@@ -8,7 +8,7 @@
 Ext.define("NVD3Charts.Application", { /* Ext.application({ */
     extend: 'Ext.app.Application',
     name: 'NVD3Charts',
-    defaultToken: '#',
+    defaultToken: '#DiscreteBarChart',
     requires: ['NVD3Charts.overrides.layout.container.Container', 'NVD3.Charts'],
     controllers: ['Root', 'Main'],
     autoCreateViewport: 'NVD3Charts.view.main.Main',
