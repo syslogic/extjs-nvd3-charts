@@ -1,5 +1,5 @@
 /**
- * NVD3 for Sencha ExtJS
+ * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
  * @see https://d3js.org & https://nvd3.org
@@ -12,10 +12,11 @@ Ext.define('NVD3Charts.view.panel.CandlestickBarChart', {
     requires: ['NVD3Charts.viewcontroller.CandlestickBarChart'],
     name: 'PanelCandlestickBarChart',
     alias: ['widget.PanelCandlestickBarChart'],
-    store: Ext.create('NVD3Charts.store.CandlestickBarChart'),
     controller: 'candlestickbarchart',
     layout: 'fit',
-    items: [{xtype: 'CandleStickBarChart',
+    items: [{
+        xtype: 'CandleStickBarChart',
+        store: Ext.create('NVD3Charts.store.CandlestickBarChart'),
         chartOptions: {
             x: function(d) {return d[0];},
             y: function(d) {return d[1];}

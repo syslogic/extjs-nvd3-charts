@@ -1,5 +1,5 @@
 /**
- * NVD3 for Sencha ExtJS
+ * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
  * @see https://d3js.org & https://nvd3.org
@@ -12,10 +12,10 @@ Ext.define('NVD3Charts.view.panel.LinePlusBarChart', {
     requires: ['NVD3Charts.viewcontroller.LinePlusBarChart'],
     name: 'PanelLinePlusBarChart',
     alias: ['widget.PanelLinePlusBarChart'],
-    store: Ext.create('NVD3Charts.store.LinePlusBarChart'),
     layout: 'fit',
     items: [{
         xtype: 'LinePlusBarChart',
+        store: Ext.create('NVD3Charts.store.LinePlusBarChart'),
         chartOptions: {
             color: d3.scale.category10().range(),
             x: function(d,i) { return i; },

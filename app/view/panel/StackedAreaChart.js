@@ -1,5 +1,5 @@
 /**
- * NVD3 for Sencha ExtJS
+ * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
  * @see https://d3js.org & https://nvd3.org
@@ -12,10 +12,10 @@ Ext.define('NVD3Charts.view.panel.StackedAreaChart', {
     requires: ['NVD3Charts.viewcontroller.StackedAreaChart'],
     name: 'PanelStackedAreaChart',
     alias: ['widget.PanelStackedAreaChart'],
-    store: Ext.create('NVD3Charts.store.StackedAreaChart'),
     layout: 'fit',
     items: [{
         xtype: 'StackedAreaChart',
+        store: Ext.create('NVD3Charts.store.StackedAreaChart'),
         chartOptions: {
             x: function(d) { return d[0]; },
             y: function(d) { return d[1]; },

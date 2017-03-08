@@ -1,5 +1,5 @@
 /**
- * NVD3 for Sencha ExtJS
+ * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
  * @see https://d3js.org & https://nvd3.org
@@ -26,48 +26,34 @@ Ext.define('NVD3Charts.controller.Main', {
     ],
 
     refs: [
-        {ref: 'cardContainer',             selector: 'panel[name=MainContainer]'},
-        {ref: 'discreteBarChart',          selector: 'PanelDiscreteBarChart'},
-        {ref: 'lineChart',                 selector: 'PanelLineChart'},
-        {ref: 'scatterChart',              selector: 'PanelScatterChart'},
-        {ref: 'stackedAreaChart',          selector: 'PanelStackedAreaChart'},
-        {ref: 'stackedBarChart',           selector: 'PanelStackedBarChart'},
-        {ref: 'horizontalStackedBarChart', selector: 'PanelHorizontalStackedBarChart'},
-        {ref: 'linePlusBarChart',          selector: 'PanelLinePlusBarChart'},
-        {ref: 'cumulativeLineChart',       selector: 'PanelCumulativeLineChart'},
-        {ref: 'lineWithFocusChart',        selector: 'PanelLineWithFocusChart'},
-        {ref: 'pieChart',                  selector: 'PanelPieChart'},
-        {ref: 'bulletChart',               selector: 'PanelBulletChart'},
-        {ref: 'sunburstChart',             selector: 'PanelSunburstChart'},
-        {ref: 'candlestickBarChart',       selector: 'PanelCandlestickBarChart'}
-    ],
-
-    updateActiveItem: function(viewIndex) {
-        var ct = this.getCardContainer();
-        ct.layout.setActiveItem(viewIndex);
-        var chartPanel = null;
-        switch(viewIndex) {
-             case 0: chartPanel = this.getDiscreteBarChart(); break;
-             case 1: chartPanel = this.getLineChart(); break;
-             case 2: chartPanel = this.getScatterChart(); break;
-             case 3: chartPanel = this.getStackedAreaChart(); break;
-             case 4: chartPanel = this.getStackedBarChart(); break;
-             case 5: chartPanel = this.getHorizontalStackedBarChart(); break;
-             case 6: chartPanel = this.getLinePlusBarChart(); break;
-             case 7: chartPanel = this.getCumulativeLineChart(); break;
-             case 8: chartPanel = this.getLineWithFocusChart(); break;
-             case 9: chartPanel = this.getPieChart(); break;
-            case 10: chartPanel = this.getBulletChart(); break;
-            case 11: chartPanel = this.getSunburstChart(); break;
-            case 12: chartPanel = this.getCandlestickBarChart(); break;
-        }
-
-        if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) !== 'undefined') {
-            document.location.hash = chartPanel.name.replace("Panel", "#");
-        } else if(typeof(chartPanel) !== 'undefined' && typeof(chartPanel.store) === 'undefined') {
-            Ext.log({msg: 'Panel '+ chartPanel.name.replace("Panel", "#") + '  has no store.', level: 'warn'});
-        } else {
-            Ext.log({msg: 'viewIndex ' + viewIndex + ' -> neither chartPanel nor store available.', level: 'warn'});
-        }
-    }
+        {ref: 'tabPanel',                       selector: 'panel[name=TabpanelMain]'},
+        
+        {ref: 'panelDiscreteBarChart',          selector: 'PanelDiscreteBarChart'},
+        {ref: 'panelLineChart',                 selector: 'PanelLineChart'},
+        {ref: 'panelScatterChart',              selector: 'PanelScatterChart'},
+        {ref: 'panelStackedAreaChart',          selector: 'PanelStackedAreaChart'},
+        {ref: 'panelStackedBarChart',           selector: 'PanelStackedBarChart'},
+        {ref: 'panelHorizontalStackedBarChart', selector: 'PanelHorizontalStackedBarChart'},
+        {ref: 'panelLinePlusBarChart',          selector: 'PanelLinePlusBarChart'},
+        {ref: 'panelCumulativeLineChart',       selector: 'PanelCumulativeLineChart'},
+        {ref: 'panelLineWithFocusChart',        selector: 'PanelLineWithFocusChart'},
+        {ref: 'panelPieChart',                  selector: 'PanelPieChart'},
+        {ref: 'panelBulletChart',               selector: 'PanelBulletChart'},
+        {ref: 'panelSunburstChart',             selector: 'PanelSunburstChart'},
+        {ref: 'panelCandlestickBarChart',       selector: 'PanelCandlestickBarChart'},
+        
+        {ref: 'discreteBarChart',               selector: 'DiscreteBarChart'},
+        {ref: 'lineChart',                      selector: 'LineChart'},
+        {ref: 'scatterChart',                   selector: 'ScatterChart'},
+        {ref: 'stackedAreaChart',               selector: 'StackedAreaChart'},
+        {ref: 'stackedBarChart',                selector: 'StackedBarChart'},
+        {ref: 'horizontalStackedBarChart',      selector: 'HorizontalStackedBarChart'},
+        {ref: 'linePlusBarChart',               selector: 'LinePlusBarChart'},
+        {ref: 'cumulativeLineChart',            selector: 'CumulativeLineChart'},
+        {ref: 'lineWithFocusChart',             selector: 'LineWithFocusChart'},
+        {ref: 'pieChart',                       selector: 'PieChart'},
+        {ref: 'bulletChart',                    selector: 'BulletChart'},
+        {ref: 'sunburstChart',                  selector: 'SunburstChart'},
+        {ref: 'candlestickBarChart',            selector: 'CandlestickBarChart'}
+    ]
 });

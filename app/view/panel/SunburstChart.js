@@ -1,5 +1,5 @@
 /**
- * NVD3 for Sencha ExtJS
+ * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
  * @see https://d3js.org & https://nvd3.org
@@ -10,7 +10,12 @@ Ext.define('NVD3Charts.view.panel.SunburstChart', {
     requires: ['NVD3Charts.viewcontroller.SunburstChart'],
     name: 'PanelSunburstChart',
     alias: ['widget.PanelSunburstChart'],
-    store: Ext.create('NVD3Charts.store.SunburstChart'),
     layout: 'fit',
-    items: [{xtype: 'SunburstChart'}]
+    items: [{
+        xtype: 'SunburstChart',
+        store: Ext.create('NVD3Charts.store.SunburstChart'),
+        chartFn: function(chart) {
+            
+        }
+    }]
 });

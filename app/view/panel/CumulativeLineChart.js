@@ -1,5 +1,5 @@
 /**
- * NVD3 for Sencha ExtJS
+ * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/+MartinZeitler
  * @see https://d3js.org & https://nvd3.org
@@ -12,11 +12,11 @@ Ext.define('NVD3Charts.view.panel.CumulativeLineChart', {
     requires: ['NVD3Charts.viewcontroller.CumulativeLineChart'],
     name: 'PanelCumulativeLineChart',
     alias: ['widget.PanelCumulativeLineChart'],
-    store: Ext.create('NVD3Charts.store.CumulativeLineChart'),
     controller: 'cummulativelinechart',
     layout: 'fit',
     items: [{
         xtype: 'CumulativeLineChart',
+        store: Ext.create('NVD3Charts.store.CumulativeLineChart'),
         chartOptions: {
             color: d3.scale.category10().range(),
             x: function(d) { return d[0]; },
@@ -24,9 +24,7 @@ Ext.define('NVD3Charts.view.panel.CumulativeLineChart', {
             useInteractiveGuideline: true
         },
         chartFn: function(chart) {
-            chart.xAxis.tickFormat(function(d) {
-                return d3.time.format('%x')(new Date(d));
-            });
+            chart.xAxis.tickFormat(function(d) {return d3.time.format('%x')(new Date(d));});
             chart.yAxis.tickFormat(d3.format(',.1%'));
         }
     }]
