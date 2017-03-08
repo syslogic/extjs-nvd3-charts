@@ -18,13 +18,13 @@ Ext.define('NVD3Charts.controller.Main', {
         'NVD3Charts.store.LineChart',
         'NVD3Charts.store.LinePlusBarChart',
         'NVD3Charts.store.LineWithFocusChart',
+        'NVD3Charts.store.MultiBarChart',
         'NVD3Charts.store.MultiBarHorizontalChart',
         'NVD3Charts.store.PieChart',
         'NVD3Charts.store.ScatterChart',
         'NVD3Charts.store.Sparkline',
         'NVD3Charts.store.SparklinePlus',
         'NVD3Charts.store.StackedAreaChart',
-        'NVD3Charts.store.StackedBarChart',
         'NVD3Charts.store.SunburstChart'
     ],
 
@@ -40,12 +40,12 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'panelLineChart',                 selector: 'PanelLineChart'},
         {ref: 'panelLinePlusBarChart',          selector: 'PanelLinePlusBarChart'},
         {ref: 'panelLineWithFocusChart',        selector: 'PanelLineWithFocusChart'},
+        {ref: 'panelMultiBarChart',             selector: 'PanelMultiBarChart'},
         {ref: 'panelMultiBarHorizontalChart',   selector: 'PanelMultiBarHorizontalChart'},
         {ref: 'panelPieChart',                  selector: 'PanelPieChart'},
         {ref: 'panelScatterChart',              selector: 'PanelScatterChart'},
         {ref: 'panelSparklinePlus',             selector: 'PanelSparklinePlus'},
         {ref: 'panelStackedAreaChart',          selector: 'PanelStackedAreaChart'},
-        {ref: 'panelStackedBarChart',           selector: 'PanelStackedBarChart'},
         {ref: 'panelSunburstChart',             selector: 'PanelSunburstChart'},
         
         /* Charts */
@@ -57,12 +57,12 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'lineChart',                      selector: 'LineChart'},
         {ref: 'linePlusBarChart',               selector: 'LinePlusBarChart'},
         {ref: 'lineWithFocusChart',             selector: 'LineWithFocusChart'},
+        {ref: 'multiBarChart',                  selector: 'MultiBarChart'},
         {ref: 'multiBarHorizontalChart',        selector: 'MultiBarHorizontalChart'},
         {ref: 'pieChart',                       selector: 'PieChart'},
         {ref: 'scatterChart',                   selector: 'ScatterChart'},
         {ref: 'sparklinePlus',                  selector: 'SparklinePlus'},
         {ref: 'stackedAreaChart',               selector: 'StackedAreaChart'},
-        {ref: 'stackedBarChart',                selector: 'StackedBarChart'},
         {ref: 'sunburstChart',                  selector: 'SunburstChart'}
     ]
 });

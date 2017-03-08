@@ -8,8 +8,8 @@
 
 Ext.define('NVD3Charts.view.main.MainController', {
     extend: 'Ext.app.ViewController',
+    requires: [],
     alias: ['controller.main'],
-
     views: [
         'main.Main',
         'main.Northern',

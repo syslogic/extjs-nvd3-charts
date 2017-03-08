@@ -18,6 +18,7 @@ Ext.define('NVD3Charts.controller.Root', {
           'CumulativeLineChart': 'onHashtag',
              'DiscreteBarChart': 'onHashtag',
                     'LineChart': 'onHashtag',
+                'MultiBarChart': 'onHashtag',
       'MultiBarHorizontalChart': 'onHashtag',
              'LinePlusBarChart': 'onHashtag',
            'LineWithFocusChart': 'onHashtag',
@@ -25,7 +26,6 @@ Ext.define('NVD3Charts.controller.Root', {
                  'ScatterChart': 'onHashtag',
                 'SparklinePlus': 'onHashtag',
              'StackedAreaChart': 'onHashtag',
-              'StackedBarChart': 'onHashtag',
                 'SunburstChart': 'onHashtag'
     },
 

@@ -5,14 +5,14 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.viewcontroller.StackedBarChart', {
+Ext.define('NVD3Charts.viewcontroller.MultiBarChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
-    alias: ['controller.stackedbarchart'],
-    stores: ['StackedBarChart'],
-    views: ['panel.StackedBarChart'],
+    alias: ['controller.multibarchart'],
+    stores: ['MultiBarChart'],
+    views: ['panel.MultiBarChart'],
     init: function() {
         this.control({
-            "PanelStackedBarChart": {
+            "PanelMultiBarChart": {
                 elementMouseover: 'onElementMouseover',
                 elementMouseout: 'onElementMouseout',
                 tooltipShow: 'onTooltipShow',

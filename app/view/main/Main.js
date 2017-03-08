@@ -10,8 +10,8 @@ Ext.define('NVD3Charts.view.main.Main', {
     extend: 'Ext.container.Container',
     requires: [
         'NVD3Charts.view.main.MainController',
-        'NVD3Charts.view.main.Northern',
-        'NVD3Charts.view.main.TabPanel'
+        'NVD3Charts.view.main.MainTabpanel',
+        'NVD3Charts.view.main.Northern'
     ],
     controller: 'main',
     xtype: 'app-main',
@@ -27,12 +27,10 @@ Ext.define('NVD3Charts.view.main.Main', {
         layout: 'fit',
         border: 0,
         items: [{
-            xtype: 'TabpanelMain',
-            plugins: 'responsive',
-            responsiveConfig: {
-                tall: {tabPosition: 'right', textAlign: 'left', tabRotation: 0},
-                wide: {tabPosition: 'right', textAlign: 'left', tabRotation: 0}
-            }
+            xtype: 'MainTabpanel',
+            textAlign: 'left',
+            tabPosition: 'right',
+            tabRotation: 0
         }]
     }],
     initComponent: function() {

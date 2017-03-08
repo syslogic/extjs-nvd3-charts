@@ -5,10 +5,10 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.store.StackedBarChart', {
+Ext.define('NVD3Charts.store.MultiBarChart', {
     extend: 'Ext.data.Store',
-    storeId: 'StackedBarChart',
-    alias: ['store.StackedBarChart'],
+    storeId: 'MultiBarChart',
+    alias: ['store.MultiBarChart'],
     model: 'NVD3Charts.model.None',
     data: [{
         "key": "Stream0",

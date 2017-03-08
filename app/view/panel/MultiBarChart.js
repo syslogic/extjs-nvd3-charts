@@ -7,15 +7,15 @@
 
 /* global d3 */
 
-Ext.define('NVD3Charts.view.panel.StackedBarChart', {
+Ext.define('NVD3Charts.view.panel.MultiBarChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.StackedBarChart'],
-    name: 'PanelStackedBarChart',
-    alias: ['widget.PanelStackedBarChart'],
+    requires: ['NVD3Charts.viewcontroller.MultiBarChart'],
+    name: 'PanelMultiBarChart',
+    alias: ['widget.PanelMultiBarChart'],
     layout: 'fit',
     items: [{
-        xtype: 'StackedBarChart',
-        store: Ext.create('NVD3Charts.store.StackedBarChart'),
+        xtype: 'MultiBarChart',
+        store: Ext.create('NVD3Charts.store.MultiBarChart'),
         chartFn: function(chart) {
             chart.xAxis.tickFormat(d3.format(',f'));
             chart.yAxis.tickFormat(d3.format(',.1f'));
