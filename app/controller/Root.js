@@ -24,6 +24,7 @@ Ext.define('NVD3Charts.controller.Root', {
           'CandlestickBarChart': 'onHashtag',
            'LineWithFocusChart': 'onHashtag',
                      'PieChart': 'onHashtag',
+                'SparklinePlus': 'onHashtag',
                 'SunburstChart': 'onHashtag'
     },
 

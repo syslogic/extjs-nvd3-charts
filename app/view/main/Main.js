@@ -10,7 +10,8 @@ Ext.define('NVD3Charts.view.main.Main', {
     extend: 'Ext.container.Container',
     requires: [
         'NVD3Charts.view.main.MainController',
-        'NVD3Charts.view.tab.Main'
+        'NVD3Charts.view.main.Northern',
+        'NVD3Charts.view.main.TabPanel'
     ],
     controller: 'main',
     xtype: 'app-main',

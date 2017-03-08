@@ -20,6 +20,7 @@ Ext.define('NVD3Charts.controller.Main', {
         'NVD3Charts.store.LineWithFocusChart',
         'NVD3Charts.store.PieChart',
         'NVD3Charts.store.ScatterChart',
+        'NVD3Charts.store.SparklinePlus',
         'NVD3Charts.store.StackedAreaChart',
         'NVD3Charts.store.StackedBarChart',
         'NVD3Charts.store.SunburstChart'
@@ -41,6 +42,7 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'panelBulletChart',               selector: 'PanelBulletChart'},
         {ref: 'panelSunburstChart',             selector: 'PanelSunburstChart'},
         {ref: 'panelCandlestickBarChart',       selector: 'PanelCandlestickBarChart'},
+        {ref: 'panelSparklinePlus',             selector: 'PanelSparklinePlus'},
         
         {ref: 'discreteBarChart',               selector: 'DiscreteBarChart'},
         {ref: 'lineChart',                      selector: 'LineChart'},
@@ -54,6 +56,7 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'pieChart',                       selector: 'PieChart'},
         {ref: 'bulletChart',                    selector: 'BulletChart'},
         {ref: 'sunburstChart',                  selector: 'SunburstChart'},
-        {ref: 'candlestickBarChart',            selector: 'CandlestickBarChart'}
+        {ref: 'candlestickBarChart',            selector: 'CandlestickBarChart'},
+        {ref: 'sparklinePlus',                  selector: 'SparklinePlus'}
     ]
 });

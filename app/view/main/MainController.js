@@ -12,8 +12,9 @@ Ext.define('NVD3Charts.view.main.MainController', {
     requires: ['Ext.form.Label'],
     views: [
         'main.Main',
-        'tab.Main',
-        'window.Bitcoins',
+        'main.Northern',
+        'main.TabPanel',
+        'main.Bitcoins',
         'panel.DiscreteBarChart',
         'panel.LineChart',
         'panel.ScatterChart',
@@ -24,6 +25,7 @@ Ext.define('NVD3Charts.view.main.MainController', {
         'panel.LinePlusBarChart',
         'panel.CumulativeLineChart',
         'panel.LineWithFocusChart',
+        'panel.SparklineChart',
         'panel.PieChart',
         'panel.BulletChart',
         'panel.SunburstChart'
@@ -55,7 +57,7 @@ Ext.define('NVD3Charts.view.main.MainController', {
 
         /* Stage Two: open/close the window on demand */
         if(typeof(items[toolEl.name]) === 'undefined') {
-            items[toolEl.name] = Ext.create('NVD3Charts.view.window.'+toolEl.name.replace('Tool', ''), {animateTarget: toolEl});
+            items[toolEl.name] = Ext.create('NVD3Charts.view.main.'+toolEl.name.replace('Tool', ''), {animateTarget: toolEl});
             items[toolEl.name].show();
         } else if(! items[toolEl.name].hidden) {
             items[toolEl.name].close();
