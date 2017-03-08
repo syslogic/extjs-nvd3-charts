@@ -37,7 +37,7 @@ Ext.define('NVD3.chart.BasicChart', {
     validChartTypes: [
         'boxPlotChart', 'bulletChart', 'candlestickBarChart', 'cumulativeLineChart', 'discreteBarChart',
         'historicalBarChart', 'lineChart', 'linePlusBarChart', 'lineWithFocusChart', 'multiBarChart', 'multiBarHorizontalChart',
-        'pieChart', 'scatterChart', 'stackedAreaChart', 'sunburstChart'
+        'pieChart', 'scatterChart', 'sparklinePlus', 'stackedAreaChart', 'sunburstChart'
     ],
 
     /** initChartComponent(), that's the bound method. */
@@ -247,6 +247,10 @@ Ext.define('NVD3.chart.BasicChart', {
         if (me.chart.candlestickbar) {
 
         }
-    }
-    
+        
+        /** TODO */
+        if (me.chart.sparkline) {
+
+        }
+    }    
 });

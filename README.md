@@ -56,6 +56,7 @@ NVD3.chart.MultiBarChart           xtype: MultiBarChart
 NVD3.chart.MultiBarHorizontalChart xtype: MultiBarHorizontalChart
 NVD3.chart.PieChart                xtype: PieChart
 NVD3.chart.ScatterChart            xtype: ScatterChart
+NVD3.chart.SparklinePlus           xtype: SparklinePlus
 NVD3.chart.StackedAreaChart        xtype: StackedAreaChart
 NVD3.chart.SunburstChart           xtype: SunburstChart
 
