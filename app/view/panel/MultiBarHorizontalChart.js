@@ -7,15 +7,15 @@
 
 /* global d3 */
 
-Ext.define('NVD3Charts.view.panel.HorizontalStackedBarChart', {
+Ext.define('NVD3Charts.view.panel.MultiBarHorizontalChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.HorizontalStackedBarChart'],
-    name: 'PanelHorizontalStackedBarChart',
-    alias: ['widget.PanelHorizontalStackedBarChart'],
+    requires: ['NVD3Charts.viewcontroller.MultiBarHorizontalChart'],
+    name: 'PanelMultiBarHorizontalChart',
+    alias: ['widget.PanelMultiBarHorizontalChart'],
     layout: 'fit',
     items: [{
-        xtype: 'HorizontalStackedBarChart',
-        store: Ext.create('NVD3Charts.store.HorizontalStackedBarChart'),
+        xtype: 'MultiBarHorizontalChart',
+        store: Ext.create('NVD3Charts.store.MultiBarHorizontalChart'),
         chartOptions: {
             x: function(d) { return d.label; },
             y: function(d) { return d.value; },

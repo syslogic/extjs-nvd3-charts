@@ -5,10 +5,10 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.store.HorizontalStackedBarChart', {
+Ext.define('NVD3Charts.store.MultiBarHorizontalChart', {
     extend: 'Ext.data.Store',
-    storeId: 'HorizontalStackedBarChart',
-    alias: ['store.HorizontalStackedBarChart'],
+    storeId: 'MultiBarHorizontalChart',
+    alias: ['store.MultiBarHorizontalChart'],
     model: 'NVD3Charts.model.None',
     data: [{
         "key":"Series1",

@@ -12,19 +12,20 @@ Ext.define('NVD3Charts.controller.Root', {
     /** Routes */
     routes: {
                              '': 'onHashtag',
+                 'BoxPlotChart': 'onHashtag',
                   'BulletChart': 'onHashtag',
+          'CandlestickBarChart': 'onHashtag',
+          'CumulativeLineChart': 'onHashtag',
              'DiscreteBarChart': 'onHashtag',
                     'LineChart': 'onHashtag',
-                 'ScatterChart': 'onHashtag',
-             'StackedAreaChart': 'onHashtag',
-              'StackedBarChart': 'onHashtag',
-    'HorizontalStackedBarChart': 'onHashtag',
+      'MultiBarHorizontalChart': 'onHashtag',
              'LinePlusBarChart': 'onHashtag',
-          'CumulativeLineChart': 'onHashtag',
-          'CandlestickBarChart': 'onHashtag',
            'LineWithFocusChart': 'onHashtag',
                      'PieChart': 'onHashtag',
+                 'ScatterChart': 'onHashtag',
                 'SparklinePlus': 'onHashtag',
+             'StackedAreaChart': 'onHashtag',
+              'StackedBarChart': 'onHashtag',
                 'SunburstChart': 'onHashtag'
     },
 
@@ -32,7 +33,7 @@ Ext.define('NVD3Charts.controller.Root', {
     onHashtag: function() {
         var hash = window.location.hash.replace('#', '');
         if(typeof(this.application.viewport.items.items) !== 'undefined') {
-            
+
             var ct = this.application.viewport.items.items[  1  ];
             var tabPanel = ct.items.items[0];
             var tabs = tabPanel.items.items;

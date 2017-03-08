@@ -22,7 +22,7 @@ Ext.define('NVD3Charts.view.main.TabPanel', {
         {tabIndex:  2, name: 'TabScatterChart',              title: 'Scattered',       items: [{xtype: 'PanelScatterChart'}]},
         {tabIndex:  3, name: 'TabStackedAreaChart',          title: 'Stacked Area',    items: [{xtype: 'PanelStackedAreaChart'}]},
         {tabIndex:  4, name: 'TabStackedBarChart',           title: 'Stacked Bar, v',  items: [{xtype: 'PanelStackedBarChart'}]},
-        {tabIndex:  5, name: 'TabHorizontalStackedBarChart', title: 'Stacked Bar, h',  items: [{xtype: 'PanelHorizontalStackedBarChart'}]},
+        {tabIndex:  5, name: 'TabMultiBarHorizontalChart',   title: 'Stacked Bar, h',  items: [{xtype: 'PanelMultiBarHorizontalChart'}]},
         {tabIndex:  6, name: 'TabLinePlusBarChart',          title: 'Line Plus Bar',   items: [{xtype: 'PanelLinePlusBarChart'}]},
         {tabIndex:  7, name: 'TabCumulativeLineChart',       title: 'Cumulative Line', items: [{xtype: 'PanelCumulativeLineChart'}]},
         {tabIndex:  8, name: 'TabLineWithFocusChart',        title: 'Line With Focus', items: [{xtype: 'PanelLineWithFocusChart'}]},
@@ -30,7 +30,8 @@ Ext.define('NVD3Charts.view.main.TabPanel', {
         {tabIndex: 10, name: 'TabBulletChart',               title: 'Bullet',          items: [{xtype: 'PanelBulletChart'}]},
         {tabIndex: 11, name: 'TabSunburstChart',             title: 'Sunburst',        items: [{xtype: 'PanelSunburstChart'}]},
         {tabIndex: 12, name: 'TabCandlestickBarChart',       title: 'CandlestickBar',  items: [{xtype: 'PanelCandlestickBarChart'}]},
-        {tabIndex: 13, name: 'TabSparklinePlus',             title: 'Sparkline',       items: [{xtype: 'PanelSparklinePlus'}]}
+        {tabIndex: 13, name: 'TabSparklinePlus',             title: 'Sparkline',       items: [{xtype: 'PanelSparklinePlus'}]},
+        {tabIndex: 14, name: 'TabBoxPlotChart',              title: 'Box Plot',        items: [{xtype: 'PanelBoxPlotChart'}]}
     ],
     listeners: {
         tabchange: function(tabPanel, tab){
