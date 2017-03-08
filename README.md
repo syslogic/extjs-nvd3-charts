@@ -5,8 +5,8 @@
 * [angularjs-nvd3-directives](https://github.com/angularjs-nvd3-directives/angularjs-nvd3-directives)
 
 
-## In Action
-* just see the [Live Example](http://nvd3.randomized.eu).
+## Live Example
+* click [here](http://nvd3.randomized.eu) to see the example ExtJS Application in action.
 
 ## Built With
 * [Oracle NetBeans 8.2](http://www.oracle.com/technetwork/developer-tools/netbeans/index.html) (Development Environment)
