@@ -13,6 +13,7 @@
         {"path": "app.js", "bundle": true}
     ],
     "css": [
-        {"path": "bootstrap.css", "bootstrap": true}
+        {"path": "bootstrap.css", "bootstrap": true},
+        {"path": "resources/css/styles.css", "bundle": true}
     ]
 }
