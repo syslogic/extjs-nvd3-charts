@@ -25,7 +25,7 @@ The relevant locations within the structure are:
 ## Getting Started
 
 a) change the local path to the desired location, for example:
-    
+
     cd /home/github
 
 b) clone this repository with:
@@ -40,7 +40,7 @@ d) place the the ExtJS Crisp Theme at the following location:
 
     /resources/themes/ext-theme-crisp
 
-## The available Package Classes and xTypes
+## Package Classes and xTypes for NVD3.chart
 
 NVD3.chart.BasicChart              xtype: NONE
 NVD3.chart.BoxPlotChart            xtype: BoxPlotChart
@@ -86,11 +86,11 @@ To build the PKG archive:
 
 This adds the package dependency (and goes to /app.json):
 
-    requires: ['nvd3-charts'],
+    requires: ['nvd3-chart']
 
 This adds the name-space NVD3.chart (and goes to /app/Application.js):
 
-    requires: ['NVD3.Charts'],
+    requires: ['NVD3.chart']
 
 ## MIT License
 
