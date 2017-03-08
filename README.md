@@ -40,7 +40,7 @@ d) place the the ExtJS Crisp Theme at the following location:
 
     /resources/themes/ext-theme-crisp
 
-## Package Classes and xtypes
+## The available Package Classes and xTypes
 
 NVD3.chart.BasicChart              xtype: NONE
 NVD3.chart.BoxPlotChart            xtype: BoxPlotChart
@@ -58,6 +58,16 @@ NVD3.chart.PieChart                xtype: PieChart
 NVD3.chart.ScatterChart            xtype: ScatterChart
 NVD3.chart.StackedAreaChart        xtype: StackedAreaChart
 NVD3.chart.SunburstChart           xtype: SunburstChart
+
+## The available Chart Events
+
+* elementMouseover
+* elementMouseout
+* tooltipShow
+* tooltipHide
+* elementClick
+* legendMouseover
+* stateChange
 
 ## Common CLI Commands
 
@@ -77,7 +87,7 @@ This adds the package dependency (and goes to /app.json):
 
     requires: ['nvd3-charts'],
 
-This adds the name-space NVD3 (and goes to /app/Application.js):
+This adds the name-space NVD3.chart (and goes to /app/Application.js):
 
     requires: ['NVD3.Charts'],
 
