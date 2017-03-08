@@ -11,10 +11,12 @@
     <link rel="author" href="https://plus.google.com/+MartinZeitler"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
-
-    <!-- The line below must be kept intact for SenchaCmd to build the application. -->
-    <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="resources/themes/ext-theme-crisp/ext-theme-crisp-all.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/nvd3/nv.d3.min.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+    <script type="text/javascript" src="lib/d3/d3.min.js"></script>
+    <script type="text/javascript" src="lib/nvd3/nv.d3.min.js"></script>
+    <script type="text/javascript" src="application.js"></script>
 </head>
 <body></body>
 </html>
