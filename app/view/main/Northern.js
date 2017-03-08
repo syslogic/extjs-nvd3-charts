@@ -8,12 +8,12 @@
 Ext.define('NVD3Charts.view.main.Northern', {
     extend: 'Ext.toolbar.Toolbar',
     name: 'ToolbarNorthern',
-    requires: ['NVD3Charts.view.main.Bitcoins'],
+    requires: ['Ext.form.Label', 'NVD3Charts.view.main.Bitcoins'],
     alias: ['widget.ToolbarNorthern'],
     collapsible: false,
     split: false,
-    border: 0,
     height: 40,
+    border: 0,
     style: {borderBottom: '1px solid #157FCC !important', background: '#F5F5F5', color: '#157FCC'},
     items: [
         {xtype: 'label', text: 'NVD3.js Bindings for Sencha ExtJS', padding: 8}, '->',

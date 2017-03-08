@@ -9,7 +9,7 @@
 Ext.define('NVD3Charts.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     alias: ['controller.main'],
-    requires: ['Ext.form.Label'],
+
     views: [
         'main.Main',
         'main.Northern',

@@ -30,8 +30,8 @@ Ext.define('NVD3Charts.view.main.Main', {
             xtype: 'TabpanelMain',
             plugins: 'responsive',
             responsiveConfig: {
-                tall: {tabPosition:   'left', textAlign:   'left', tabRotation: 0},
-                wide: {tabPosition: 'bottom', textAlign: 'center'}
+                tall: {tabPosition: 'right', textAlign: 'left', tabRotation: 0},
+                wide: {tabPosition: 'right', textAlign: 'left', tabRotation: 0}
             }
         }]
     }],
