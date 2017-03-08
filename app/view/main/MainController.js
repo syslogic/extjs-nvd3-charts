@@ -38,13 +38,13 @@ Ext.define('NVD3Charts.view.main.MainController', {
             Ext.log({msg: 'chartLoaded.', level: 'info'});
         //</debug>
     },
-    
+
     /* show/hide Windows */
     showWindow: function(event, toolEl, toolbar){
-        
+
         var items = NVD3Charts.getApplication().windows;
-        
-        /* stage one: close all other windows */
+
+        /* Stage One: close all other windows */
         if(Object.keys(items).length > 0){
             for(var key in items) {
                 if(items[key].name !== toolEl.name){
@@ -52,8 +52,8 @@ Ext.define('NVD3Charts.view.main.MainController', {
                 }
             }
         }
-        
-        /* stage two: open/close the window on demand */
+
+        /* Stage Two: open/close the window on demand */
         if(typeof(items[toolEl.name]) === 'undefined') {
             items[toolEl.name] = Ext.create('NVD3Charts.view.window.'+toolEl.name.replace('Tool', ''), {animateTarget: toolEl});
             items[toolEl.name].show();
@@ -62,9 +62,5 @@ Ext.define('NVD3Charts.view.main.MainController', {
         } else {
             items[toolEl.name].show();
         }
-    },
-    
-    initComponent: function() {
-        this.callParent(arguments);
     }
 });

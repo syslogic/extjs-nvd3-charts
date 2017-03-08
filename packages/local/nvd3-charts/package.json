@@ -25,8 +25,8 @@
         ]
     },
     "js": [
-        {"path": "lib/d3/d3.min.js", "bundle": true},
-        {"path": "lib/nvd3/nv.d3.min.js", "bundle": true}
+        {"path": "lib/d3/d3.min.js", "bundle": false},
+        {"path": "lib/nvd3/nv.d3.min.js", "bundle": false}
     ],
     "css": [
         {"path": "lib/nvd3/nv.d3.min.css", "bundle": true}

@@ -1,5 +1,8 @@
 bootstrap.js
 bootstrap.json
 bootstrap.jsonp
+sencha-error-*.log
+application.debug.js
+application.js
 build/
 ext/
