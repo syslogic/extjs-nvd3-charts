@@ -12,10 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="resources/themes/ext-theme-crisp/ext-theme-crisp-all.css"/>
-    <link rel="stylesheet" type="text/css" href="lib/nvd3/nv.d3.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.5/nv.d3.min.css"/>
     <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
-    <script type="text/javascript" src="lib/d3/d3.min.js"></script>
-    <script type="text/javascript" src="lib/nvd3/nv.d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.5/nv.d3.min.js"></script>
     <script type="text/javascript" src="application.js"></script>
 </head>
 <body></body>
