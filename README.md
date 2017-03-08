@@ -4,7 +4,7 @@ This project is similar to the ExtJS 4 & Touch bindings,
 as well as the available AngularJS directives.
 
 ## In Action
-* [see the Live Example](http://nvd3.randomized.eu)
+* just see the [Live Example](http://nvd3.randomized.eu)
 
 ## Built With
 * [Oracle NetBeans 8.2](http://www.oracle.com/technetwork/developer-tools/netbeans/index.html) (Development Environment)
