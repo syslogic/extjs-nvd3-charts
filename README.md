@@ -40,25 +40,25 @@ d) place the the ExtJS Crisp Theme at the following location:
 
     /resources/themes/ext-theme-crisp
 
-## Package Classes and xTypes for NVD3.chart
+## Package Classes and xTypes
 
-NVD3.chart.BasicChart              xtype: NONE
-NVD3.chart.BoxPlotChart            xtype: BoxPlotChart
-NVD3.chart.BulletChart             xtype: BulletChart
-NVD3.chart.CandlestickBarChart     xtype: CandlestickBarChart
-NVD3.chart.CumulativeLineChart     xtype: CumulativeLineChart
-NVD3.chart.DiscreteBarChart        xtype: DiscreteBarChart
-NVD3.chart.HistoricalBarChart      xtype: HistoricalBarChart
-NVD3.chart.LineChart               xtype: LineChart
-NVD3.chart.LinePlusBarChart        xtype: LinePlusBarChart
-NVD3.chart.LineWithFocusChart      xtype: LineWithFocusChart
-NVD3.chart.MultiBarChart           xtype: MultiBarChart
-NVD3.chart.MultiBarHorizontalChart xtype: MultiBarHorizontalChart
-NVD3.chart.PieChart                xtype: PieChart
-NVD3.chart.ScatterChart            xtype: ScatterChart
-NVD3.chart.SparklinePlus           xtype: SparklinePlus
-NVD3.chart.StackedAreaChart        xtype: StackedAreaChart
-NVD3.chart.SunburstChart           xtype: SunburstChart
+* NVD3.chart.BasicChart              xtype: NONE
+* NVD3.chart.BoxPlotChart            xtype: BoxPlotChart
+* NVD3.chart.BulletChart             xtype: BulletChart
+* NVD3.chart.CandlestickBarChart     xtype: CandlestickBarChart
+* NVD3.chart.CumulativeLineChart     xtype: CumulativeLineChart
+* NVD3.chart.DiscreteBarChart        xtype: DiscreteBarChart
+* NVD3.chart.HistoricalBarChart      xtype: HistoricalBarChart
+* NVD3.chart.LineChart               xtype: LineChart
+* NVD3.chart.LinePlusBarChart        xtype: LinePlusBarChart
+* NVD3.chart.LineWithFocusChart      xtype: LineWithFocusChart
+* NVD3.chart.MultiBarChart           xtype: MultiBarChart
+* NVD3.chart.MultiBarHorizontalChart xtype: MultiBarHorizontalChart
+* NVD3.chart.PieChart                xtype: PieChart
+* NVD3.chart.ScatterChart            xtype: ScatterChart
+* NVD3.chart.SparklinePlus           xtype: SparklinePlus
+* NVD3.chart.StackedAreaChart        xtype: StackedAreaChart
+* NVD3.chart.SunburstChart           xtype: SunburstChart
 
 ## The available Chart Events
 
