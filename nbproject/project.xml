@@ -29,6 +29,24 @@
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>ExtJS</word>
             <word>Zeitler</word>
+            <word>xtype</word>
+            <word>BasicChart</word>
+            <word>BoxPlotChart</word>
+            <word>BulletChart</word>
+            <word>CandlestickBarChart</word>
+            <word>CumulativeLineChart</word>
+            <word>DiscreteBarChart</word>
+            <word>HistoricalBarChart</word>
+            <word>LineChart</word>
+            <word>LinePlusBarChart</word>
+            <word>LineWithFocusChart</word>
+            <word>MultiBarChart</word>
+            <word>MultiBarHorizontalChart</word>
+            <word>PieChart</word>
+            <word>ScatterChart</word>
+            <word>SparklinePlus</word>
+            <word>StackedAreaChart</word>
+            <word>SunburstChart</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

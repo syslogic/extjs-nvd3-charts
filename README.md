@@ -4,7 +4,6 @@
 * [OpenCharts-For-Sencha-Touch-and-ExtJS](https://github.com/woodenconsulting/OpenCharts-For-Sencha-Touch-and-ExtJS)
 * [angularjs-nvd3-directives](https://github.com/angularjs-nvd3-directives/angularjs-nvd3-directives)
 
-
 ## Live Example
 * click [here](http://nvd3.randomized.eu) to see the example ExtJS Application in action.
 
@@ -60,7 +59,7 @@ d) place the the ExtJS Crisp Theme at the following location:
 * NVD3.chart.StackedAreaChart        xtype: StackedAreaChart
 * NVD3.chart.SunburstChart           xtype: SunburstChart
 
-## The available Chart Events
+## Common NVD3 Events
 
 * elementMouseover
 * elementMouseout
