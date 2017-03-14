@@ -19,7 +19,7 @@ The relevant locations within the structure are:
 
     Example Application: / app
 
-    The Package: / packages / local / nvd3-charts
+    The Package: / packages / local / nvd3-chart
 
 ## Getting Started
 
@@ -38,6 +38,28 @@ c) place the ExtJS 5.1.x Framework at the following location:
 d) place the the ExtJS Crisp Theme at the following location:
 
     /resources/themes/ext-theme-crisp
+
+## Common CLI Commands
+
+To refresh the application bootstrap:
+
+    cd /
+    sencha app refresh
+
+To build the PKG archive:
+
+    cd /packages/local/nvd3-charts
+    sencha package build
+
+## Including the Package in your Application
+
+This adds the package dependency (and goes to /app.json):
+
+    requires: ['nvd3-chart']
+
+This adds the name-space NVD3.chart (and goes to /app/Application.js):
+
+    requires: ['NVD3.chart']
 
 ## Package Classes and xTypes
 
@@ -68,28 +90,6 @@ d) place the the ExtJS Crisp Theme at the following location:
 * elementClick
 * legendMouseover
 * stateChange
-
-## Common CLI Commands
-
-To refresh the application bootstrap:
-
-    cd /
-    sencha app refresh
-
-To build the PKG archive:
-
-    cd /packages/local/nvd3-charts
-    sencha package build
-
-## Including the Package in your Application
-
-This adds the package dependency (and goes to /app.json):
-
-    requires: ['nvd3-chart']
-
-This adds the name-space NVD3.chart (and goes to /app/Application.js):
-
-    requires: ['NVD3.chart']
 
 ## MIT License
 
