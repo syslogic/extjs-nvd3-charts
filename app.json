@@ -5,13 +5,18 @@
     "framework":"ext",
     "locale": "en",
     "indexHtmlPath": "index.html",
-    "requires": ["nvd3-charts"],
-    "loader": {"cacheParam": "_dc", "cache": true},
-    "builds": {"classic": {"theme": "ext-theme-crisp"}},
+    "requires": ["nvd3-chart"],
+    "loader": {
+    	"cacheParam": "_dc", "cache": true
+    },
+    "builds": {
+    	"classic": {"theme": "ext-theme-crisp"}
+    },
     "js": [
         {"path": "bootstrap.js"},
         {"path": "lib/d3/d3.min.js", "bundle": true},
-        {"path": "lib/nvd3/nv.d3.min.js", "bundle": true},
+        // {"path": "lib/nvd3/nv.d3.min.js", "bundle": true},
+        {"path": "lib/nvd3/nv.d3.js", "bundle": true},
         {"path": "app.js", "bundle": true}
     ],
     "css": [
