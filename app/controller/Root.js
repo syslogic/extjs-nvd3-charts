@@ -38,14 +38,14 @@ Ext.define('NVD3Charts.controller.Root', {
             var tabPanel = ct.items.items[0];
             var tabs = tabPanel.items.items;
 
-            /** notice: return false equals continue withing the scope of Ext.each(). */
+            /** note: within the scope of Ext.each() "return false" equals "continue". */
             Ext.each(tabs, function(tab, i) {
                 if(tab.name === 'Tab' + hash) {
                     tabPanel.setActiveItem(i);
                     var chart = tab.items.items[0].items.items[0];
                     chart.store.load();
                     //<debug>
-                    	Ext.log({msg: 'switching to tabIndex ' + i + ' -> ' + hash, level: 'info'});
+                    	Ext.log({msg: 'onHashtag("' + hash + '") -> switching to index ' + i + '.', level: 'debug'});
                     //</debug>
                     return false;
                 }
@@ -65,7 +65,7 @@ Ext.define('NVD3Charts.controller.Root', {
     /** unmatched route */
     onUnmatchedRoute: function(hash) {
         //<debug>
-            Ext.log({msg: 'onUnmatchedRoute: ' + hash.replace('#', ''), level: 'warn'});
+            Ext.log({msg: 'onUnmatchedRoute(' + hash.replace('#', '') + ')', level: 'warn'});
         //</debug>
     },
 
