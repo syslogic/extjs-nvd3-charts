@@ -7,7 +7,7 @@
 
 /* global Ext */
 
-Ext.define('NVD3.chart', {
+Ext.define('NVD3.chart.Chart', {
     requires: [
         'NVD3.chart.BoxPlotChart',
         'NVD3.chart.BulletChart',
