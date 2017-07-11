@@ -9,7 +9,7 @@ Ext.define('NVD3Charts.view.main.Bitcoins', {
     extend: 'Ext.window.Window',
     requires: [],
     alias: ['window.Bitcoins'],
-    title: 'Bitcoin Address: 1LXzkLeSBGPRQZQGLNzL7LPQR8nyJDQzW7',
+    title: 'Bitcoin Address: 19uySyXrtqQ71PFZWHb2PxBwtNitg2Dp6b',
     style: 'background: #0078A5;',
     closeAction: 'hide',
     layout: 'border',
@@ -24,7 +24,7 @@ Ext.define('NVD3Charts.view.main.Bitcoins', {
         xtype: 'panel',
         region: 'center',
         cls: 'x-panel-bitcoins',
-        html: '<a href="bitcoin:1LXzkLeSBGPRQZQGLNzL7LPQR8nyJDQzW7" target="_blank"><img src="resources/images/1LXzkLeSBGPRQZQGLNzL7LPQR8nyJDQzW7.png" height="493px" width="493px"></a>',
+        html: '<a href="bitcoin:19uySyXrtqQ71PFZWHb2PxBwtNitg2Dp6b" target="_blank"><img src="resources/images/19uySyXrtqQ71PFZWHb2PxBwtNitg2Dp6b.png" height="493px" width="493px"></a>',
         border: 0,
         flex: 1
     }],
