@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html manifest="">
 <head>
-    <title>NVD3 for Sencha ExtJS</title>
+    <title>NVD3 Bindings for Sencha ExtJS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="author" content="Martin Zeitler, IT Solution Development"/>
-    <meta name="copyright" content="Copyright 2015 by Martin Zeitler, All rights reserved."/>
+    <meta name="copyright" content="Copyright 2017 by Martin Zeitler."/>
     <link rel="icon" type="image/x-icon" href="https://store.syslogic.io/catalog/view/theme/randomized/image/favicon.ico"/>
     <link rel="publisher" href="https://plus.google.com/113310724040129613521"/>
-    <link rel="author" href="https://plus.google.com/+MartinZeitler"/>
+    <link rel="author" href="https://plus.google.com/106963082057954766426"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="resources/themes/ext-theme-crisp/ext-theme-crisp-all.css"/>

@@ -4,7 +4,7 @@
  * @class NVD3Charts.overrides.layout.container.Container
  * @overrides Ext.layout.container.Container
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
- * @author https://plus.google.com/+MartinZeitler
+ * @author https://plus.google.com/106963082057954766426
 **/
 
 Ext.define('NVD3Charts.overrides.layout.container.Container', {
