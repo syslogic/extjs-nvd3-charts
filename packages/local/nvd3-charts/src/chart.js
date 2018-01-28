@@ -21,9 +21,10 @@ Ext.define('NVD3.chart.Chart', {
         'NVD3.chart.LineWithFocusChart',
         'NVD3.chart.MultiBarChart',
         'NVD3.chart.MultiBarHorizontalChart',
-        'NVD3.chart.ParallelCoordinates',
+        'NVD3.chart.ParallelCoordinatesChart',
         'NVD3.chart.PieChart',
         'NVD3.chart.ScatterChart',
+        'NVD3.chart.Sparkline',
         'NVD3.chart.SparklinePlus',
         'NVD3.chart.StackedAreaChart',
         'NVD3.chart.SunburstChart'

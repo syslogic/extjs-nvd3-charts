@@ -37,8 +37,8 @@ Ext.define('NVD3.chart.BasicChart', {
         'boxPlotChart', 'bulletChart', 'candlestickBarChart', 'cumulativeLineChart',
         'discreteBarChart', 'historicalBarChart', 'lineChart', 'linePlusBarChart',
         'lineWithFocusChart', 'multiBarChart', 'multiBarHorizontalChart','pieChart',
-        'scatterChart', 'sparklinePlus', 'stackedAreaChart', 'sunburstChart',
-        'forceDirectedGraph', 'parallelCoordinates'
+        'scatterChart', 'sparkline', 'sparklinePlus', 'stackedAreaChart', 'sunburstChart',
+        'forceDirectedGraph', 'parallelCoordinatesChart'
     ],
 
     /** initChartComponent(), that's the bound method. */
@@ -90,14 +90,13 @@ Ext.define('NVD3.chart.BasicChart', {
             d3.select(this.svg).datum(this.getChartData()).transition().duration(this.chartAnimDuration).call(this.chart);
 
             // bind the window resize event
-            // window.onresize =nv.utils.windowResize(me.chart.update);
             nv.utils.windowResize(me.chart.update);
 
             // fire the chartLoaded event
             me.fireEvent('chartLoaded', me.chart);
 
             //<debug>
-                Ext.log({msg: 'the ' + chartType + ' has been attached as #' + dom.id + '.', level: 'verbose'});
+                Ext.log({msg: 'the ' + chartType + ' has been attached as #' + dom.id + '.', level: 'debug'});
             //</debug>
             return this.chart;
         }
@@ -125,7 +124,7 @@ Ext.define('NVD3.chart.BasicChart', {
             if(this.svg !== null && this.chart !== null) {
                 d3.select(this.svg).datum(data).transition().duration(this.chartAnimDuration).call(this.chart);
             } else {
-                if(this.chart === null) {Ext.log({msg: 'this.chart === null', level: 'error'});}
+                if(this.chart === null) {Ext.log({msg: 'this.chart === null', level: 'warn'});}
                 if(this.svg   === null) {Ext.log({msg: 'this.svg === null', level: 'error'});}
             }
         }
@@ -285,6 +284,13 @@ Ext.define('NVD3.chart.BasicChart', {
                 }
                 break;
 
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#sparklineChart */
+            case 'Sparkline':
+                if (me.chart.sparkline) {
+
+                }
+                break;
+
             /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#sparklinePlusChart */
             case 'SparklinePlus':
                 if (me.chart.sparklineplus) {
@@ -299,9 +305,9 @@ Ext.define('NVD3.chart.BasicChart', {
                 }
                 break;
 
-            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#parallelCoordinates */
-            case 'ParallelCoordinates':
-                if (me.chart.parallelcoordinates) {
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#parallelCoordinatesChart */
+            case 'ParallelCoordinatesChart':
+                if (me.chart.parallelcoordinateschart) {
 
                 }
                 break;
