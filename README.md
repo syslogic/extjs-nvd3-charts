@@ -48,7 +48,7 @@ To refresh the application bootstrap:
 
 To build the PKG archive:
 
-    cd /packages/local/nvd3-charts
+    cd packages/local/nvd3-charts
     sencha package build
 
 ## Including the Package in your Application
