@@ -11,22 +11,24 @@ Ext.define('NVD3Charts.controller.Root', {
 
     /** Routes */
     routes: {
-                             '': 'onHashtag',
-                 'BoxPlotChart': 'onHashtag',
-                  'BulletChart': 'onHashtag',
-          'CandlestickBarChart': 'onHashtag',
-          'CumulativeLineChart': 'onHashtag',
-             'DiscreteBarChart': 'onHashtag',
-                    'LineChart': 'onHashtag',
-                'MultiBarChart': 'onHashtag',
-      'MultiBarHorizontalChart': 'onHashtag',
-             'LinePlusBarChart': 'onHashtag',
-           'LineWithFocusChart': 'onHashtag',
-                     'PieChart': 'onHashtag',
-                 'ScatterChart': 'onHashtag',
-                'SparklinePlus': 'onHashtag',
-             'StackedAreaChart': 'onHashtag',
-                'SunburstChart': 'onHashtag'
+                        '': 'onHashtag',
+            'BoxPlotChart': 'onHashtag',
+             'BulletChart': 'onHashtag',
+     'CandlestickBarChart': 'onHashtag',
+     'CumulativeLineChart': 'onHashtag',
+        'DiscreteBarChart': 'onHashtag',
+      'ForceDirectedGraph': 'onHashtag',
+               'LineChart': 'onHashtag',
+           'MultiBarChart': 'onHashtag',
+ 'MultiBarHorizontalChart': 'onHashtag',
+     'ParallelCoordinates': 'onHashtag',
+        'LinePlusBarChart': 'onHashtag',
+      'LineWithFocusChart': 'onHashtag',
+                'PieChart': 'onHashtag',
+            'ScatterChart': 'onHashtag',
+           'SparklinePlus': 'onHashtag',
+        'StackedAreaChart': 'onHashtag',
+           'SunburstChart': 'onHashtag'
     },
 
     /** switching the Tabs */

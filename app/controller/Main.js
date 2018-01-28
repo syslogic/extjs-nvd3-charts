@@ -22,14 +22,13 @@ Ext.define('NVD3Charts.controller.Main', {
         'NVD3Charts.store.MultiBarHorizontalChart',
         'NVD3Charts.store.PieChart',
         'NVD3Charts.store.ScatterChart',
-        'NVD3Charts.store.Sparkline',
         'NVD3Charts.store.SparklinePlus',
         'NVD3Charts.store.StackedAreaChart',
         'NVD3Charts.store.SunburstChart'
     ],
 
     refs: [
-        
+
         /* Panels */
         {ref: 'tabPanel',                       selector: 'panel[name=TabpanelMain]'},
         {ref: 'panelBoxPlotChart',              selector: 'PanelBoxPlotChart'},
@@ -47,7 +46,7 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'panelSparklinePlus',             selector: 'PanelSparklinePlus'},
         {ref: 'panelStackedAreaChart',          selector: 'PanelStackedAreaChart'},
         {ref: 'panelSunburstChart',             selector: 'PanelSunburstChart'},
-        
+
         /* Charts */
         {ref: 'boxPlotChart',                   selector: 'BoxPlotChart'},
         {ref: 'bulletChart',                    selector: 'BulletChart'},
