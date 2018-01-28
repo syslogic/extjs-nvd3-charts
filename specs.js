@@ -1,5 +1,5 @@
 /**
- * Jasmine 2.5.2 Specs Description
+ * Jasmine 2.9.1 Specs Description
  * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
  * @author https://plus.google.com/106963082057954766426
  * @see https://jasmine.github.io/2.5/introduction
@@ -38,7 +38,7 @@
     jasmine.getEnv().addReporter(consoleReporter);
 */
 
-/* global Ext, NVD3Charts, expect */
+/* global Ext, NVD3Charts, expect, d3, nv */
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
 
@@ -46,19 +46,19 @@ describe('NVD3Charts', function() {
 
     var app = null, controller = null, model = null, store = null, view = null;
     
-    beforeEach(function() {});
-    afterEach(function() {});
-
-    describe('JavaScript Framework', function() {
-        it('ExtJS 5.1.0', function() {
-            expect(Ext).toBeDefined();
-            expect(Ext.getVersion()).toBeTruthy();
-            expect(Ext.getVersion().major).toEqual(5);
-            expect(Ext.getVersion().minor).toBeGreaterThan(0);
-        });
+    beforeEach(function(done) {
+        expect(Ext).toBeDefined();
+        setTimeout(function() {
+            // value = 0;
+            done();
+        }, 1000);
     });
-
-    describe('Application', function() {
+    
+    afterEach(function() {
+        
+    });
+    
+    describe('ExtJS Application', function() {
 
         /* synchronous call */
         it('configured', function() {
@@ -105,20 +105,46 @@ describe('NVD3Charts', function() {
         });
     });
 
+    describe('D3', function() {
+        it('is loaded', function() {
+            expect(window.d3).toBeDefined();
+        });
+    });
+
+    describe('NVD3', function() {
+        it('is loaded', function() {
+            expect(window.nv).toBeDefined();
+        });
+    });
+
     describe('Controllers', function() {
 
-        beforeEach(function() {controller = null;});
+        beforeEach(function() {
+            controller = null;
+        });
+        
         afterEach(function() {});
 
         describe('controller.Root', function () {
-            it('instanced', function() {
+            it('instanced', function(done) {
+                
+                setTimeout(function() {
+                    done();
+                }, 1000);
+                
                 controller = NVD3Charts.getApplication().getRootController();
                 expect(controller).not.toBeNull();
-
-                /* TODO: test application routes */
-                it('has routes', function() {
-                    expect(controller.routes).not.toBeNull();
-                });
+            });
+            
+            it('instanced & has routes defined', function(done) {
+                
+                setTimeout(function() {
+                    done();
+                }, 1000);
+                
+                controller = NVD3Charts.getApplication().getRootController();
+                expect(controller).not.toBeNull();
+                expect(controller.routes).not.toBeNull();
             });
         });
 
@@ -133,22 +159,110 @@ describe('NVD3Charts', function() {
 
             });
 
-            describe('store.ServerInfo', function () {
+            describe('store.BoxPlotChart', function () {
                 it('instanced', function() {
-                    store = controller.getServerInfoStore();
+                    store = controller.getBoxPlotChart();
                     expect(store).not.toBeNull();
                 });
             });
-
-            /*
-                describe('onViewportRendered()', function () {
-                    it('has been called', function() {
-                        spyOn(controller, 'onViewportRendered');
-                        controller.onViewportRendered();
-                        expect(controller.onViewportRendered).toHaveBeenCalled();
-                    });
+            
+            describe('store.BulletChart', function () {
+                it('instanced', function() {
+                    store = controller.getBulletChart();
+                    expect(store).not.toBeNull();
                 });
-            */
+            });
+            
+            describe('store.CandlestickBarChart', function () {
+                it('instanced', function() {
+                    store = controller.getCandlestickBarChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.CumulativeLineChart', function () {
+                it('instanced', function() {
+                    store = controller.getCumulativeLineChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.DiscreteBarChart', function () {
+                it('instanced', function() {
+                    store = controller.getDiscreteBarChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.LineChart', function () {
+                it('instanced', function() {
+                    store = controller.getLineChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.LinePlusBarChart', function () {
+                it('instanced', function() {
+                    store = controller.getLinePlusBarChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.LineWithFocusChart', function () {
+                it('instanced', function() {
+                    store = controller.getLineWithFocusChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.MultiBarChart', function () {
+                it('instanced', function() {
+                    store = controller.getMultiBarChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.MultiBarHorizontalChart', function () {
+                it('instanced', function() {
+                    store = controller.getMultiBarHorizontalChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.PieChart', function () {
+                it('instanced', function() {
+                    store = controller.getPieChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.ScatterChart', function () {
+                it('instanced', function() {
+                    store = controller.getScatterChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.SparklinePlus', function () {
+                it('instanced', function() {
+                    store = controller.getSparklinePlus();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.StackedAreaChart', function () {
+                it('instanced', function() {
+                    store = controller.getStackedAreaChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            
+            describe('store.SunburstChart', function () {
+                it('instanced', function() {
+                    store = controller.getSunburstChart();
+                    expect(store).not.toBeNull();
+                });
+            });
         });
     });
 
@@ -159,7 +273,7 @@ describe('NVD3Charts', function() {
 
         describe('main.Main', function () {
             it('instanced', function() {
-                view = NVD3Charts.app.getMainMainView();
+                view = NVD3Charts.app.getMainView();
                 expect(view).not.toBeNull();
             });
         });
