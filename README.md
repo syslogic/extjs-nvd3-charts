@@ -13,6 +13,7 @@
 * [Sencha Cmd 6.5.3.6](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
 * [NVD3 1.8.6](https://github.com/novus/nvd3) (reusable D3 charting library)
 
+
 ## Basic Directory Structure
 
 The relevant locations within the structure are:
@@ -63,23 +64,23 @@ This adds the name-space NVD3.chart (and goes to /app/Application.js):
 
 ## Package Classes and xTypes
 
-* NVD3.chart.BasicChart              xtype: NONE
-* NVD3.chart.BoxPlotChart            xtype: BoxPlotChart
-* NVD3.chart.BulletChart             xtype: BulletChart
-* NVD3.chart.CandlestickBarChart     xtype: CandlestickBarChart
-* NVD3.chart.CumulativeLineChart     xtype: CumulativeLineChart
-* NVD3.chart.DiscreteBarChart        xtype: DiscreteBarChart
-* NVD3.chart.HistoricalBarChart      xtype: HistoricalBarChart
-* NVD3.chart.LineChart               xtype: LineChart
-* NVD3.chart.LinePlusBarChart        xtype: LinePlusBarChart
-* NVD3.chart.LineWithFocusChart      xtype: LineWithFocusChart
-* NVD3.chart.MultiBarChart           xtype: MultiBarChart
-* NVD3.chart.MultiBarHorizontalChart xtype: MultiBarHorizontalChart
-* NVD3.chart.PieChart                xtype: PieChart
-* NVD3.chart.ScatterChart            xtype: ScatterChart
-* NVD3.chart.SparklinePlus           xtype: SparklinePlus
-* NVD3.chart.StackedAreaChart        xtype: StackedAreaChart
-* NVD3.chart.SunburstChart           xtype: SunburstChart
+* NVD3.chart.BasicChart                                                                   xtype: NONE
+* NVD3.chart.[BoxPlotChart](https://nvd3.syslogic.io/#BoxPlotChart)                       xtype: BoxPlotChart
+* NVD3.chart.[BulletChart](https://nvd3.syslogic.io/#BulletChart)                         xtype: BulletChart
+* NVD3.chart.[CandlestickBarChart](https://nvd3.syslogic.io/#CandlestickBarChart)         xtype: CandlestickBarChart
+* NVD3.chart.[CumulativeLineChart](https://nvd3.syslogic.io/#CumulativeLineChart)         xtype: CumulativeLineChart
+* NVD3.chart.[DiscreteBarChart](https://nvd3.syslogic.io/#DiscreteBarChart)               xtype: DiscreteBarChart
+* NVD3.chart.[HistoricalBarChart](https://nvd3.syslogic.io/#HistoricalBarChart)           xtype: HistoricalBarChart
+* NVD3.chart.[LineChart](https://nvd3.syslogic.io/#LineChart)                             xtype: LineChart
+* NVD3.chart.[LinePlusBarChart](https://nvd3.syslogic.io/#LinePlusBarChart)               xtype: LinePlusBarChart
+* NVD3.chart.[LineWithFocusChart](https://nvd3.syslogic.io/#LineWithFocusChart)           xtype: LineWithFocusChart
+* NVD3.chart.[MultiBarChart](https://nvd3.syslogic.io/#MultiBarChart)                     xtype: MultiBarChart
+* NVD3.chart.[MultiBarHorizontalChart](https://nvd3.syslogic.io/#MultiBarHorizontalChart) xtype: MultiBarHorizontalChart
+* NVD3.chart.[PieChart](https://nvd3.syslogic.io/#PieChart)                               xtype: PieChart
+* NVD3.chart.[ScatterChart](https://nvd3.syslogic.io/#ScatterChart)                       xtype: ScatterChart
+* NVD3.chart.[SparklinePlus](https://nvd3.syslogic.io/#SparklinePlus)                     xtype: SparklinePlus
+* NVD3.chart.[StackedAreaChart](https://nvd3.syslogic.io/#StackedAreaChart)               xtype: StackedAreaChart
+* NVD3.chart.[SunburstChart](https://nvd3.syslogic.io/#SunburstChart)                     xtype: SunburstChart
 
 ## Common NVD3 Events
 
