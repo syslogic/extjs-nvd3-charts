@@ -45,7 +45,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
 describe('NVD3Charts', function() {
 
     var app = null, controller = null, model = null, store = null, view = null;
-    
+
     beforeEach(function(done) {
         expect(Ext).toBeDefined();
         setTimeout(function() {
@@ -53,11 +53,11 @@ describe('NVD3Charts', function() {
             done();
         }, 1000);
     });
-    
+
     afterEach(function() {
-        
+
     });
-    
+
     describe('ExtJS Application', function() {
 
         /* synchronous call */
@@ -122,26 +122,26 @@ describe('NVD3Charts', function() {
         beforeEach(function() {
             controller = null;
         });
-        
+
         afterEach(function() {});
 
         describe('controller.Root', function () {
             it('instanced', function(done) {
-                
+
                 setTimeout(function() {
                     done();
                 }, 1000);
-                
+
                 controller = NVD3Charts.getApplication().getRootController();
                 expect(controller).not.toBeNull();
             });
-            
+
             it('instanced & has routes defined', function(done) {
-                
+
                 setTimeout(function() {
                     done();
                 }, 1000);
-                
+
                 controller = NVD3Charts.getApplication().getRootController();
                 expect(controller).not.toBeNull();
                 expect(controller.routes).not.toBeNull();
@@ -165,101 +165,114 @@ describe('NVD3Charts', function() {
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.BulletChart', function () {
                 it('instanced', function() {
                     store = controller.getBulletChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.CandlestickBarChart', function () {
                 it('instanced', function() {
                     store = controller.getCandlestickBarChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.CumulativeLineChart', function () {
                 it('instanced', function() {
                     store = controller.getCumulativeLineChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.DiscreteBarChart', function () {
                 it('instanced', function() {
                     store = controller.getDiscreteBarChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.LineChart', function () {
                 it('instanced', function() {
                     store = controller.getLineChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.LinePlusBarChart', function () {
                 it('instanced', function() {
                     store = controller.getLinePlusBarChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.LineWithFocusChart', function () {
                 it('instanced', function() {
                     store = controller.getLineWithFocusChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.MultiBarChart', function () {
                 it('instanced', function() {
                     store = controller.getMultiBarChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.MultiBarHorizontalChart', function () {
                 it('instanced', function() {
                     store = controller.getMultiBarHorizontalChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.PieChart', function () {
                 it('instanced', function() {
                     store = controller.getPieChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.ScatterChart', function () {
                 it('instanced', function() {
                     store = controller.getScatterChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
-            describe('store.SparklinePlus', function () {
+
+            describe('store.Sparkline', function () {
                 it('instanced', function() {
-                    store = controller.getSparklinePlus();
+                    store = controller.getSparkline();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.StackedAreaChart', function () {
                 it('instanced', function() {
                     store = controller.getStackedAreaChart();
                     expect(store).not.toBeNull();
                 });
             });
-            
+
             describe('store.SunburstChart', function () {
                 it('instanced', function() {
                     store = controller.getSunburstChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+
+            describe('store.ParallelCoordinatesChart', function () {
+                it('instanced', function() {
+                    store = controller.getParallelCoordinatesChart();
+                    expect(store).not.toBeNull();
+                });
+            });
+            describe('store.ForceDirectedGraph', function () {
+                it('instanced', function() {
+                    store = controller.getForceDirectedGraph();
                     expect(store).not.toBeNull();
                 });
             });

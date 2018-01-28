@@ -13,7 +13,7 @@ Ext.define('NVD3Charts.store.ForceDirectedGraph', {
     model: 'NVD3Charts.model.None',
 
     data: [{
-        "nodes":[
+        "nodes": [
             {"name":"Myriel","group":1},
             {"name":"Napoleon","group":1},
             {"name":"Mlle.Baptistine","group":1},
@@ -91,8 +91,9 @@ Ext.define('NVD3Charts.store.ForceDirectedGraph', {
             {"name":"Child2","group":10},
             {"name":"Brujon","group":4},
             {"name":"Mme.Hucheloup","group":8}
-        ],
-        "links":[
+        ]
+    }, {
+        "links": [
             {"source":1,"target":0,"value":1},
             {"source":2,"target":0,"value":8},
             {"source":3,"target":0,"value":10},
@@ -356,7 +357,7 @@ Ext.define('NVD3Charts.store.ForceDirectedGraph', {
         reader: {
             type: 'json',
             idProperty: 'id',
-            rootProperty: '[0]'
+            rootProperty: ['nodes', 'links']
         }
     }
 });

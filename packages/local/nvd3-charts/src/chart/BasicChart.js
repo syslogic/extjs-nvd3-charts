@@ -38,7 +38,7 @@ Ext.define('NVD3.chart.BasicChart', {
         'discreteBarChart', 'historicalBarChart', 'lineChart', 'linePlusBarChart',
         'lineWithFocusChart', 'multiBarChart', 'multiBarHorizontalChart','pieChart',
         'scatterChart', 'sparkline', 'sparklinePlus', 'stackedAreaChart', 'sunburstChart',
-        'forceDirectedGraph', 'parallelCoordinatesChart'
+        'forceDirectedGraph', 'parallelCoordinates', 'parallelCoordinatesChart'
     ],
 
     /** initChartComponent(), that's the bound method. */
@@ -113,7 +113,12 @@ Ext.define('NVD3.chart.BasicChart', {
             Ext.log({msg: 'onStoreLoaded() has no data.', level: 'warn'});
             return false;
         } else {
-
+            
+            // the graph requires two root nodes ...
+            if(store.getStoreId() === "ForceDirectedGraph"){
+                data = {'nodes':data[0].nodes, 'links':data[1].links};
+             }
+            
             // apply the data
             this.setChartData(data);
 
