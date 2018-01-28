@@ -5,7 +5,7 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-/* global Ext, d3 */
+/* global Ext, d3, nv */
 
 Ext.define('NVD3.chart.BasicChart', {
     extend: 'Ext.Component',
@@ -34,9 +34,11 @@ Ext.define('NVD3.chart.BasicChart', {
 
     /** a list of (currently) valid chartTypes */
     validChartTypes: [
-        'boxPlotChart', 'bulletChart', 'candlestickBarChart', 'cumulativeLineChart', 'discreteBarChart',
-        'historicalBarChart', 'lineChart', 'linePlusBarChart', 'lineWithFocusChart', 'multiBarChart', 'multiBarHorizontalChart',
-        'pieChart', 'scatterChart', 'sparklinePlus', 'stackedAreaChart', 'sunburstChart'
+        'boxPlotChart', 'bulletChart', 'candlestickBarChart', 'cumulativeLineChart',
+        'discreteBarChart', 'historicalBarChart', 'lineChart', 'linePlusBarChart',
+        'lineWithFocusChart', 'multiBarChart', 'multiBarHorizontalChart','pieChart',
+        'scatterChart', 'sparklinePlus', 'stackedAreaChart', 'sunburstChart',
+        'forceDirectedGraph', 'parallelCoordinates'
     ],
 
     /** initChartComponent(), that's the bound method. */
@@ -144,7 +146,7 @@ Ext.define('NVD3.chart.BasicChart', {
                     autoLoad: true
                 });
             } else {
-                
+
                 // bind to the configured store's load event
                 this.store.addListener('load', this.onStoreLoaded, this);
 
@@ -215,7 +217,6 @@ Ext.define('NVD3.chart.BasicChart', {
             me.chart.scatter.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
         }
 
-        /** TODO */
         if (me.chart.bullet) {
             me.chart.bullet.dispatch.on('elementMousemove.tooltip.directive', function (e) {me.fireEvent('elementMousemove', e);});
             me.chart.bullet.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
@@ -235,24 +236,22 @@ Ext.define('NVD3.chart.BasicChart', {
             }
         }
 
-        /** TODO */
         if (me.chart.sunburst) {
-
+            me.chart.sunburst.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+            me.chart.sunburst.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+            me.chart.sunburst.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
         }
 
-        /** TODO */
         if (me.chart.candlestickbar) {
-
+            me.chart.candlestickbar.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+            me.chart.candlestickbar.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+            me.chart.candlestickbar.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
         }
-        
-        /** TODO */
-        if (me.chart.sparkline) {
 
-        }
-        
-        /** TODO */
         if (me.chart.sparklineplus) {
-
+            me.chart.sparklineplus.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+            me.chart.sparklineplus.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+            me.chart.sparklineplus.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
         }
-    }    
+    }
 });
