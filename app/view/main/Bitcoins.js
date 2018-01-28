@@ -5,6 +5,8 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
+/* global NVD3Charts */
+
 Ext.define('NVD3Charts.view.main.Bitcoins', {
     extend: 'Ext.window.Window',
     requires: [],

@@ -6,6 +6,8 @@
  * @license MIT License
 **/
 
+/* global NVD3Charts */
+
 Ext.define('NVD3Charts.view.main.MainController', {
     extend: 'Ext.app.ViewController',
     requires: [],

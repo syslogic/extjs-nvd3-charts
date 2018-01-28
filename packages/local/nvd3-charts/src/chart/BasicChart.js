@@ -90,6 +90,7 @@ Ext.define('NVD3.chart.BasicChart', {
             d3.select(this.svg).datum(this.getChartData()).transition().duration(this.chartAnimDuration).call(this.chart);
 
             // bind the window resize event
+            // window.onresize =nv.utils.windowResize(me.chart.update);
             nv.utils.windowResize(me.chart.update);
 
             // fire the chartLoaded event
@@ -125,7 +126,7 @@ Ext.define('NVD3.chart.BasicChart', {
                 d3.select(this.svg).datum(data).transition().duration(this.chartAnimDuration).call(this.chart);
             } else {
                 if(this.chart === null) {Ext.log({msg: 'this.chart === null', level: 'error'});}
-                if(this.svg   === null) {Ext.log({msg: 'this.svg === null', level: 'error'});}                
+                if(this.svg   === null) {Ext.log({msg: 'this.svg === null', level: 'error'});}
             }
         }
     },
@@ -171,63 +172,14 @@ Ext.define('NVD3.chart.BasicChart', {
             }
             if (me.chart.dispatch.tooltipHide) {me.chart.dispatch.on('tooltipHide.directive', function (e) {me.fireEvent('tooltipHide', e);});}
             if (me.chart.dispatch.beforeUpdate) {me.chart.dispatch.on('beforeUpdate.directive', function (e) {me.fireEvent('beforeUpdate', e);});}
-            if (me.chart.dispatch.renderEnd) {me.chart.dispatch.on('renderEnd.directive', function (e) {me.fireEvent('renderEnd', e);});}
             if (me.chart.dispatch.stateChange) {me.chart.dispatch.on('stateChange.directive', function (e) {me.fireEvent('stateChange', e);});}
             if (me.chart.dispatch.changeState) {me.chart.dispatch.on('changeState.directive', function (e) {me.fireEvent('changeState', e);});}
-        }
-
-        if (me.chart.lines) {
-            me.chart.lines.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.lines.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-            me.chart.lines.dispatch.on('elementClick.directive', function (e) {me.fireEvent('elementClick', e);});
-        }
-
-        if (me.chart.bars) {
-            me.chart.bars.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.bars.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-            me.chart.bars.dispatch.on('elementClick.directive', function (e) {me.fireEvent('elementClick', e);});
-        }
-
-        if (me.chart.stacked && me.chart.stacked.dispatch) {
-            me.chart.stacked.dispatch.on('areaClick.toggle.directive', function (e) {me.fireEvent('areaClick', e);});
-            // me.chart.stacked.dispatch.on('tooltipShow.directive', function (e) {me.fireEvent('tooltipShow', e);});
-            // me.chart.stacked.dispatch.on('tooltipHide.directive', function (e) {me.fireEvent('tooltipHide', e);});
+            if (me.chart.dispatch.renderEnd) {me.chart.dispatch.on('renderEnd.directive', function (e) {me.fireEvent('renderEnd', e);});}
         }
 
         if (me.chart.interactiveLayer) {
             if (me.chart.interactiveLayer.elementMouseout) {me.chart.interactiveLayer.dispatch.on('elementMouseout.directive', function (e) {me.fireEvent('elementMouseout', e);});}
             if (me.chart.interactiveLayer.elementMousemove) {me.chart.interactiveLayer.dispatch.on('elementMousemove.directive', function (e) {me.fireEvent('elementMousemove', e);});}
-        }
-
-        if (me.chart.discretebar) {
-            me.chart.discretebar.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.discretebar.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-            me.chart.discretebar.dispatch.on('elementClick.directive', function (e) {me.fireEvent('elementClick', e);});
-            me.chart.discretebar.dispatch.on('elementDblClick.directive', function (e) {me.fireEvent('elementDblClick', e);});
-        }
-
-        if (me.chart.pie) {
-            me.chart.pie.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.pie.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-            me.chart.pie.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
-        }
-
-        if (me.chart.scatter) {
-            me.chart.scatter.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.scatter.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-        }
-
-        if (me.chart.bullet) {
-            me.chart.bullet.dispatch.on('elementMousemove.tooltip.directive', function (e) {me.fireEvent('elementMousemove', e);});
-            me.chart.bullet.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.bullet.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-        }
-
-        if (me.chart.legend) {
-            me.chart.legend.dispatch.on('stateChange.legend.directive', function (e) {me.fireEvent('stateChange', e);});
-            me.chart.legend.dispatch.on('legendClick.directive', function (d, i) {me.fireEvent('legendClick', d, i);});
-            me.chart.legend.dispatch.on('legendDblclick.directive', function (d, i) {me.fireEvent('legendDblclick', d, i);});
-            me.chart.legend.dispatch.on('legendMouseover.directive', function (d, i) {me.fireEvent('legendMouseover', d, i);});
         }
 
         if (me.chart.controls) {
@@ -236,22 +188,178 @@ Ext.define('NVD3.chart.BasicChart', {
             }
         }
 
-        if (me.chart.sunburst) {
-            me.chart.sunburst.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.sunburst.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-            me.chart.sunburst.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
+        if (me.chart.legend) {
+            me.chart.legend.dispatch.on('legendClick.directive', function (d, i) {me.fireEvent('legendClick', d, i);});
+            me.chart.legend.dispatch.on('legendDblclick.directive', function (d, i) {me.fireEvent('legendDblclick', d, i);});
+            me.chart.legend.dispatch.on('legendMouseover.directive', function (d, i) {me.fireEvent('legendMouseover', d, i);});
         }
 
-        if (me.chart.candlestickbar) {
-            me.chart.candlestickbar.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.candlestickbar.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-            me.chart.candlestickbar.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
-        }
+        /* some performance optimization */
+        switch(me.xtype) {
 
-        if (me.chart.sparklineplus) {
-            me.chart.sparklineplus.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-            me.chart.sparklineplus.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-            me.chart.sparklineplus.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#lineChart */
+            case 'LineChart':
+                if (me.chart.lines) {
+                    me.chart.lines.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.lines.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.lines.dispatch.on('elementClick.directive', function (e) {me.fireEvent('elementClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#barChart */
+            case 'DiscreteBarChart':
+                if (me.chart.bars) {
+                    me.chart.bars.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.bars.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.bars.dispatch.on('elementClick.directive', function (e) {me.fireEvent('elementClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#stackedChart */
+            case 'StackedAreaChart':
+                if (me.chart.stacked && me.chart.stacked.dispatch) {
+                    me.chart.stacked.dispatch.on('areaClick.toggle.directive', function (e) {me.fireEvent('areaClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#discreteBarChart */
+            case 'StackedAreaChart':
+                if (me.chart.discretebar) {
+                    me.chart.discretebar.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.discretebar.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.discretebar.dispatch.on('elementClick.directive', function (e) {me.fireEvent('elementClick', e);});
+                    me.chart.discretebar.dispatch.on('elementDblClick.directive', function (e) {me.fireEvent('elementDblClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#pieChart */
+            case 'PieChart':
+                if (me.chart.pie) {
+                    me.chart.pie.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.pie.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.pie.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#scatterChart */
+            case 'ScatterChart':
+                if (me.chart.scatter) {
+                    me.chart.scatter.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.scatter.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#bulletChart */
+            case 'BulletChart':
+                if (me.chart.bullet) {
+                    me.chart.bullet.dispatch.on('elementMousemove.tooltip.directive', function (e) {me.fireEvent('elementMousemove', e);});
+                    me.chart.bullet.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.bullet.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#sunburstChart */
+            case 'SunburstChart':
+                if (me.chart.sunburst) {
+                    me.chart.sunburst.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.sunburst.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.sunburst.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#candlestickBarChart */
+            case 'SunburstChart':
+                if (me.chart.sunburst) {
+                    me.chart.sunburst.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.sunburst.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.sunburst.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#candlestickBarChart */
+            case 'CandlestickBarChart':
+                if (me.chart.candlestickbar) {
+                    me.chart.candlestickbar.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.candlestickbar.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.candlestickbar.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#sparklinePlusChart */
+            case 'SparklinePlus':
+                if (me.chart.sparklineplus) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#forceDirectedGraph */
+            case 'ForceDirectedGraph':
+                if (me.chart.forcedirectedgraph) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#parallelCoordinates */
+            case 'ParallelCoordinates':
+                if (me.chart.parallelcoordinates) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#multiBarChart */    
+            case 'MultiBarChart':
+                if (me.chart.multibarchart) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#multiBarHorizontalChart */    
+            case 'MultiBarHorizontalChart':
+                if (me.chart.multibarhorizontalchart) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#linePlusBarChart */    
+            case 'LinePlusBarChart':
+                if (me.chart.lineplusbarchart) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#lineWithFocusChart */    
+            case 'LineWithFocusChart':
+                if (me.chart.linewithfocuschart) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#cumulativeLineChart */    
+            case 'CumulativeLineChart':
+                if (me.chart.cumulativelinechart) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#candleStickBarChart */    
+            case 'CandleStickBarChart':
+                if (me.chart.candlestickbarchart) {
+
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#boxPlotChart */    
+            case 'BoxPlotChart':
+                if (me.chart.boxplotchart) {
+
+                }
+                break;
+
+            default:
+                //<debug>
+                    Ext.log({msg: 'an unknown xtype was passed: '+me.xtype, level: 'warn'});
+                //</debug>
+                break;
         }
     }
 });
