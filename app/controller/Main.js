@@ -20,9 +20,11 @@ Ext.define('NVD3Charts.controller.Main', {
         'NVD3Charts.store.LineWithFocusChart',
         'NVD3Charts.store.MultiBarChart',
         'NVD3Charts.store.MultiBarHorizontalChart',
+        'NVD3Charts.store.ParallelCoordinatesChart',
+        'NVD3Charts.store.ForceDirectedGraph',
         'NVD3Charts.store.PieChart',
         'NVD3Charts.store.ScatterChart',
-        'NVD3Charts.store.SparklinePlus',
+        'NVD3Charts.store.Sparkline',
         'NVD3Charts.store.StackedAreaChart',
         'NVD3Charts.store.SunburstChart'
     ],
@@ -43,9 +45,12 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'panelMultiBarHorizontalChart',   selector: 'PanelMultiBarHorizontalChart'},
         {ref: 'panelPieChart',                  selector: 'PanelPieChart'},
         {ref: 'panelScatterChart',              selector: 'PanelScatterChart'},
+        {ref: 'panelSparkline',                 selector: 'PanelSparkline'},
         {ref: 'panelSparklinePlus',             selector: 'PanelSparklinePlus'},
         {ref: 'panelStackedAreaChart',          selector: 'PanelStackedAreaChart'},
         {ref: 'panelSunburstChart',             selector: 'PanelSunburstChart'},
+        {ref: 'panelParallelCoordinatesChart',  selector: 'PanelParallelCoordinatesChart'},
+        {ref: 'panelForceDirectedGraph',        selector: 'PanelForceDirectedGraph'},
 
         /* Charts */
         {ref: 'boxPlotChart',                   selector: 'BoxPlotChart'},
@@ -60,6 +65,7 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'multiBarHorizontalChart',        selector: 'MultiBarHorizontalChart'},
         {ref: 'pieChart',                       selector: 'PieChart'},
         {ref: 'scatterChart',                   selector: 'ScatterChart'},
+        {ref: 'sparkline',                      selector: 'Sparkline'},
         {ref: 'sparklinePlus',                  selector: 'SparklinePlus'},
         {ref: 'stackedAreaChart',               selector: 'StackedAreaChart'},
         {ref: 'sunburstChart',                  selector: 'SunburstChart'}

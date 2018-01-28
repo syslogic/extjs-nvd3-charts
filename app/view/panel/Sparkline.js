@@ -7,14 +7,14 @@
 
 /* global d3 */
 
-Ext.define('NVD3Charts.view.panel.SparklinePlus', {
+Ext.define('NVD3Charts.view.panel.Sparkline', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.SparklinePlus'],
-    name: 'PanelSparklinePlus',
-    alias: ['widget.PanelSparklinePlus'],
+    requires: ['NVD3Charts.viewcontroller.Sparkline'],
+    name: 'PanelSparkline',
+    alias: ['widget.PanelSparkline'],
     layout: 'fit',
     items: [{
-        xtype: 'SparklinePlus',
+        xtype: 'Sparkline',
         store: Ext.create('NVD3Charts.store.Sparkline'),
         chartOptions: {
             color: d3.scale.category10().range(),

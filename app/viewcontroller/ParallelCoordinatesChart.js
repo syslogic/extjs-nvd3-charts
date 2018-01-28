@@ -5,14 +5,14 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.viewcontroller.SparklinePlus', {
+Ext.define('NVD3Charts.viewcontroller.ParallelCoordinatesChart', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
-    alias: ['controller.sparklineplus'],
-    stores: ['Sparkline'],
-    views: ['panel.SparklinePlus'],
+    alias: ['controller.parallelcoordinateschart'],
+    stores: ['ParallelCoordinatesChart'],
+    views: ['panel.ParallelCoordinatesChart'],
     init: function() {
         this.control({
-            "PanelSparklinePlus": {
+            "PanelParallelCoordinates": {
                 elementMouseover: 'onElementMouseover',
                 elementMouseout: 'onElementMouseout',
                 tooltipShow: 'onTooltipShow',

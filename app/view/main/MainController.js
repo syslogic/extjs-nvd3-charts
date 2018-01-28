@@ -27,10 +27,13 @@ Ext.define('NVD3Charts.view.main.MainController', {
         'panel.LinePlusBarChart',
         'panel.CumulativeLineChart',
         'panel.LineWithFocusChart',
-        'panel.SparklineChart',
+        'panel.Sparkline',
+        'panel.SparklinePlus',
         'panel.PieChart',
         'panel.BulletChart',
-        'panel.SunburstChart'
+        'panel.SunburstChart',
+        'panel.ForceDirectedGraph',
+        'panel.ParallelCoordinates'
     ],
 
     /* Event Listeners */

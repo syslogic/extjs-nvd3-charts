@@ -5,23 +5,20 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.store.LineChart', {
+/* TODO: this store would require some data, which renders. */
+Ext.define('NVD3Charts.store.Sparkline', {
     extend: 'Ext.data.Store',
-    storeId: 'LineChart',
-    alias: ['store.LineChart'],
+    storeId: 'Sparkline',
+    alias: ['store.Sparkline'],
     model: 'NVD3Charts.model.None',
     data: (function() {
-        var sin = [], cos = [];
-        for (var i = 0; i < 100; i++) {
+        var sin = [];
+        for (var i = 0; i < 500; i++) {
             sin.push({x: i, y: Math.sin(i/10)});
-            cos.push({x: i, y: .5 * Math.cos(i/10)});
         }
-        return [
-          {key:   'Sine Wave', color: '#ff7f0e', values: sin},
-          {key: 'Cosine Wave', color: '#2ca02c', values: cos}
-        ];
+        return sin;
     })(),
-    autoLoad: false,
+    autoLoad: true,
     pageSize: 100,
     proxy: {
         type: 'memory',

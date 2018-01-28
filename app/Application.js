@@ -14,7 +14,7 @@ Ext.define("NVD3Charts.Application", { /* Ext.application({ */
     name: 'NVD3Charts',
     launch: function() {
         //<debug>
-            Ext.log({msg: 'the Application was launched.', level: 'verbose'});
+            Ext.log({msg: 'the Application was launched.', level: 'info'});
         //</debug>
     	this.viewport = this.getMainView();
 

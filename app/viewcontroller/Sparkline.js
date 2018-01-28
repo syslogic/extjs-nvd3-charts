@@ -5,14 +5,14 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-Ext.define('NVD3Charts.viewcontroller.SparklinePlus', {
+Ext.define('NVD3Charts.viewcontroller.Sparkline', {
     extend: 'NVD3Charts.viewcontroller.BaseChart',
-    alias: ['controller.sparklineplus'],
+    alias: ['controller.sparkline'],
     stores: ['Sparkline'],
-    views: ['panel.SparklinePlus'],
+    views: ['panel.Sparkline'],
     init: function() {
         this.control({
-            "PanelSparklinePlus": {
+            "PanelSparkline": {
                 elementMouseover: 'onElementMouseover',
                 elementMouseout: 'onElementMouseout',
                 tooltipShow: 'onTooltipShow',

@@ -17,15 +17,16 @@ Ext.define('NVD3Charts.controller.Root', {
      'CandlestickBarChart': 'onHashtag',
      'CumulativeLineChart': 'onHashtag',
         'DiscreteBarChart': 'onHashtag',
-      'ForceDirectedGraph': 'onHashtag',
                'LineChart': 'onHashtag',
            'MultiBarChart': 'onHashtag',
  'MultiBarHorizontalChart': 'onHashtag',
-     'ParallelCoordinates': 'onHashtag',
+'ParallelCoordinatesChart': 'onHashtag',
+      'ForceDirectedGraph': 'onHashtag',
         'LinePlusBarChart': 'onHashtag',
       'LineWithFocusChart': 'onHashtag',
                 'PieChart': 'onHashtag',
             'ScatterChart': 'onHashtag',
+               'Sparkline': 'onHashtag',
            'SparklinePlus': 'onHashtag',
         'StackedAreaChart': 'onHashtag',
            'SunburstChart': 'onHashtag'
@@ -74,7 +75,7 @@ Ext.define('NVD3Charts.controller.Root', {
     /** chart loaded */
     onChartLoaded: function(x) {
         //<debug>
-            Ext.log({msg: 'onChartLoaded: ' + x, level: 'verbose'});
+            Ext.log({msg: 'onChartLoaded: ' + x, level: 'debug'});
         //</debug>
     }
 });
