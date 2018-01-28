@@ -1,7 +1,7 @@
 {
     "type": "code",
     "name": "nvd3-chart",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "framework": "ext",
     "namespace": "NVD3",
     "creator": "Martin Zeitler",

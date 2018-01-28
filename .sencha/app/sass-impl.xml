@@ -273,7 +273,9 @@
                                                 </not>
                                                 <then>
                                                     <concat destfile="${build.out.js.path}" append="true">
-                                                        <filelist files="${build.out.css.dir}/css-vars.js"/>
+                                                        <fileset dir="${build.out.css.dir}">
+                                                            <include name="css-vars.js"/>
+                                                        </fileset>
                                                     </concat>
                                                 </then>
                                             </if>
