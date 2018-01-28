@@ -5,12 +5,12 @@
 * [angularjs-nvd3-directives](https://github.com/angularjs-nvd3-directives/angularjs-nvd3-directives)
 
 ## Live Example
-* click [here](http://nvd3.syslogic.io) to see the example ExtJS Application in action.
+* click [here](https://nvd3.syslogic.io) to see the example ExtJS Application in action.
 
 ## Built With
 * [Oracle NetBeans 8.2](http://www.oracle.com/technetwork/developer-tools/netbeans/index.html) (Development Environment)
 * [Sencha ExtJS 5.1.1.451](https://docs.sencha.com/extjs/5.1.1/index.html) (JavaScript Framework)
-* [Sencha Cmd 6.2.2.36](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
+* [Sencha Cmd 6.5.1.240](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
 * [NVD3 1.8.5](https://github.com/novus/nvd3) (reusable D3 charting library)
 
 ## Basic Directory Structure
