@@ -17,13 +17,9 @@ Ext.define('NVD3Charts.view.panel.SparklinePlus', {
         xtype: 'SparklinePlus',
         store: Ext.create('NVD3Charts.store.SparklinePlus'),
         chartOptions: {
-            color: d3.scale.category10().range(),
-            x: function(d, i) { 
-                return d.values[i].x; 
-            },
-            y: function(d, i) { 
-                return d.values[i].y; 
-            }
+            // color: d3.scale.category10().range(),
+            x: function(d, i) { return d.x; },
+            y: function(d, i) {  return d.y; }
         }
     }]
 });

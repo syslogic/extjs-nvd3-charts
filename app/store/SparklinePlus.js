@@ -15,11 +15,8 @@ Ext.define('NVD3Charts.store.SparklinePlus', {
         var sin = [];
         for (var i = 0; i < 200; i++) {
             sin.push({x: i, y: Math.sin(i/10)});
-
         }
-        return [
-            {key: 'Sine',  values: sin, color: '#FF7F0eE'}
-        ];
+        return sin;
     })(),
     autoLoad: true,
     pageSize: 100,
