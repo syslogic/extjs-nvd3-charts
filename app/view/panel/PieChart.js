@@ -17,7 +17,10 @@ Ext.define('NVD3Charts.view.panel.PieChart', {
         chartOptions: {
             x: function(d) { return d.label; },
             y: function(d) { return d.value; },
-            showLabels: true
+            showLabels: true,
+            padAngle: .06,
+            cornerRadius: 4,
+            donut: true
         },
         chartFn: function(chart) {
             
