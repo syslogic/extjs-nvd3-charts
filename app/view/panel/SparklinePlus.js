@@ -7,7 +7,7 @@
 
 /* global d3 */
 
-Ext.define('NVD3Charts.view.panel.SparklineChart', {
+Ext.define('NVD3Charts.view.panel.SparklinePlus', {
     extend: 'Ext.container.Container',
     requires: ['NVD3Charts.viewcontroller.SparklinePlus'],
     name: 'PanelSparklinePlus',
@@ -18,11 +18,12 @@ Ext.define('NVD3Charts.view.panel.SparklineChart', {
         store: Ext.create('NVD3Charts.store.SparklinePlus'),
         chartOptions: {
             color: d3.scale.category10().range(),
-            x: function(d) {return d[0];},
-            y: function(d) {return d[1];}
-        },
-        chartFn: function(chart) {
-            chart.xTickFormat(function(d) {return d3.time.format('%b %Y')(new Date( d * 86400000 ));})
+            x: function(d, i) { 
+                return d.values[i].x; 
+            },
+            y: function(d, i) { 
+                return d.values[i].y; 
+            }
         }
     }]
 });
