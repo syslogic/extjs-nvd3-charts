@@ -20,6 +20,9 @@ Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
             color: d3.scale.category20(),
             x: function(d) {return d[0];},
             y: function(d) {return d[1];}
+        },
+        chartFn: function(chart) {
+
         }
     }]
 });

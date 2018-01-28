@@ -5,7 +5,7 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-/* global d3 */
+/* global NVD3Charts, d3 */
 
 Ext.define('NVD3Charts.view.panel.LinePlusBarChart', {
     extend: 'Ext.container.Container',

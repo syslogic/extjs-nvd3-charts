@@ -20,6 +20,9 @@ Ext.define('NVD3Charts.view.panel.SparklinePlus', {
             color: d3.scale.category10().range(),
             x: function(d, i) { return d.x; },
             y: function(d, i) {  return d.y; }
+        },
+        chartFn: function(chart) {
+
         }
     }]
 });

@@ -14,8 +14,11 @@ Ext.define('NVD3Charts.view.panel.SunburstChart', {
     items: [{
         xtype: 'SunburstChart',
         store: Ext.create('NVD3Charts.store.SunburstChart'),
+        chartOptions: {
+
+        },
         chartFn: function(chart) {
-            
+
         }
     }]
 });

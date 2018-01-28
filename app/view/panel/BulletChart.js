@@ -15,8 +15,11 @@ Ext.define('NVD3Charts.view.panel.BulletChart', {
     items: [{
         xtype: 'BulletChart',
         store: Ext.create('NVD3Charts.store.BulletChart'),
+        chartOptions: {
+
+        },
         chartFn: function(chart) {
-            
+
         }
     }]
 });

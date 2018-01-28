@@ -15,8 +15,11 @@ Ext.define('NVD3Charts.view.panel.BoxPlotChart', {
     items: [{
         xtype: 'BoxPlotChart',
         store: Ext.create('NVD3Charts.store.BoxPlotChart'),
+        chartOptions: {
+
+        },
         chartFn: function(chart) {
-            
+
         }
     }]
 });
