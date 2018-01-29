@@ -25,7 +25,11 @@ Ext.define('NVD3Charts.view.panel.ParallelCoordinatesChart', {
                 {key: "power (hp)",        format: d3.format("d")},
                 {key: "weight (lb)",       format: d3.format("")},
                 {key: "0-60 mph (s)",      format: d3.format(".1f")},
-                {key: "year",              format: d3.format("d")}
+                {key: "year",              format: function(input) {
+                    var date = d3.time.format("%y").parse(input.toString());
+                    var format = d3.time.format("%Y");
+                    return format(date);
+                }}
             ]
         },
         chartFn: function(chart) {

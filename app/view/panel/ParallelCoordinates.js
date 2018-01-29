@@ -14,15 +14,23 @@ Ext.define('NVD3Charts.view.panel.ParallelCoordinates', {
     alias: ['widget.PanelParallelCoordinates'],
     layout: 'fit',
     items: [{
-        xtype: 'ForceDirectedGraph',
+        xtype: 'ParallelCoordinates',
         store: Ext.create('NVD3Charts.store.ParallelCoordinates'),
         chartOptions: {
-            color: d3.scale.category20(),
-            x: function(d) {return d[0];},
-            y: function(d) {return d[1];},            
-            dimensionNames: ["economy (mpg)", "cylinders", "displacement (cc)", "power (hp)", "weight (lb)", "0-60 mph (s)", "year"],
-            dimensionFormats: [d3.format("0.5f"), d3.format("e"), d3.format("g"), d3.format("d"), d3.format(""), d3.format("%"), d3.format("p")],
-            lineTension: 0.85
+            lineTension: 0.85,
+            dimensionData: [
+                {key: "economy (mpg)",     format: d3.format(".1f")},
+                {key: "cylinders",         format: d3.format("1.0f")},
+                {key: "displacement (cc)", format: d3.format("g")},
+                {key: "power (hp)",        format: d3.format("d")},
+                {key: "weight (lb)",       format: d3.format("")},
+                {key: "0-60 mph (s)",      format: d3.format(".1f")},
+                {key: "year",              format: function(input) {
+                    var date = d3.time.format("%y").parse(input.toString());
+                    var format = d3.time.format("%Y");
+                    return format(date);
+                }}
+            ]
         }
     }],
     getGraph: function() {
