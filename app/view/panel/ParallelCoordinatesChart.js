@@ -16,16 +16,16 @@ Ext.define('NVD3Charts.view.panel.ParallelCoordinatesChart', {
     items: [{
         xtype: 'ParallelCoordinatesChart',
         store: Ext.create('NVD3Charts.store.ParallelCoordinatesChart'),
-        chartOptions: {        
+        chartOptions: {
             lineTension: 0.85,
             dimensionData: [
-                {key: "economy (mpg)", format: d3.format("0.5f"), tooltip: "Parameter 1"},
-                {key: "cylinders", format: d3.format("1.0f"), tooltip: "Parameter 2"},
-                {key: "displacement (cc)", format: d3.format("g"), tooltip: "Parameter 3"},
-                {key: "power (hp)", format: d3.format("d"), tooltip: "Parameter 4"},
-                {key: "weight (lb)", format: d3.format(""), tooltip: "Parameter 5"},
-                {key: "0-60 mph (s)", format: d3.format("%"), tooltip: "Parameter 6"},
-                {key: "year", format: d3.format("p"), tooltip: "Parameter 7"}
+                {key: "economy (mpg)",     format: d3.format(".1f")},
+                {key: "cylinders",         format: d3.format("1.0f")},
+                {key: "displacement (cc)", format: d3.format("g")},
+                {key: "power (hp)",        format: d3.format("d")},
+                {key: "weight (lb)",       format: d3.format("")},
+                {key: "0-60 mph (s)",      format: d3.format(".1f")},
+                {key: "year",              format: d3.format("d")}
             ]
         },
         chartFn: function(chart) {

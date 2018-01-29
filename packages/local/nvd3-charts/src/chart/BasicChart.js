@@ -30,7 +30,7 @@ Ext.define('NVD3.chart.BasicChart', {
 
         /** the default store */
         store: false,
-        
+
         /* for delaying the resize */
         resizeId: null
     },
@@ -90,21 +90,22 @@ Ext.define('NVD3.chart.BasicChart', {
         if(this.svg !== null || this.chart !== null) {
 
             // call the D3 library
-            d3  .select(this.svg)
-                .datum(this.getChartData())
-                .transition().duration(this.chartAnimDuration)
-                .call(this.chart);
-
-            // fire the chartLoaded event
-            me.fireEvent('chartLoaded', me.chart);
+            d3.select(this.svg)
+            .datum(this.getChartData())
+            .transition().duration(this.chartAnimDuration)
+            .call(this.chart);
 
             //<debug>
                 Ext.log({msg: 'xtype "' + chartType + '" has been attached as #' + dom.id + '.', level: 'debug'});
             //</debug>
+
+            // fire the chartLoaded event
+            me.fireEvent('chartLoaded', me.chart);
+
             return this.chart;
         }
     },
-    
+
     /** onStoreLoaded() */
     onStoreLoaded: function(store, records, success, operation) {
 
@@ -116,12 +117,12 @@ Ext.define('NVD3.chart.BasicChart', {
             Ext.log({msg: 'onStoreLoaded() has no data.', level: 'warn'});
             return false;
         } else {
-            
+
             // the graph requires two root nodes ...
             if(store.getStoreId() === "ForceDirectedGraph"){
                 data = {'nodes':data[0].nodes, 'links':data[1].links};
              }
-            
+
             // apply the data
             this.setChartData(data);
 
@@ -143,7 +144,7 @@ Ext.define('NVD3.chart.BasicChart', {
 
         this.callParent(arguments);
         var me = this;
-        
+
         // when the NVD3 library is loaded:
         if(typeof(nv) !== 'undefined') {
 
@@ -160,34 +161,7 @@ Ext.define('NVD3.chart.BasicChart', {
                 this.store.addListener('load', this.onStoreLoaded, this);
 
                 // instance chart and bind further methods.
-                nv.addGraph(Ext.bind(this.generateComponent, this), function(graph) {
-                    /*
-                    nv.utils.windowResize(function() {
-
-                        //<debug>
-                            var el = me.ownerCt.ownerCt.ownerCt.layout.activeItem.items.items[0];
-                            var width = el.getWidth(), height = el.getHeight();
-                            Ext.log({msg: "before: "+width+" x "+height, level: 'debug'});
-                        //</debug>
-
-                        if(typeof(me.chart.width) === 'function' && typeof(me.chart.height) === 'function') {
-                            me.chart.width(width).height(height);
-                        }
-                        
-                        d3.select(me.svg)
-                            .attr('width', width)
-                            .attr('height', height)
-                            .transition()
-                            .duration(me.resizeAnimDuration)
-                            .call(me.chart);
-
-                        //<debug>
-                            Ext.log({msg: "after: "+width+" x "+height, level: 'debug'});
-                        //</debug>
-
-                    });
-                    */
-                });
+                nv.addGraph(Ext.bind(this.generateComponent, this));
             }
         } else {
             Ext.log({msg: 'the NVD3.js library is not loaded.', level: 'error'});
@@ -200,10 +174,7 @@ Ext.define('NVD3.chart.BasicChart', {
         var me = this;
 
         if (me.chart.dispatch) {
-            if (me.chart.dispatch.tooltipShow) {
-                me.chart.dispatch.on('tooltipShow.directive', function (e) {me.fireEvent('tooltipShow', e);});
-                me.chart.dispatch.on('tooltipShow.directive', Ext.Function.bind(me.fireEvent('tooltipShow', this)));
-            }
+            if (me.chart.dispatch.tooltipShow) {me.chart.dispatch.on('tooltipShow.directive', function (e) {me.fireEvent('tooltipShow', e);});}
             if (me.chart.dispatch.tooltipHide) {me.chart.dispatch.on('tooltipHide.directive', function (e) {me.fireEvent('tooltipHide', e);});}
             if (me.chart.dispatch.beforeUpdate) {me.chart.dispatch.on('beforeUpdate.directive', function (e) {me.fireEvent('beforeUpdate', e);});}
             if (me.chart.dispatch.stateChange) {me.chart.dispatch.on('stateChange.directive', function (e) {me.fireEvent('stateChange', e);});}
@@ -302,16 +273,7 @@ Ext.define('NVD3.chart.BasicChart', {
                 break;
 
             /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#candlestickBarChart */
-            case 'SunburstChart':
-                if (me.chart.sunburst) {
-                    me.chart.sunburst.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
-                    me.chart.sunburst.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
-                    me.chart.sunburst.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
-                }
-                break;
-
-            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#candlestickBarChart */
-            case 'CandlestickBarChart':
+            case 'CandleStickBarChart':
                 if (me.chart.candlestickbar) {
                     me.chart.candlestickbar.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
                     me.chart.candlestickbar.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
@@ -341,9 +303,12 @@ Ext.define('NVD3.chart.BasicChart', {
                 break;
 
             /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#parallelCoordinatesChart */
+            /* brushstart brush brushEnd dimensionsOrder stateChange elementClick elementMouseover elementMouseout elementMousemove activeChanged */
             case 'ParallelCoordinatesChart':
                 if (me.chart.parallelcoordinateschart) {
-
+                    me.chart.parallelcoordinateschart.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.parallelcoordinateschart.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.parallelcoordinateschart.dispatch.on('elementClick.directive', function(e) {me.fireEvent('elementClick', e);});
                 }
                 break;
 
@@ -378,13 +343,6 @@ Ext.define('NVD3.chart.BasicChart', {
             /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#cumulativeLineChart */    
             case 'CumulativeLineChart':
                 if (me.chart.cumulativelinechart) {
-
-                }
-                break;
-
-            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#candleStickBarChart */    
-            case 'CandleStickBarChart':
-                if (me.chart.candlestickbarchart) {
 
                 }
                 break;
