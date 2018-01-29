@@ -11,7 +11,7 @@ Ext.define('NVD3Charts.store.CumulativeLineChart', {
     alias: ['store.CumulativeLineChart'],
     model: 'NVD3Charts.model.None',
     data: [{
-        "key": "Series 2",
+        "key": "Series 1",
         "values": [
             [1025409600000, 0],
             [1028088000000, -6.3382185140371],
