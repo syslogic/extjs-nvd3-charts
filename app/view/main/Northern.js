@@ -8,7 +8,7 @@
 Ext.define('NVD3Charts.view.main.Northern', {
     extend: 'Ext.toolbar.Toolbar',
     name: 'ToolbarNorthern',
-    requires: ['Ext.form.Label', 'NVD3Charts.view.main.Bitcoins'],
+    requires: ['Ext.form.Label'],
     alias: ['widget.ToolbarNorthern'],
     collapsible: false,
     split: false,
@@ -17,8 +17,8 @@ Ext.define('NVD3Charts.view.main.Northern', {
     style: {borderBottom: '1px solid #157FCC !important', background: '#F5F5F5', color: '#157FCC'},
     items: [
         {xtype: 'label', text: 'NVD3.js Bindings for Sencha ExtJS', padding: 8}, '->',
-        {xtype: 'label', html: '<a class="btc" href="https://github.com/syslogic/extjs-nvd3-charts" target="_blank"><img src="resources/images/octocat.png"></a>', padding: 8, width: 24},
-        {xtype:  'tool', name: 'ToolBitcoins', cls: 'x-tool-bitcoin', qtip: 'donate some tokens.', type: 'bitcoin', callback:'showWindow', padding: 8, width: 24},
-        {xtype: 'label', html: '<a class="gplus" href="https://plus.google.com/106963082057954766426?rel=author" target="_blank"><img src="resources/images/gplus.png"></a>', padding: 8, width: 24}
+        {xtype: 'label', html: '<a class="github" href="https://github.com/syslogic/extjs-nvd3-charts" target="_blank"><img src="resources/images/octocat.png"></a>', paddingTop: 9, width: 22},
+        {xtype: 'label', html: '<a class="gplus" href="https://plus.google.com/106963082057954766426?rel=author" target="_blank"><img src="resources/images/gplus.png"></a>', paddingTop: 6, width: 20},
+        {xtype: 'label', html: '<a class="paypal" href="https://www.paypal.me/syslogic" target="_blank"><img src="resources/images/paypal.png"></a>', paddingTop: 9, width: 20}
     ]
 });
