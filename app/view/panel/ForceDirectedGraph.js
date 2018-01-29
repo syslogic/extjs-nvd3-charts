@@ -26,15 +26,10 @@ Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
         },
         chartFn: function(chart) {
 
-            /* in order to center the graph upon first load one has to define it's width & height. */
+            /* to center the graph upon first load one has to define it's width & height. */
             var tabPanel= NVD3Charts.getApplication().getMainController().getTabPanel();
             var size = tabPanel.getPanelSize();
             chart.width(size[0]).height(size[1]);
-            d3.select('#svg')
-            .attr('width', size[0])
-            .attr('height', size[1])
-            .transition().duration(0)
-            .call(chart);
         }
     }],
     getGraph: function() {
