@@ -1,6 +1,6 @@
 /**
  * NVD3.js Bindings for Sencha ExtJS
- * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
+ * @copyright Copyright 2017-2018 by Martin Zeitler, Bavaria.
  * @author https://plus.google.com/106963082057954766426
  * @see https://d3js.org & https://nvd3.org
 **/
@@ -25,11 +25,14 @@ Ext.define('NVD3.chart.BasicChart', {
         /** the default chartFn() */
         chartFn: function(chart) {},
 
-        /** the default animation duration */
+        /** the default chart animation duration */
         chartAnimDuration: 400,
 
         /** the default store */
-        store: false
+        store: false,
+        
+        /* for delaying the resize */
+        resizeId: null
     },
 
     /** a list of (currently) valid chartTypes */
@@ -41,8 +44,8 @@ Ext.define('NVD3.chart.BasicChart', {
         'forceDirectedGraph', 'parallelCoordinates', 'parallelCoordinatesChart'
     ],
 
-    /** initChartComponent(), that's the bound method. */
-    initChartComponent: function() {
+    /** generateComponent(), bound method. */
+    generateComponent: function() {
 
         var me = this, dom = null;
 
@@ -69,7 +72,7 @@ Ext.define('NVD3.chart.BasicChart', {
             me.chart.options(options);
         }
 
-        // call the chartFn()
+        // execute the chartFn()
         var chartFn = me.getChartFn();
         if (Ext.isFunction(chartFn)) {chartFn(me.chart);}
 
@@ -87,21 +90,21 @@ Ext.define('NVD3.chart.BasicChart', {
         if(this.svg !== null || this.chart !== null) {
 
             // call the D3 library
-            d3.select(this.svg).datum(this.getChartData()).transition().duration(this.chartAnimDuration).call(this.chart);
-
-            // bind the window resize event
-            nv.utils.windowResize(me.chart.update);
+            d3  .select(this.svg)
+                .datum(this.getChartData())
+                .transition().duration(this.chartAnimDuration)
+                .call(this.chart);
 
             // fire the chartLoaded event
             me.fireEvent('chartLoaded', me.chart);
 
             //<debug>
-                Ext.log({msg: 'the ' + chartType + ' has been attached as #' + dom.id + '.', level: 'debug'});
+                Ext.log({msg: 'xtype "' + chartType + '" has been attached as #' + dom.id + '.', level: 'debug'});
             //</debug>
             return this.chart;
         }
     },
-
+    
     /** onStoreLoaded() */
     onStoreLoaded: function(store, records, success, operation) {
 
@@ -139,7 +142,8 @@ Ext.define('NVD3.chart.BasicChart', {
     initComponent: function() {
 
         this.callParent(arguments);
-
+        var me = this;
+        
         // when the NVD3 library is loaded:
         if(typeof(nv) !== 'undefined') {
 
@@ -152,13 +156,39 @@ Ext.define('NVD3.chart.BasicChart', {
                 });
             } else {
 
-                // bind to the configured store's load event
+                // bind the configured store's load event
                 this.store.addListener('load', this.onStoreLoaded, this);
 
-                // create a NVD3 chart and bind it.
-                nv.addGraph(Ext.bind(this.initChartComponent, this));
-            }
+                // instance chart and bind further methods.
+                nv.addGraph(Ext.bind(this.generateComponent, this), function(graph) {
+                    /*
+                    nv.utils.windowResize(function() {
 
+                        //<debug>
+                            var el = me.ownerCt.ownerCt.ownerCt.layout.activeItem.items.items[0];
+                            var width = el.getWidth(), height = el.getHeight();
+                            Ext.log({msg: "before: "+width+" x "+height, level: 'debug'});
+                        //</debug>
+
+                        if(typeof(me.chart.width) === 'function' && typeof(me.chart.height) === 'function') {
+                            me.chart.width(width).height(height);
+                        }
+                        
+                        d3.select(me.svg)
+                            .attr('width', width)
+                            .attr('height', height)
+                            .transition()
+                            .duration(me.resizeAnimDuration)
+                            .call(me.chart);
+
+                        //<debug>
+                            Ext.log({msg: "after: "+width+" x "+height, level: 'debug'});
+                        //</debug>
+
+                    });
+                    */
+                });
+            }
         } else {
             Ext.log({msg: 'the NVD3.js library is not loaded.', level: 'error'});
         }

@@ -1,7 +1,7 @@
 {
     "type": "code",
     "name": "nvd3-chart",
-    "version": "1.0.1",
+    "version": "1.0.2.0",
     "framework": "ext",
     "namespace": "NVD3",
     "creator": "Martin Zeitler",
@@ -27,6 +27,7 @@
     "js": [
         {"path": "lib/d3/d3.min.js", "bundle": false},
         {"path": "lib/nvd3/nv.d3.min.js", "bundle": false}
+	// {"path": "lib/nvd3/nv.d3.js", "bundle": false}
     ],
     "css": [
         {"path": "lib/nvd3/nv.d3.min.css", "bundle": true}

@@ -1,7 +1,7 @@
 {
     "name": "NVD3Charts",
     "id": "9760645c-5482-48d0-bddd-414657ace490",
-    "version": "1.0.1.0",
+    "version": "1.0.2.0",
     "framework":"ext",
     "locale": "en",
     "indexHtmlPath": "index.html",

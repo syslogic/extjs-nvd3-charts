@@ -1,12 +1,12 @@
 /**
  * NVD3.js Bindings for Sencha ExtJS
- * @copyright Copyright 2017 by Martin Zeitler, All rights reserved.
+ * @copyright Copyright 2017-2018 by Martin Zeitler, Bavaria.
  * @author https://plus.google.com/106963082057954766426
  * @see https://d3js.org & https://nvd3.org
  * @license MIT License
 **/
 
-/* global NVD3Charts */
+/* global NVD3Charts, d3 */
 
 Ext.define('NVD3Charts.view.main.MainTabpanel', {
     extend: 'Ext.tab.Panel',
@@ -17,6 +17,11 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
     title: false,
     bodyPadding: 0,
     viewmodel: {type: 'main'},
+    config: {
+
+        /** the default resize animation duration */
+        resizeAnimDuration: 200
+    },
     bodyStyle:{'border-width': '0px', 'text-align':'center', 'padding': '12px'},
     defaults: {layout: 'fit', cls: 'x-btn-text-icon',  bodyPadding: 0, iconAlign: 'left', textAlign: 'left'},
     items: [
@@ -42,6 +47,22 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
     listeners: {
         tabchange: function(tabPanel, tab){
             NVD3Charts.getApplication().getRootController().redirectTo(tab.name.replace('Tab', ''));
+        },
+        /* scaling the chart on tab-panel resize, top-down. */
+        resize: function(tabPanel, width, height){
+            var tab = tabPanel.activeTab.items.items[0];
+            var offset = tabPanel.getTabBar().getWidth();
+            if(typeof(tab.getGraph) === 'function') {
+                var graph = tab.getGraph();
+                if(graph.getSvg() !== null) {
+                    graph.chart.width(width-offset).height(height);
+                    d3.select(graph.getSvg())
+                    .attr('width', width-offset)
+                    .attr('height', height)
+                    .transition().duration(this.resizeAnimDuration)
+                    .call(graph.chart);
+                }
+            }
         }
     },
     setTextAlign: function(direction) {
