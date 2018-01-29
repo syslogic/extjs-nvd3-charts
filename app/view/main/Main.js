@@ -32,8 +32,5 @@ Ext.define('NVD3Charts.view.main.Main', {
             tabPosition: 'right',
             tabRotation: 0
         }]
-    }],
-    initComponent: function() {
-        this.callParent(arguments);
-    }
+    }]
 });
