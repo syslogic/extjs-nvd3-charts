@@ -8,7 +8,7 @@
 Ext.define('NVD3Charts.controller.Main', {
     extend: 'Ext.app.Controller',
     views: ['main.Main'],
-    
+
     requires: [
         'NVD3Charts.store.BoxPlotChart',
         'NVD3Charts.store.BulletChart',
@@ -32,7 +32,7 @@ Ext.define('NVD3Charts.controller.Main', {
     refs: [
 
         /* Panels */
-        {ref: 'tabPanel',                       selector: 'panel[name=TabpanelMain]'},
+        {ref: 'tabPanel',                       selector: 'panel[name=MainTabpanel]'},
         {ref: 'panelBoxPlotChart',              selector: 'PanelBoxPlotChart'},
         {ref: 'panelBulletChart',               selector: 'PanelBulletChart'},
         {ref: 'panelCandlestickBarChart',       selector: 'PanelCandlestickBarChart'},

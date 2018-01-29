@@ -5,7 +5,7 @@
  * @see https://d3js.org & https://nvd3.org
 **/
 
-/* global d3 */
+/* global d3, NVD3Charts */
 
 Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
     extend: 'Ext.container.Container',
@@ -18,16 +18,23 @@ Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
         store: Ext.create('NVD3Charts.store.ForceDirectedGraph'),
         chartOptions: {
             color: d3.scale.category20(),
-            x: function(d) {return d[0];},
-            y: function(d) {return d[1];},
             nodeExtras: (function(node) {
-                  node.append("text")
+                node.append("text")
                     .attr("dx", 12).attr("dy", ".4em")
                     .text(function(d) { return d.name; });
             })
         },
         chartFn: function(chart) {
 
+            /* in order to center the graph upon first load one has to define it's width & height. */
+            var tabPanel= NVD3Charts.getApplication().getMainController().getTabPanel();
+            var size = tabPanel.getPanelSize();
+            chart.width(size[0]).height(size[1]);
+            d3.select('#svg')
+            .attr('width', size[0])
+            .attr('height', size[1])
+            .transition().duration(0)
+            .call(chart);
         }
     }],
     getGraph: function() {

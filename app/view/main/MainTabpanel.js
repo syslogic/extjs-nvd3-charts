@@ -65,10 +65,15 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
             }
         }
     },
+
+    getPanelSize: function(){
+        var offset = this.getTabBar().getWidth();
+        var width = this.getWidth();
+        var height = this.getHeight();
+        return [width-offset, height];
+    },
+
     setTextAlign: function(direction) {
 
-    },
-    initComponent: function(){
-        this.callParent(arguments);
     }
 });
