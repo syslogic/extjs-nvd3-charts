@@ -18,12 +18,13 @@ Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
         store: Ext.create('NVD3Charts.store.ForceDirectedGraph'),
         chartOptions: {
             color: d3.scale.category20(),
-            x: function(d) {
-                return d[0];
-            },
-            y: function(d) {
-                return d[1];
-            }
+            x: function(d) {return d[0];},
+            y: function(d) {return d[1];},
+            nodeExtras: (function(node) {
+                  node.append("text")
+                    .attr("dx", 12).attr("dy", ".4em")
+                    .text(function(d) { return d.name; });
+            })
         },
         chartFn: function(chart) {
 
