@@ -105,13 +105,13 @@ describe('NVD3Charts', function() {
         });
     });
 
-    describe('D3', function() {
+    describe('D3.js', function() {
         it('is loaded', function() {
             expect(window.d3).toBeDefined();
         });
     });
 
-    describe('NVD3', function() {
+    describe('NVD3.js', function() {
         it('is loaded', function() {
             expect(window.nv).toBeDefined();
         });

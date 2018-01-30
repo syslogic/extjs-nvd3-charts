@@ -44,6 +44,8 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'panelMultiBarChart',             selector: 'PanelMultiBarChart'},
         {ref: 'panelMultiBarHorizontalChart',   selector: 'PanelMultiBarHorizontalChart'},
         {ref: 'panelPieChart',                  selector: 'PanelPieChart'},
+        {ref: 'panelPieChartRegular',           selector: 'PanelPieChartRegular'},
+        {ref: 'panelPieChartDonut',             selector: 'PanelPieChartDonut'},
         {ref: 'panelScatterChart',              selector: 'PanelScatterChart'},
         {ref: 'panelSparkline',                 selector: 'PanelSparkline'},
         {ref: 'panelSparklinePlus',             selector: 'PanelSparklinePlus'},
@@ -63,12 +65,13 @@ Ext.define('NVD3Charts.controller.Main', {
         {ref: 'lineWithFocusChart',             selector: 'LineWithFocusChart'},
         {ref: 'multiBarChart',                  selector: 'MultiBarChart'},
         {ref: 'multiBarHorizontalChart',        selector: 'MultiBarHorizontalChart'},
-        {ref: 'pieChartRegular',                selector: 'PieChartRegular'},
-        {ref: 'pieChartDonut',                  selector: 'PieChartDonut'},
+        {ref: 'pieChart',                       selector: 'PieChart'},
         {ref: 'scatterChart',                   selector: 'ScatterChart'},
         {ref: 'sparkline',                      selector: 'Sparkline'},
         {ref: 'sparklinePlus',                  selector: 'SparklinePlus'},
         {ref: 'stackedAreaChart',               selector: 'StackedAreaChart'},
-        {ref: 'sunburstChart',                  selector: 'SunburstChart'}
+        {ref: 'sunburstChart',                  selector: 'SunburstChart'},
+        {ref: 'parallelCoordinatesChart',       selector: 'ParallelCoordinatesChart'},
+        {ref: 'forceDirectedGraph',             selector: 'ForceDirectedGraph'},
     ]
 });
