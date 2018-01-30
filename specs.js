@@ -44,14 +44,14 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 30000;
 
 describe('NVD3Charts', function() {
 
-    var app = null, controller = null, model = null, store = null, view = null;
+    var app = null, controller = null, model = null, store = null, view = null, tabpanel = null, toolbar = null;
 
     beforeEach(function(done) {
         expect(Ext).toBeDefined();
         setTimeout(function() {
             // value = 0;
             done();
-        }, 1000);
+        }, 600);
     });
 
     afterEach(function() {
@@ -281,7 +281,11 @@ describe('NVD3Charts', function() {
 
     describe('Views', function() {
 
-        beforeEach(function() {view = null;});
+        beforeEach(function() {
+            view = null;
+            toolbar = null;
+            tabpanel = null;
+        });
         afterEach(function() {});
 
         describe('main.Main', function () {
@@ -290,5 +294,202 @@ describe('NVD3Charts', function() {
                 expect(view).not.toBeNull();
             });
         });
-    });	
+        describe('main.Northern', function () {
+            it('instanced', function() {
+                toolbar = NVD3Charts.app.getMainView().items.items[0];
+                expect(toolbar).not.toBeNull();
+            });
+        });
+
+        describe('main.MainTabpanel', function () {
+
+            // execute timeoutPromise and wait for it to resolve ...
+            beforeEach(function() {
+
+            });
+            afterEach(function() {});
+
+            var timeoutPromise = new Promise(function(resolve, reject){
+                setTimeout(resolve, 4000);
+            });
+
+            var OnTabChange = function(name, callback) {
+
+                var controller = NVD3Charts.app.getRootController();
+                var tabpanel = Ext.ComponentQuery.query('panel[name=MainTabpanel]')[0];
+                var panel = Ext.ComponentQuery.query('[name=Panel'+name+']')[0];
+
+                controller.redirectTo('#'+name);
+                //controller.fireEvent('onhashtag');
+                expect(panel).not.toBeNull();
+
+                if(panel.items.items.length > 1) {
+                    for(i=0; i < panel.items.items.length; i++) {
+                        if(typeof(panel.getGraph) === 'function'){
+                            var graph = panel.getGraph(i);
+                            Ext.log({msg: 'graph '+graph.id, level: 'info'});
+                            expect(graph.svg).not.toBeNull();
+                        }
+                    }
+                } else  {
+                     if(typeof(panel.getGraph) === 'function'){
+                        var graph = panel.getGraph();
+                        Ext.log({msg: 'graph '+graph.id, level: 'info'});
+                        expect(graph.svg).not.toBeNull();
+                    }
+                }
+                callback();
+            };
+
+            it('instanced', function() {
+                var panel = Ext.ComponentQuery.query('panel[name=MainTabpanel]')[0];
+                expect(panel).not.toBeNull();
+            });
+
+            describe('panel.LineChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('LineChart', done);
+                    });
+                });
+            });
+
+            describe('panel.LineWithFocusChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('LineWithFocusChart', done);
+                    });
+                });
+            });
+
+            describe('panel.LinePlusBarChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('LinePlusBarChart', done);
+                    });
+                });
+            });
+
+            describe('panel.Sparkline', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('Sparkline', done);
+                    });
+                });
+            });
+
+            describe('panel.SparklinePlus', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('SparklinePlus', done);
+                    });
+                });
+            });
+
+            describe('panel.ScatterChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('ScatterChart', done);
+                    });
+                });
+            });
+
+            describe('panel.StackedAreaChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('StackedAreaChart', done);
+                    });
+                });
+            });
+
+            describe('panel.DiscreteBarChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('DiscreteBarChart', done);
+                    });
+                });
+            });
+
+            describe('panel.MultiBarChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('MultiBarChart', done);
+                    });
+                });
+            });
+
+            describe('panel.MultiBarHorizontalChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('MultiBarHorizontalChart', done);
+                    });
+                });
+            });
+
+            describe('panel.CumulativeLineChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('CumulativeLineChart', done);
+                    });
+                });
+            });
+
+            describe('panel.BoxPlotChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('BoxPlotChart', done);
+                    });
+                });
+            });
+
+            describe('panel.PieChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('PieChart', done);
+                    });
+                });
+            });
+
+            describe('panel.BulletChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('BulletChart', done);
+                    });
+                });
+            });
+
+            describe('panel.SunburstChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('SunburstChart', done);
+                    });
+                });
+            });
+
+            describe('panel.CandlestickBarChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('CandlestickBarChart', done);
+                    });
+                });
+            });
+
+            describe('panel.ParallelCoordinatesChart', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('ParallelCoordinatesChart', done);
+                    });
+                });
+            });
+
+            describe('panel.ForceDirectedGraph', function () {
+                it('instanced', function(done) {
+                    timeoutPromise.then(function() {
+                        OnTabChange('ForceDirectedGraph', done);
+                    });
+                });
+            });
+
+        });
+    });
 });
