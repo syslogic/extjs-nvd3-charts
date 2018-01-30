@@ -66,7 +66,8 @@ Ext.define('NVD3Charts.controller.Root', {
         controller: {
             '*': {
                 unmatchedroute : 'onUnmatchedRoute',
-                chartLoaded: 'onChartLoaded'
+                chartLoaded: 'onChartLoaded',
+                onhashtag : 'onHashtag'
             }
         }
     },

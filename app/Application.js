@@ -9,7 +9,7 @@ Ext.define("NVD3Charts.Application", { /* Ext.application({ */
     extend: 'Ext.app.Application',
     requires: ['NVD3Charts.overrides.layout.container.Container', 'NVD3.chart.Chart'],
     autoCreateViewport: 'NVD3Charts.view.main.Main',
-    defaultToken: '#DiscreteBarChart',
+    defaultToken: '#LineChart',
     controllers: ['Root', 'Main'],
     name: 'NVD3Charts',
     launch: function() {

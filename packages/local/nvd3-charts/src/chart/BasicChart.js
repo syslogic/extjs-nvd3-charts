@@ -133,7 +133,7 @@ Ext.define('NVD3.chart.BasicChart', {
             if(this.svg !== null && this.chart !== null) {
                 d3.select(this.svg).datum(data).transition().duration(this.chartAnimDuration).call(this.chart);
             } else {
-                if(this.chart === null) {Ext.log({msg: 'this.chart === null', level: 'warn'});}
+                if(this.chart === null) {Ext.log({msg: 'this.chart === null', level: 'debug'});}
                 if(this.svg   === null) {Ext.log({msg: 'this.svg === null', level: 'error'});}
             }
         }
