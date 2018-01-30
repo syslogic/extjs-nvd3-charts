@@ -16,9 +16,6 @@ Ext.define("NVD3Charts.Application", { /* Ext.application({ */
         //<debug>
             Ext.log({msg: 'the Application was launched.', level: 'info'});
         //</debug>
-    	this.viewport = this.getMainView();
-
-        /* define an array, in order to manage overlay windows. */
-        if(typeof(this.windows) !== 'object') {this.windows=[];}
+        this.viewport = this.getMainView();
     }
 });
