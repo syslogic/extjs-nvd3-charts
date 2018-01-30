@@ -7,26 +7,27 @@
 
 Ext.define('NVD3Charts.view.panel.PieChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.PieChart'],
+    requires: [
+        'NVD3Charts.viewcontroller.PieChart',
+        'NVD3Charts.view.panel.PieChartRegular',
+        'NVD3Charts.view.panel.PieChartDonut'
+    ],
     name: 'PanelPieChart',
     alias: ['widget.PanelPieChart'],
-    layout: 'fit',
+    layout: 'border',
     items: [{
-        xtype: 'PieChart',
-        store: Ext.create('NVD3Charts.store.PieChart'),
-        chartOptions: {
-            x: function(d) { return d.label; },
-            y: function(d) { return d.value; },
-            showLabels: true,
-            padAngle: .06,
-            cornerRadius: 4,
-            donut: true
-        },
-        chartFn: function(chart) {
-            
-        }
+        xtype: 'PanelPieChartRegular',
+        region: 'west',
+        flex: 1
+    }, {
+        xtype: 'PanelPieChartDonut',
+        region: 'center',
+        flex: 1
     }],
-    getGraph: function() {
-        return this.items.items[0];
+    getGraphCount: function() {
+        return this.items.items.length;
+    },
+    getGraph: function(index) {
+        return this.items.items[index].getGraph();
     }
 });

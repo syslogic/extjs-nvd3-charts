@@ -17,11 +17,8 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
     title: false,
     bodyPadding: 0,
     viewmodel: {type: 'main'},
-    config: {
-
-        /** the default resize animation duration */
-        resizeAnimDuration: 200
-    },
+    /** the default resize animation duration */
+    config: {resizeAnimDuration: 200},
     bodyStyle:{'border-width': '0px', 'text-align':'center', 'padding': '12px'},
     defaults: {layout: 'fit', cls: 'x-btn-text-icon',  bodyPadding: 0, iconAlign: 'left', textAlign: 'left'},
     items: [
@@ -41,9 +38,10 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
         {tabIndex: 14, name: 'TabBulletChart',              title: 'Bullet',          items: [{xtype: 'PanelBulletChart'}]},
         {tabIndex: 15, name: 'TabSunburstChart',            title: 'Sunburst',        items: [{xtype: 'PanelSunburstChart'}]},
         {tabIndex: 16, name: 'TabCandlestickBarChart',      title: 'CandlestickBar',  items: [{xtype: 'PanelCandlestickBarChart'}]},
-        {tabIndex: 17, name: 'TabParallelCoordinatesChart', title: 'Parallel',        items: [{xtype: 'PanelParallelCoordinatesChart'}]},        
+        {tabIndex: 17, name: 'TabParallelCoordinatesChart', title: 'Parallel',        items: [{xtype: 'PanelParallelCoordinatesChart'}]},
         {tabIndex: 18, name: 'TabForceDirectedGraph',       title: 'Force Directed',  items: [{xtype: 'PanelForceDirectedGraph'}]}
     ],
+
     listeners: {
         tabchange: function(tabPanel, tab){
             NVD3Charts.getApplication().getRootController().redirectTo(tab.name.replace('Tab', ''));
@@ -52,18 +50,30 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
         resize: function(tabPanel, width, height){
             var tab = tabPanel.activeTab.items.items[0];
             var offset = tabPanel.getTabBar().getWidth();
-            if(typeof(tab.getGraph) === 'function') {
-                var graph = tab.getGraph();
-                if(graph.getSvg() !== null) {
-                    graph.chart.width(width-offset).height(height);
-                    d3.select(graph.getSvg())
-                    .attr('width', width-offset)
-                    .attr('height', height)
-                    .transition().duration(this.resizeAnimDuration)
-                    .call(graph.chart);
+            if(typeof(tab.getGraphCount) === 'function' && tab.getGraphCount() > 1) {
+                for(i=0; i < tab.getGraphCount(); i++) {
+                    /* it currently only considers two horizontal items */
+                    this.updateGraph(tab.getGraph(i), width/2, offset, height);
                 }
+            } else if(typeof(tab.getGraph) === 'function') {
+                this.updateGraph(tab.getGraph(), width, offset, height);
             }
         }
+    },
+
+    updateGraph: function(graph, width, offset, height) {
+        if(graph.getSvg() !== null) {
+            graph.chart.width(width-offset).height(height);
+            d3.select(graph.getSvg())
+            .attr('width', width-offset)
+            .attr('height', height)
+            .transition().duration(this.resizeAnimDuration)
+            .call(graph.chart);
+        }
+    },
+
+    setTextAlign: function(direction) {
+
     },
 
     getPanelSize: function(){
@@ -71,9 +81,5 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
         var width = this.getWidth();
         var height = this.getHeight();
         return [width-offset, height];
-    },
-
-    setTextAlign: function(direction) {
-
     }
 });

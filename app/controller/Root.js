@@ -45,8 +45,14 @@ Ext.define('NVD3Charts.controller.Root', {
             Ext.each(tabs, function(tab, i) {
                 if(tab.name === 'Tab' + hash) {
                     tabPanel.setActiveItem(i);
-                    var chart = tab.items.items[0].items.items[0];
-                    chart.store.load();
+                    var panel = tab.items.items[0];
+                    if(panel.items.items.length > 1) {
+                        for(i=0; i < panel.items.items.length; i++) {
+                            panel.items.items[i].items.items[0].store.load();
+                        }
+                    } else  {
+                        panel.items.items[0].store.load();
+                    }
                     //<debug>
                     	Ext.log({msg: 'onHashtag("' + hash + '") -> switching to index ' + i + '.', level: 'debug'});
                     //</debug>
