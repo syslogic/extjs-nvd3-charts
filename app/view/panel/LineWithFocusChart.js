@@ -17,7 +17,7 @@ Ext.define('NVD3Charts.view.panel.LineWithFocusChart', {
         xtype: 'LineWithFocusChart',
         store: Ext.create('NVD3Charts.store.LineWithFocusChart'),
         chartOptions: {
-
+            useInteractiveGuideline: true
         },
         chartFn: function(chart) {
             chart.xAxis.tickFormat(d3.format(',f'));
