@@ -17,9 +17,9 @@ Ext.define('NVD3Charts.view.panel.LineChart', {
         xtype: 'LineChart',
         store: Ext.create('NVD3Charts.store.LineChart'),
         chartOptions: {
-            x: function(d, i) { return i; },
             showXAxis: true,
             showYAxis: true,
+            useInteractiveGuideline: true,
             transitionDuration: 250
         },
         chartFn: function(chart) {
