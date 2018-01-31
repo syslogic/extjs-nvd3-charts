@@ -8,8 +8,6 @@
 Ext.define('NVD3Charts.controller.Root', {
     extend: 'Ext.app.Controller',
     requires: [],
-
-    /** Routes */
     routes: {
                         '': 'onHashtag',
             'BoxPlotChart': 'onHashtag',
@@ -21,6 +19,7 @@ Ext.define('NVD3Charts.controller.Root', {
            'MultiBarChart': 'onHashtag',
  'MultiBarHorizontalChart': 'onHashtag',
 'ParallelCoordinatesChart': 'onHashtag',
+      'HistoricalBarChart': 'onHashtag',
       'ForceDirectedGraph': 'onHashtag',
         'LinePlusBarChart': 'onHashtag',
       'LineWithFocusChart': 'onHashtag',
@@ -36,11 +35,9 @@ Ext.define('NVD3Charts.controller.Root', {
     onHashtag: function() {
         var hash = window.location.hash.replace('#', '');
         if(typeof(this.application.viewport.items.items) !== 'undefined') {
-
             var ct = this.application.viewport.items.items[  1  ];
             var tabPanel = ct.items.items[0];
             var tabs = tabPanel.items.items;
-
             /** note: within the scope of Ext.each() "return false" equals "continue". */
             Ext.each(tabs, function(tab, i) {
                 if(tab.name === 'Tab' + hash) {
