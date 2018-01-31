@@ -17,7 +17,10 @@ Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
         xtype: 'ForceDirectedGraph',
         store: Ext.create('NVD3Charts.store.ForceDirectedGraph'),
         chartOptions: {
-            color: d3.scale.category20(),
+             color: function(d) {
+                var colors = d3.scale.category20c().range();
+                return colors[d.group];
+            },
             nodeExtras: (function(node) {
                 node.append("text")
                     .attr("dx", 12).attr("dy", ".4em")
