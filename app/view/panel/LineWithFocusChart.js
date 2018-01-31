@@ -17,6 +17,8 @@ Ext.define('NVD3Charts.view.panel.LineWithFocusChart', {
         xtype: 'LineWithFocusChart',
         store: Ext.create('NVD3Charts.store.LineWithFocusChart'),
         chartOptions: {
+            x: function(d) {return d.x;},
+            y: function(d) {return d.y;},
             useInteractiveGuideline: true
         },
         chartFn: function(chart) {

@@ -18,8 +18,7 @@ Ext.define('NVD3Charts.view.panel.LinePlusBarChart', {
         store: Ext.create('NVD3Charts.store.LinePlusBarChart'),
         chartOptions: {
             color: d3.scale.category10().range(),
-            // x: function(d, i) {return d[0];},
-            x: function(d){return d[0];},
+            x: function(d) {return d[0];},
             y: function(d) {return d[1];},
             margin: {top: 30, right: 60, bottom: 50, left: 70},
             legendRightAxisHint:' [Using Right Axis]'
