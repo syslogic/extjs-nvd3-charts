@@ -2,7 +2,6 @@
  * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017-2018 by Martin Zeitler, Bavaria.
  * @author https://plus.google.com/106963082057954766426
- * @see https://d3js.org & https://nvd3.org
 **/
 
 Ext.define('NVD3Charts.store.MultiBarHorizontalChart', {
@@ -24,7 +23,7 @@ Ext.define('NVD3Charts.store.MultiBarHorizontalChart', {
             {"label":"Group H","value":-0.91445417330854},
             {"label":"Group I","value":-0.055746319141851}
         ]
-    },{
+    }, {
         "key":"Series2",
         "color":"#1f77b4",
         "values":[
