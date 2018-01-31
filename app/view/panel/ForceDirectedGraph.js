@@ -2,7 +2,7 @@
  * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017-2018 by Martin Zeitler, Bavaria.
  * @author https://plus.google.com/106963082057954766426
- * @see https://d3js.org & https://nvd3.org
+ * @see ??
 **/
 
 /* global d3, NVD3Charts */
@@ -28,8 +28,7 @@ Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
             })
         },
         chartFn: function(chart) {
-            var tabPanel= NVD3Charts.getApplication().getMainController().getTabPanel();
-            var size = tabPanel.getPanelSize();
+            var size = NVD3Charts.getApplication().getMainController().getTabPanel().getPanelSize();
             chart.width(size[0]).height(size[1]);
             d3.select('#svg').attr('width', size[0]).attr('height', size[1]).transition().duration(0).call(chart);
         }
