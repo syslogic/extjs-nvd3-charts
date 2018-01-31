@@ -2,7 +2,6 @@
  * NVD3.js Bindings for Sencha ExtJS
  * @copyright Copyright 2017-2018 by Martin Zeitler, Bavaria.
  * @author https://plus.google.com/106963082057954766426
- * @see https://d3js.org & https://nvd3.org
 **/
 
 /* global Ext, d3, nv */
@@ -41,7 +40,7 @@ Ext.define('NVD3.chart.BasicChart', {
         'discreteBarChart', 'historicalBarChart', 'lineChart', 'linePlusBarChart',
         'lineWithFocusChart', 'multiBarChart', 'multiBarHorizontalChart','pieChart',
         'scatterChart', 'sparkline', 'sparklinePlus', 'stackedAreaChart', 'sunburstChart',
-        'forceDirectedGraph', 'parallelCoordinates', 'parallelCoordinatesChart'
+        'forceDirectedGraph', 'parallelCoordinatesChart'
     ],
 
     /** generateComponent(), bound method. */
@@ -213,6 +212,15 @@ Ext.define('NVD3.chart.BasicChart', {
 
             /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#barChart */
             case 'DiscreteBarChart':
+                if (me.chart.bars) {
+                    me.chart.bars.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
+                    me.chart.bars.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
+                    me.chart.bars.dispatch.on('elementClick.directive', function (e) {me.fireEvent('elementClick', e);});
+                }
+                break;
+
+            /* @see https://nvd3-community.github.io/nvd3/examples/documentation.html#historicalBarChart */
+            case 'HistoricalBarChart':
                 if (me.chart.bars) {
                     me.chart.bars.dispatch.on('elementMouseover.tooltip.directive', function (e) {me.fireEvent('elementMouseover', e);});
                     me.chart.bars.dispatch.on('elementMouseout.tooltip.directive', function (e) {me.fireEvent('elementMouseout', e);});
