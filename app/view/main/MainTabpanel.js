@@ -42,35 +42,42 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
         {tabIndex: 19, name: 'TabForceDirectedGraph',       title: 'Force Directed',  items: [{xtype: 'PanelForceDirectedGraph'}]}
     ],
     listeners: {
-        tabchange: function(tabPanel, tab){
+        tabchange: function(tabPanel, tab) {
             NVD3Charts.getApplication().getRootController().redirectTo(tab.name.replace('Tab', ''));
         },
         /* scaling the chart on tab-panel resize, top-down. */
-        resize: function(tabPanel, width, height){
+        resize: function(tabPanel, width, height) {
             var tab = tabPanel.activeTab.items.items[0];
             var offset = tabPanel.getTabBar().getWidth();
             if(typeof(tab.getGraphCount) === 'function' && tab.getGraphCount() > 1) {
 
-                /* it now considers hbox & vbox layouts*/
+                /* it now considers hbox & vbox layout. */
                 var graphCount = tab.getGraphCount();
                 for(i=0; i < graphCount; i++) {
                     var direction = tab.getLayout().direction;
+                    var size = this.getPanelSize();
                     if(direction === 'horizontal') {
-                        this.updateGraph(tab.getGraph(i), width/graphCount, offset, height);
+                        this.updateGraph(tab.getGraph(i), size[0] / graphCount, size[1]);
                     } else if(direction === 'vertical') {
-                        this.updateGraph(tab.getGraph(i), width, offset, height/graphCount);
+                        this.updateGraph(tab.getGraph(i), size[0], size[1]/graphCount);
                     }
                 }
             } else if(typeof(tab.getGraph) === 'function') {
-                this.updateGraph(tab.getGraph(), width, offset, height);
+                this.updateGraph(tab.getGraph(), width, height);
             }
         }
     },
-    updateGraph: function(graph, width, offset, height) {
+    getPanelSize: function() {
+        var offset = this.getTabBar().getWidth();
+        var width = this.getWidth();
+        var height = this.getHeight();
+        return [width-offset, height];
+    },
+    updateGraph: function(graph, width, height) {
         if(graph.getSvg() !== null) {
-            graph.chart.width(width-offset).height(height);
+            graph.chart.width(width).height(height);
             d3.select(graph.getSvg())
-            .attr('width', width-offset)
+            .attr('width', width)
             .attr('height', height)
             .transition().duration(this.resizeAnimDuration)
             .call(graph.chart);
@@ -78,11 +85,5 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
     },
     setTextAlign: function(direction) {
 
-    },
-    getPanelSize: function(){
-        var offset = this.getTabBar().getWidth();
-        var width = this.getWidth();
-        var height = this.getHeight();
-        return [width-offset, height];
     }
 });
