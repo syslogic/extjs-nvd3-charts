@@ -11,6 +11,7 @@
 * [Oracle NetBeans 8.2](http://www.oracle.com/technetwork/developer-tools/netbeans/index.html) (Development Environment)
 * [Sencha ExtJS 5.1.1.451](https://docs.sencha.com/extjs/5.1.1/index.html) (JavaScript Framework)
 * [Sencha Cmd 6.5.3.6](https://docs.sencha.com/cmd/index.html) (JavaScript Compiler)
+* [D3 3.5.17](https://github.com/d3/d3) (Data-Driven Documents)
 * [NVD3 1.8.6](https://github.com/novus/nvd3) (reusable D3 charting library)
 
 
@@ -76,7 +77,8 @@ This adds the name-space NVD3.chart (and goes to /app/Application.js):
 * NVD3.chart.[LineWithFocusChart](https://nvd3.syslogic.io/#LineWithFocusChart)             xtype: **LineWithFocusChart**
 * NVD3.chart.[MultiBarChart](https://nvd3.syslogic.io/#MultiBarChart)                       xtype: **MultiBarChart**
 * NVD3.chart.[MultiBarHorizontalChart](https://nvd3.syslogic.io/#MultiBarHorizontalChart)   xtype: **MultiBarHorizontalChart**
-* NVD3.chart.[PieChart](https://nvd3.syslogic.io/#PieChart)                                 xtype: **PieChart**
+* NVD3.chart.[PieChartRegular](https://nvd3.syslogic.io/#PieChart)                          xtype: **PieChartRegular**
+* NVD3.chart.[PieChartDonut](https://nvd3.syslogic.io/#PieChart)                            xtype: **PieChartDonut**
 * NVD3.chart.[ScatterChart](https://nvd3.syslogic.io/#ScatterChart)                         xtype: **ScatterChart**
 * NVD3.chart.[Sparkline](https://nvd3.syslogic.io/#Sparkline)                               xtype: **Sparkline**
 * NVD3.chart.[SparklinePlus](https://nvd3.syslogic.io/#SparklinePlus)                       xtype: **SparklinePlus**
