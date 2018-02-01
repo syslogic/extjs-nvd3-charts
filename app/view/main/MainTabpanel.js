@@ -50,9 +50,16 @@ Ext.define('NVD3Charts.view.main.MainTabpanel', {
             var tab = tabPanel.activeTab.items.items[0];
             var offset = tabPanel.getTabBar().getWidth();
             if(typeof(tab.getGraphCount) === 'function' && tab.getGraphCount() > 1) {
-                for(i=0; i < tab.getGraphCount(); i++) {
-                    /* it currently only considers two horizontal items */
-                    this.updateGraph(tab.getGraph(i), width/2, offset, height);
+
+                /* it now considers hbox & vbox layouts*/
+                var graphCount = tab.getGraphCount();
+                for(i=0; i < graphCount; i++) {
+                    var direction = tab.getLayout().direction;
+                    if(direction === 'horizontal') {
+                        this.updateGraph(tab.getGraph(i), width/graphCount, offset, height);
+                    } else if(direction === 'vertical') {
+                        this.updateGraph(tab.getGraph(i), width, offset, height/graphCount);
+                    }
                 }
             } else if(typeof(tab.getGraph) === 'function') {
                 this.updateGraph(tab.getGraph(), width, offset, height);
