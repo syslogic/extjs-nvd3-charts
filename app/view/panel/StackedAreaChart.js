@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.StackedAreaChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.StackedAreaChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelStackedAreaChart',
     alias: ['widget.PanelStackedAreaChart'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'StackedAreaChart',

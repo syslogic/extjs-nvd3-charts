@@ -7,10 +7,10 @@
 
 Ext.define('NVD3Charts.view.panel.BulletChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.BulletChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelBulletChart',
     alias: ['widget.PanelBulletChart'],
-    controller: 'bulletchart',
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'BulletChart',

@@ -44,6 +44,7 @@ Ext.define('NVD3Charts.controller.Root', {
                     tabPanel.setActiveItem(i);
                     var panel = tab.items.items[0];
                     if(panel.items.items.length > 1) {
+                        /* load each store */
                         for(i=0; i < panel.items.items.length; i++) {
                             panel.items.items[i].items.items[0].store.load();
                         }

@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.ForceDirectedGraph', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.ForceDirectedGraph'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelForceDirectedGraph',
     alias: ['widget.PanelForceDirectedGraph'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'ForceDirectedGraph',

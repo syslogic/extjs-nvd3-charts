@@ -9,10 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.CumulativeLineChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.CumulativeLineChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelCumulativeLineChart',
     alias: ['widget.PanelCumulativeLineChart'],
-    controller: 'cummulativelinechart',
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'CumulativeLineChart',

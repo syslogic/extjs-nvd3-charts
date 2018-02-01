@@ -28,10 +28,7 @@ Ext.define('NVD3.chart.BasicChart', {
         chartAnimDuration: 400,
 
         /** the default store */
-        store: false,
-
-        /* for delaying the resize */
-        resizeId: null
+        store: false
     },
 
     /** a list of (currently) valid chartTypes */

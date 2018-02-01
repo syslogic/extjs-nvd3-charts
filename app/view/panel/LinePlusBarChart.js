@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.LinePlusBarChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.LinePlusBarChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelLinePlusBarChart',
     alias: ['widget.PanelLinePlusBarChart'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'LinePlusBarChart',

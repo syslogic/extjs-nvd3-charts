@@ -7,10 +7,10 @@
 
 Ext.define('NVD3Charts.view.panel.BoxPlotChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.BoxPlotChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelBoxPlotChart',
     alias: ['widget.PanelBoxPlotChart'],
-    controller: 'boxplotchart',
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'BoxPlotChart',

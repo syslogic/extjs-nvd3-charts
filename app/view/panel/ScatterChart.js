@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.ScatterChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.ScatterChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelScatterChart',
     alias: ['widget.PanelScatterChart'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'ScatterChart',

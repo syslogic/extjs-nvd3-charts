@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.MultiBarHorizontalChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.MultiBarHorizontalChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelMultiBarHorizontalChart',
     alias: ['widget.PanelMultiBarHorizontalChart'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'MultiBarHorizontalChart',

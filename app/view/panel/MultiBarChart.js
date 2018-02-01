@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.MultiBarChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.MultiBarChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelMultiBarChart',
     alias: ['widget.PanelMultiBarChart'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'MultiBarChart',

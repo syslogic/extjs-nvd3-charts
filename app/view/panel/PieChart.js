@@ -8,22 +8,19 @@
 Ext.define('NVD3Charts.view.panel.PieChart', {
     extend: 'Ext.container.Container',
     requires: [
-        'NVD3Charts.viewcontroller.PieChart',
+        'NVD3Charts.viewcontroller.ChartPanel',
         'NVD3Charts.view.panel.PieChartRegular',
         'NVD3Charts.view.panel.PieChartDonut'
     ],
     name: 'PanelPieChart',
     alias: ['widget.PanelPieChart'],
-    layout: 'border',
-    items: [{
-        xtype: 'PanelPieChartRegular',
-        region: 'west',
-        flex: 1
-    }, {
-        xtype: 'PanelPieChartDonut',
-        region: 'center',
-        flex: 1
-    }],
+    controller: 'chartpanel',
+    layout: 'hbox',
+    defaults: {height: '100%', flex: 1},
+    items: [
+        {xtype: 'PanelPieChartRegular'},
+        {xtype: 'PanelPieChartDonut'}
+    ],
     getGraphCount: function() {
         return this.items.items.length;
     },

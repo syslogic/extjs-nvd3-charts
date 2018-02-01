@@ -7,9 +7,10 @@
 
 Ext.define('NVD3Charts.view.panel.PieChartDonut', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.PieChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelPieChartDonut',
     alias: ['widget.PanelPieChartDonut'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'PieChart',

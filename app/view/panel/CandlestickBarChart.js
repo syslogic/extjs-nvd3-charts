@@ -9,10 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.CandlestickBarChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.CandlestickBarChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelCandlestickBarChart',
     alias: ['widget.PanelCandlestickBarChart'],
-    controller: 'candlestickbarchart',
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'CandleStickBarChart',

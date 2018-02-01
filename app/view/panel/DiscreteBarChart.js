@@ -7,10 +7,10 @@
 
 Ext.define('NVD3Charts.view.panel.DiscreteBarChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.DiscreteBarChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelDiscreteBarChart',
     alias: ['widget.PanelDiscreteBarChart'],
-    controller: 'discretebarchart',
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'DiscreteBarChart',

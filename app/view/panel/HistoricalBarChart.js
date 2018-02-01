@@ -7,10 +7,10 @@
 
 Ext.define('NVD3Charts.view.panel.HistoricalBarChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.HistoricalBarChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelHistoricalBarChart',
     alias: ['widget.PanelHistoricalBarChart'],
-    controller: 'historicalbarchart',
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'HistoricalBarChart',

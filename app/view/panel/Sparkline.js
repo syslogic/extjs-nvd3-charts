@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.Sparkline', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.Sparkline'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelSparkline',
     alias: ['widget.PanelSparkline'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'Sparkline',

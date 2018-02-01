@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.LineWithFocusChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.LineWithFocusChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelLineWithFocusChart',
     alias: ['widget.PanelLineWithFocusChart'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'LineWithFocusChart',

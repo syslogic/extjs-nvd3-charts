@@ -9,9 +9,10 @@
 
 Ext.define('NVD3Charts.view.panel.ParallelCoordinatesChart', {
     extend: 'Ext.container.Container',
-    requires: ['NVD3Charts.viewcontroller.ParallelCoordinatesChart'],
+    requires: ['NVD3Charts.viewcontroller.ChartPanel'],
     name: 'PanelParallelCoordinatesChart',
     alias: ['widget.PanelParallelCoordinatesChart'],
+    controller: 'chartpanel',
     layout: 'fit',
     items: [{
         xtype: 'ParallelCoordinatesChart',
