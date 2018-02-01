@@ -81,8 +81,8 @@ Ext.define('NVD3Charts.store.CandlestickBarChart', {
             {"date": 15951, "open": 165.23, "high": 165.58, "low": 163.7, "close": 164.39, "volume": 142322300, "adjusted": 164.39},
             {"date": 15952, "open": 164.43, "high": 166.03, "low": 164.13, "close": 165.75, "volume": 97304000, "adjusted": 165.75},
             {"date": 15953, "open": 165.85, "high": 166.4, "low": 165.73, "close": 165.96, "volume": 62930500, "adjusted": 165.96}
-        ]}
-    ],
+        ]
+    }],
     autoLoad: true,
     pageSize: 100,
     proxy: {
