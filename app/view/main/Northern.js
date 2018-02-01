@@ -16,9 +16,10 @@ Ext.define('NVD3Charts.view.main.Northern', {
     style: {borderBottom: '1px solid #157FCC !important', background: '#F5F5F5', color: '#157FCC'},
     defaults: {xtype: 'label'},
     items: [{
-            text: 'NVD3.js for Sencha ExtJS',
-            padding: 8
-    }, '->', {
+        text: 'NVD3.js for Sencha ExtJS',
+        padding: 8
+    }, '->',
+    {
         html: '<a class="github" href="https://github.com/syslogic/extjs-nvd3-charts" target="_blank"><img src="resources/images/octocat.png"></a>',
         paddingTop: 10,
         width: 22

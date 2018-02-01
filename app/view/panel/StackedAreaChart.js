@@ -14,14 +14,15 @@ Ext.define('NVD3Charts.view.panel.StackedAreaChart', {
     alias: ['widget.PanelStackedAreaChart'],
     controller: 'chartpanel',
     layout: 'fit',
+    margin: {right: 0},
     items: [{
         xtype: 'StackedAreaChart',
         store: Ext.create('NVD3Charts.store.StackedAreaChart'),
         chartOptions: {
             x: function(d) { return d[0]; },
             y: function(d) { return d[1]; },
-            clipEdge: true,
-            useInteractiveGuideline: true
+            useInteractiveGuideline: true,
+            clipEdge: true
         },
         chartFn: function(chart) {
             chart.xAxis.tickFormat(function(d) { return d3.time.format('%x')(new Date(d)); });
