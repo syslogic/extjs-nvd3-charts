@@ -20,7 +20,7 @@ Ext.define('NVD3Charts.view.panel.CandlestickBarChart', {
         chartOptions: {
             x: function(d) {return d['date']},
             y: function(d) {return d['close']},
-            margin: {left: 75, bottom: 50}
+            margin: {left: 75, right: 32, bottom: 50}
         },
         chartFn: function(chart) {
             chart.xAxis
