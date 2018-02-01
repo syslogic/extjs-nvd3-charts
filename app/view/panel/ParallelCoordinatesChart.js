@@ -21,11 +21,12 @@ Ext.define('NVD3Charts.view.panel.ParallelCoordinatesChart', {
             dimensionData: [
                 {key: "economy (mpg)",     format: d3.format(".1f")},
                 {key: "cylinders",         format: d3.format("1.0f")},
-                {key: "displacement (cc)", format: d3.format("g")},
-                {key: "power (hp)",        format: d3.format("d")},
-                {key: "weight (lb)",       format: d3.format("")},
+                {key: "displacement (cc)", format: d3.format(".1f")},
+                {key: "power (hp)",        format: d3.format(".1f")},
+                {key: "weight (lb)",       format: d3.format(".1f")},
                 {key: "0-60 mph (s)",      format: d3.format(".1f")},
                 {key: "year",              format: function(input) {
+                    input = Math.round(input);
                     var date = d3.time.format("%y").parse(input.toString());
                     var format = d3.time.format("%Y");
                     return format(date);
