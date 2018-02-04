@@ -24,9 +24,11 @@ Ext.define('NVD3Charts.view.panel.Sparkline', {
         },
         chartFn: function(chart) {
             var tabPanel= NVD3Charts.getApplication().getMainController().getTabPanel();
-            var size = tabPanel.getPanelSize();
-            chart.width(size[0]).height(size[1]);
-            d3.select('#svg').attr('width', size[0]).attr('height', size[1]).transition().duration(0).call(chart);
+            if(typeof(tabPanel) !== 'undefined') {
+                var size = tabPanel.getPanelSize();
+                chart.width(size[0]).height(size[1]);
+                d3.select('#svg').attr('width', size[0]).attr('height', size[1]).transition().duration(0).call(chart);
+            }
         }
     }],
     getGraph: function() {

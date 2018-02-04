@@ -341,6 +341,15 @@ describe('NVD3Charts', function() {
                 });
             });
 
+            describe('panel.CumulativeLineChart', function () {
+                it('instanced', function(done) {
+                    var panel = OnTabChange('CumulativeLineChart');
+                    Ext.log({msg: 'panel '+panel.id, level: 'info'});
+                    expect(panel).not.toBeNull();
+                    setTimeout(done, 800);
+                });
+            });
+
             describe('panel.LinePlusBarChart', function () {
                 it('instanced', function(done) {
                     var panel = OnTabChange('LinePlusBarChart');
@@ -416,15 +425,6 @@ describe('NVD3Charts', function() {
             describe('panel.MultiBarHorizontalChart', function () {
                 it('instanced', function(done) {
                     var panel = OnTabChange('MultiBarHorizontalChart');
-                    Ext.log({msg: 'panel '+panel.id, level: 'info'});
-                    expect(panel).not.toBeNull();
-                    setTimeout(done, 800);
-                });
-            });
-
-            describe('panel.CumulativeLineChart', function () {
-                it('instanced', function(done) {
-                    var panel = OnTabChange('CumulativeLineChart');
                     Ext.log({msg: 'panel '+panel.id, level: 'info'});
                     expect(panel).not.toBeNull();
                     setTimeout(done, 800);
