@@ -6,3 +6,4 @@ application.debug.js
 application.js
 build/
 ext/
+/docs/
